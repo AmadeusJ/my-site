@@ -1,7 +1,13 @@
 // TechSection.tsx
 
-import React from "react";
+import React from 'react';
 
 export default function TechSection() {
-    return <div>TechSection</div>;
+  return (
+    <>
+      <section className="section">
+        <h1>TechSection</h1>
+      </section>
+    </>
+  );
 }

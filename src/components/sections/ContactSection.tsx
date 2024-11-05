@@ -1,7 +1,13 @@
 // ContactSection.tsx
 
-import React from "react";
+import React from 'react';
 
 export default function ContactSection() {
-    return <div>ContactSection</div>;
+  return (
+    <>
+      <section className="section">
+        <h1>ContactSection</h1>
+      </section>
+    </>
+  );
 }

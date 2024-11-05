@@ -1,7 +1,22 @@
 // HeroSection.tsx
+'use client';
 
-import React from "react";
+import React, { useEffect } from 'react';
 
 export default function HeroSection() {
-    return <div>HeroSection</div>;
+
+  useEffect(() => {
+    console.log('HeroSection mounted');
+
+
+
+  }, []);
+
+  return (
+    <>
+      <section className="section">
+        <h1>HeroSection</h1>
+      </section>
+    </>
+  );
 }

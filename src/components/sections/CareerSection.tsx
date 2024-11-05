@@ -1,7 +1,13 @@
 // CareerSection.tsx
 
-import React from "react";
+import React from 'react';
 
 export default function CareerSection() {
-    return <div>CareerSection</div>;
+  return (
+    <>
+      <section className="section">
+        <h1>CareerSection</h1>
+      </section>
+    </>
+  );
 }
