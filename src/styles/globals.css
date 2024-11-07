@@ -9,7 +9,7 @@ body {
   scroll-behavior: smooth;
   overflow-y: scroll;
   /* 배경색 전환 효과 */
-  transition: background 0.5s ease;
+  transition: background 1s ease-in-out;
 }
 
 .section {

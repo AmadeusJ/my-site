@@ -10,7 +10,7 @@ const changeBackgroundColor = (variableName: string) => {
 export const backgroundObserver = () => {
   const sections = document.querySelectorAll<HTMLElement>('.section');
   const oberserObtions = {
-    threshold: 0.3, // 30% 이상 영역에 진입하면 이벤트 발생
+    threshold: 0.5, // 50% 이상 영역에 진입하면 이벤트 발생
   };
 
   const observer = new IntersectionObserver((entries) => {
