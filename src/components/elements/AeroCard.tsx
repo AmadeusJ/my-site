@@ -1,7 +1,18 @@
-// AeroCard.tsx
 
 import React from 'react';
+import styles from './AeroCard.module.css';
 
-export default function AeroCard() {
-  return <div>AeroCard</div>;
+interface AeroCardProps {
+  children: React.ReactNode;
+  className?: string;
 }
+
+const AeroCard: React.FC<AeroCardProps> = ({ children, className }) => {
+  return (
+    <div className={`${styles.aeroCard} ${className || ''}`}>
+      {children}
+    </div>
+  );
+};
+
+export default AeroCard;

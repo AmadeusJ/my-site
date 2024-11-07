@@ -2,6 +2,8 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import AeroCard from '../elements/AeroCard';
+import styles from './HeroSection.module.css';
 
 export default function HeroSection() {
 
@@ -14,8 +16,10 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="section">
-        <h1>HeroSection</h1>
+      <section className={`section ${styles.heroSection}`}>
+        <AeroCard className={styles.heroCard}>
+          <h1>HeroSection</h1>
+        </AeroCard>
       </section>
     </>
   );

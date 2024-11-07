@@ -1,1 +1,17 @@
 /*  */
+.aeroCard {
+  background: rgba(255, 255, 255, 0.54);
+  /* 반투명 배경 */
+  backdrop-filter: blur(10px);
+  /* 블러 효과 */
+  border-radius: 15px;
+  /* 부드러운 모서리 */
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .aeroCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+} */
