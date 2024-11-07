@@ -1,6 +1,6 @@
 
 import React from 'react';
-import styles from './AeroCard.module.css';
+import styles from './AeroCard.module.scss';
 
 interface AeroCardProps {
   children: React.ReactNode;

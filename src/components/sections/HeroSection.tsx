@@ -3,7 +3,7 @@
 
 import React, { useEffect } from 'react';
 import AeroCard from '../elements/AeroCard';
-import styles from './HeroSection.module.css';
+import styles from './HeroSection.module.scss';
 
 export default function HeroSection() {
 

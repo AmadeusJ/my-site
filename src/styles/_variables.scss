@@ -1,0 +1,28 @@
+/* _variables.scss */
+
+
+// Global
+$text-color: #333A4D;
+
+
+// Hero Section
+$hero-bg-color: linear-gradient(120deg,
+    rgba(160, 215, 255, 1) 0%,
+    rgba(174, 232, 255, 0.8) 40%,
+    rgba(160, 215, 255, 0.6) 70%,
+    rgba(174, 232, 255, 1) 100%);
+$hero-highlight-color: #FFA726;
+
+
+// Project Section
+$project-bg-color: linear-gradient(120deg,
+    rgba(174, 232, 211, 1) 0%,
+    rgba(160, 215, 255, 0.8) 40%,
+    rgba(174, 232, 211, 0.6) 70%,
+    rgba(160, 215, 255, 1) 100%);
+$project-highlight-color: #93C5FD;
+
+:root {
+  --hero-bg-color: #{$hero-bg-color};
+  --project-bg-color: #{$project-bg-color};
+}
