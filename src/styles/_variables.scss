@@ -8,21 +8,66 @@ $text-color: #333A4D;
 // Hero Section
 $hero-bg-color: linear-gradient(120deg,
     rgba(160, 215, 255, 1) 0%,
-    rgba(174, 232, 255, 0.8) 40%,
-    rgba(160, 215, 255, 0.6) 70%,
-    rgba(174, 232, 255, 1) 100%);
+    rgba(174, 232, 255, 0.8) 20%,
+    rgba(160, 215, 255, 0.6) 30%,
+    rgba(184, 255, 230, 1) 50%);
 $hero-highlight-color: #FFA726;
 
 
 // Project Section
 $project-bg-color: linear-gradient(120deg,
-    rgba(174, 232, 211, 1) 0%,
-    rgba(160, 215, 255, 0.8) 40%,
-    rgba(174, 232, 211, 0.6) 70%,
-    rgba(160, 215, 255, 1) 100%);
+    rgba(184, 255, 230, 1) 0%,
+    rgba(250, 250, 205, 0.8) 40%,
+    rgba(255, 250, 205, 0.6) 70%,
+    rgba(255, 245, 210, 1) 100%);
 $project-highlight-color: #93C5FD;
+
+
+// Tech Section
+$tech-bg-color: linear-gradient(100deg,
+    rgba(255, 255, 153, 1) 0%,
+    /* 밝은 레몬 옐로우 */
+    rgba(255, 200, 150, 0.8) 40%,
+    /* 중간 정도 주황빛 */
+    rgba(255, 175, 130, 0.6) 70%,
+    /* 진한 주황빛 */
+    rgba(255, 140, 100, 1) 100%
+    /* 끝 부분에서 밝은 갈색 */
+  );
+
+// Career Section
+$career-bg-color: linear-gradient(80deg,
+    rgba(255, 192, 220, 1) 0%,
+    /* 진한 오렌지 */
+    /* 중간 정도의 핑크빛 */
+    /* 연한 핑크 */
+    rgba(255, 180, 110, 1) 100%
+    /* 끝 부분에서 파스텔 핑크 */
+  );
+//   $career-bg-color: linear-gradient(80deg,
+//   rgba(255, 180, 110, 1) 0%,
+//   /* 진한 오렌지 */
+//   rgba(255, 150, 160, 0.8) 30%,
+//   /* 중간 정도의 핑크빛 */
+//   rgba(255, 130, 170, 0.6) 70%,
+//   /* 연한 핑크 */
+//   rgba(255, 192, 220, 1) 100%
+//   /* 끝 부분에서 파스텔 핑크 */
+// );
+
+// Contact Section
+$contact-bg-color: linear-gradient(30deg,
+    rgba(255, 105, 135, 1) 0%,
+    /* 진한 핑크 */
+    rgba(230, 230, 250, 1) 50%
+    /* 부드러운 라벤더로 마무리 */
+  );
+
 
 :root {
   --hero-bg-color: #{$hero-bg-color};
   --project-bg-color: #{$project-bg-color};
+  --tech-bg-color: #{$tech-bg-color};
+  --career-bg-color: #{$career-bg-color};
+  --contact-bg-color: #{$contact-bg-color};
 }

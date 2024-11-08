@@ -4,7 +4,10 @@ const changeBackgroundColor = (variableName: string) => {
   const rootStyles = getComputedStyle(document.documentElement);
   const color = rootStyles.getPropertyValue(variableName).trim();
   console.log(color);
+  document.body.style.transition = 'background 1.5s cubic-bezier(0.97, 0.03, 0.12, 1)'; // Custom easing for smoothness
   document.body.style.background = color;
+  console.log('background-color: ', document.body.style);
+
 };
 
 export const backgroundObserver = () => {
