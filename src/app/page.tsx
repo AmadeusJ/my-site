@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import { store } from '@/stores/store';
 import HeroSection from '@/components/sections/HeroSection';
 import ProjectSection from '@/components/sections/ProjectSection';
 import TechSection from '@/components/sections/TechSection';
@@ -15,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <Provider store={store}>
       {/* Full Page Animation */}
       <HeroSection />
 
@@ -24,6 +26,6 @@ export default function Home() {
       <TechSection />
       <CareerSection />
       <ContactSection />
-    </>
+    </Provider>
   );
 }

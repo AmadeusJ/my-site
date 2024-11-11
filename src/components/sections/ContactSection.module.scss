@@ -2,4 +2,16 @@
 
 .contactSection {
   padding: 50px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  .contactChat {
+    flex: 1;
+  }
+
+  .contactContents {
+    flex: 1;
+  }
 }
