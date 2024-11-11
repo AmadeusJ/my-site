@@ -17,7 +17,7 @@ export default function HeroSection() {
       y: -10,
       transition: {
         type: 'spring',
-        stiffness: 1000, // 탄성
+        stiffness: 500, // 탄성
         damping: 15, // 감쇠
         mass: 0.5, // 질량
       },
