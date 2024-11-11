@@ -1,7 +1,7 @@
 // CareerSection.tsx
 
 import React from 'react';
-import AeroCard from '../elements/AeroCard';
+import AeroCard from '../Aero/AeroCard';
 import styles from './CareerSection.module.scss';
 
 export default function CareerSection() {

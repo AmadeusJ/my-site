@@ -1,7 +1,7 @@
 // TechSection.tsx
 
 import React from 'react';
-import AeroCard from '../elements/AeroCard';
+import AeroCard from '../Aero/AeroCard';
 import styles from './TechSection.module.scss';
 import { skills } from '@/data/skills';
 

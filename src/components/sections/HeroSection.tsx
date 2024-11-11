@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import AeroCard from '../elements/AeroCard';
+import AeroCard from '../Aero/AeroCard';
 import styles from './HeroSection.module.scss';
 import { motion } from 'framer-motion';
 

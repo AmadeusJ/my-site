@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import AeroCard from '../elements/AeroCard';
+import AeroCard from '../Aero/AeroCard';
 import { motion, useInView } from "framer-motion";
 import { useAppDispatch } from '@/stores/store';
 import { projects } from '@/data/projects';
