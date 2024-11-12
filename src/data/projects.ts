@@ -1,4 +1,64 @@
-export const projects = [
+export type Project = {
+  id: number;
+  title: string;
+  description: string;
+  isMain: boolean;
+}
+
+
+export const projectTopics = [
+  {
+    id: 1,
+    title: 'Web Application',
+    description: 'Web Application Description',
+    items: [
+      {
+        id: 1,
+        title: 'AI Competition Platform',
+      },
+      {
+        id: 2,
+        title: 'LLM Applications',
+      },
+    ]
+  },
+  {
+    id: 2,
+    title: 'Data Visualization',
+    description: 'Data Visualization Description',
+    items: [
+      {
+        id: 1,
+        title: 'MLOps Platform',
+      },
+      {
+        id: 2,
+        title: 'Data Visualization',
+      },
+    ]
+  },
+  {
+    id: 3,
+    title: 'Fullstack & Collaboration',
+    description: 'Fullstack & Collaboration Description',
+    items: [
+      {
+        id: 1,
+        title: 'Fullstack Development',
+      },
+      {
+        id: 2,
+        title: 'API Integration',
+      },
+      {
+        id: 3,
+        title: 'Collaboration',
+      },
+    ]
+  }
+]
+
+export const projects: Project[] = [
   {
     id: 1,
     title: 'Project 1',

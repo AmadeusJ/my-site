@@ -73,6 +73,21 @@ export default function TechSection() {
           <AeroCard className={styles.techDescriptionCard}>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
             </p>
           </AeroCard>
         </div>
