@@ -60,12 +60,3 @@ $contact-bg-color: linear-gradient(70deg,
     rgba(240, 240, 250, 1) 100%
     /* 부드러운 라벤더 */
   );
-
-
-:root {
-  --hero-bg-color: #{$hero-bg-color};
-  --project-bg-color: #{$project-bg-color};
-  --tech-bg-color: #{$tech-bg-color};
-  --career-bg-color: #{$career-bg-color};
-  --contact-bg-color: #{$contact-bg-color};
-}

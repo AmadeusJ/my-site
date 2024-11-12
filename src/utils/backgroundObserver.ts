@@ -11,27 +11,27 @@ const changeBackgroundColor = (variableName: string) => {
 };
 
 export const backgroundObserver = () => {
+  // 초기에 한 번만 transition 설정
+  document.body.style.transition = 'background 1.5s cubic-bezier(0.97, 0.03, 0.12, 1)';
+
   const sections = document.querySelectorAll<HTMLElement>('.section');
-  const oberserObtions = {
-    threshold: 0.5, // 50% 이상 영역에 진입하면 이벤트 발생
+  const observerOptions = {
+    threshold: 0.5,
+    // 성능 최적화를 위한 rootMargin 추가
+    rootMargin: '50px 0px'
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      console.log(entry);
       if (entry.isIntersecting) {
         const sectionClass = entry.target.classList[1];
-        const baseClassName = sectionClass?.split('__').pop() || ''; // '__' 이후의 부분을 추출
-        const cleanedClassName = baseClassName.replace(/Section$/, ''); // 'Section' 제거
+        const match = sectionClass?.match(/[_]*([a-zA-Z]+)Section[_]*/);
+        const cleanedClassName = match ? match[1].toLowerCase() : '';
         const variableName = `--${cleanedClassName.replace(/-/g, '_')}-bg-color`;
-        console.log(entry.target.classList, cleanedClassName, variableName);
         changeBackgroundColor(variableName);
       }
     });
-  }, oberserObtions);
+  }, observerOptions);
 
-  // 각 섹션에 관찰자 추가
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
+  sections.forEach((section) => observer.observe(section));
 };

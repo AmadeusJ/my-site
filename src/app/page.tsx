@@ -13,7 +13,7 @@ import { backgroundObserver } from '@/utils/backgroundObserver';
 export default function Home() {
   useEffect(() => {
     // 배경색 전환 효과
-    backgroundObserver();
+    // backgroundObserver();
   }, []);
 
   return (
