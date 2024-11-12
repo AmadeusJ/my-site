@@ -1,6 +1,9 @@
 @import '@/styles/_variables.scss';
 
 .contactSection {
+  height: '100vh';
+  background: 'transparent';
+  // background: $contact-bg-color;
   padding: 50px;
 
   display: flex;

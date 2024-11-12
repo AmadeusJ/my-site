@@ -1,6 +1,9 @@
 @import '@/styles/_variables.scss';
 
 .careerSection {
+  height: '100vh';
+  background: 'transparent';
+  // background: $career-bg-color;
   padding: 50px;
 
   .careerCard {

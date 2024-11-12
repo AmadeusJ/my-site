@@ -2,16 +2,9 @@
 @import '@/styles/_variables.scss';
 
 .heroSection {
-  // background: linear-gradient(120deg,
-  //     rgba(160, 215, 255, 1) 0%,
-  //     rgba(174, 232, 255, 0.8) 40%,
-  //     rgba(160, 215, 255, 0.6) 70%,
-  //     rgba(174, 232, 255, 1) 100%);
-  // background:
-  //   radial-gradient(circle at top left, rgba(160, 215, 255, 0.8), transparent 60%),
-  //   /* 은은한 빛 효과 */
-  //   linear-gradient(135deg, #A0D7FF, rgba(255, 255, 255, 0.5) 70%, #AEE8D3);
-  /* 메인 그라데이션 */
+  height: '100vh';
+  background: 'transparent';
+  // background: $hero-bg-color;
   padding: 50px;
 
   .heroCard {

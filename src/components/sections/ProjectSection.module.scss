@@ -1,6 +1,9 @@
 @import '@/styles/_variables.scss';
 
 .projectSection {
+  height: '100vh';
+  background: 'transparent';
+  // background: $project-bg-color;
   padding: 50px;
 
   display: grid;

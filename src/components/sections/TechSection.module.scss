@@ -1,6 +1,9 @@
 @import '@/styles/_variables.scss';
 
 .techSection {
+  height: '100vh';
+  background: 'transparent';
+  // background: $tech-bg-color;
   padding: 50px;
 
   .techContainer {
