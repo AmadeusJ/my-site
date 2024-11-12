@@ -4,12 +4,63 @@
   padding: 50px;
 
   .techContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+
+    .techSkills {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      max-width: 50%;
+    }
+
+    .techDescription {
+      padding: 10px;
+      flex-grow: 1;
+    }
+  }
+
+  .techCategory {
+    position: relative;
+    z-index: 2;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .techCategoryCard {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    transition: transform 0.3s ease;
+    width: 100%;
+  }
+
+  .techIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    // transition: transform 0.3s ease;
+  }
+
+  .techIcon:hover {
+    transform: scale(1.1);
+    /* 호버 시 약간 확대 */
+  }
+
+  .techDescriptionCard {
+    margin: 10px;
     padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
   }
 }
