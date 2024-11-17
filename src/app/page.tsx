@@ -10,7 +10,6 @@ import ProjectSection from '@/components/sections/ProjectSection';
 import TechSection from '@/components/sections/TechSection';
 import CareerSection from '@/components/sections/CareerSection';
 import ContactSection from '@/components/sections/ContactSection';
-import { backgroundObserver } from '@/utils/backgroundObserver';
 
 
 const BackgroundOverlay = ({ color }) => (
@@ -32,9 +31,6 @@ const BackgroundOverlay = ({ color }) => (
   />
 );
 
-
-
-
 export default function Home() {
   const [activeSection, setActiveSection] = useState(0);
 
@@ -48,12 +44,23 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sectionIndex = Math.floor(window.scrollY / window.innerHeight);
-      setActiveSection(sectionIndex);
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      // 스크롤 위치에 따른 섹션 인덱스 계산
+      // 30% 진입 지점을 계산하기 위해 0.3을 곱합니다
+      const threshold = windowHeight * 0.3;
+      // 현재 스크롤 위치에서 threshold를 고려하여 섹션 인덱스를 계산
+      const sectionIndex = Math.floor((scrollPosition + threshold) / windowHeight);
+
+      if (sectionIndex !== activeSection) {
+        console.log('sectionIndex: ', sectionIndex);
+        setActiveSection(sectionIndex);
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeSection]);
 
   return (
     <Provider store={store}>
