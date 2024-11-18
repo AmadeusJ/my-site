@@ -9,9 +9,9 @@ export default function CategoryHeader() {
     <header className={styles.categoryHeader}>
       <AeroCard className={styles.categoryHeaderCard}>
         <button>all</button>
-        <button>projects</button>
-        <button>career</button>
-        <button>contact</button>
+        <button>Web Application</button>
+        <button>Data Visualization</button>
+        <button>A11Y + UI/UX</button>
       </AeroCard>
     </header>
   );
