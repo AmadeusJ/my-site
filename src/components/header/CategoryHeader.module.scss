@@ -1,7 +1,58 @@
 // 카테고리 헤더
 
 .categoryHeader {
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  /* 다른 요소 위에 표시 */
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+
+  .categoryHeaderCard {
+    padding: 10px;
+    flex-grow: 1;
+    /* 카드가 화면에 맞게 늘어남 */
+
+  }
+}
+
+
+/* 버튼 스타일 */
+.categoryHeaderCard button {
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 호버 상태 */
+.categoryHeaderCard button:hover {
+  background-color: rgba(144, 202, 249, 0.2);
+  /* 라이트 블루 호버 효과 */
+  color: #007aff;
+}
+
+/* 포커스 상태 */
+.categoryHeaderCard button:focus {
+  outline: none;
+  border-color: #007aff;
+  background-color: rgba(144, 202, 249, 0.2);
+  /* 동일한 호버 효과 */
+  color: #007aff;
+}
+
+/* 활성화된 버튼 스타일 */
+.categoryHeaderCard button.active {
+  background-color: rgba(0, 122, 255, 0.1);
+  color: #007aff;
+  font-weight: bold;
+  border-color: #007aff;
 }
