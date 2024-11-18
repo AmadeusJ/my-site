@@ -1,14 +1,23 @@
 @import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
 
 .projectSection {
+  width: calc(100% - 100px);
+  /* 좌우 패딩을 고려한 유동적인 너비 */
+  max-width: 2000px;
+  /* 최대 너비 제한 */
   height: '100vh';
   background: 'transparent';
   // background: $project-bg-color;
   padding: 50px;
+  margin: 0 auto;
+  /* 좌우 중앙 정렬 */
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 74px;
+  // align-items: center;
+  // justify-content: center;
 
   .projectCardWrapper {
     position: relative;
@@ -40,4 +49,23 @@
       overflow: hidden;
     }
   }
+
+  // 미디어 쿼리
+  @include respond-to("desktop") {
+    gap: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  @include respond-to("tablet") {
+    padding: 30px;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  @include respond-to("mobile") {
+    padding: 20px;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
 }

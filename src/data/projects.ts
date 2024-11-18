@@ -39,23 +39,34 @@ export const projectTopics = [
   },
   {
     id: 3,
-    title: 'Fullstack & Collaboration',
-    description: 'Fullstack & Collaboration Description',
+    title: 'A11Y + UI/UX',
+    description: 'A11Y & UX Research Description',
     items: [
       {
         id: 1,
-        title: 'Fullstack Development',
-      },
-      {
-        id: 2,
-        title: 'API Integration',
-      },
-      {
-        id: 3,
-        title: 'Collaboration',
+        title: 'AI',
       },
     ]
-  }
+  },
+  // {
+  //   id: 4,
+  //   title: 'Fullstack + Collabo',
+  //   description: 'Fullstack & Collaboration Description',
+  //   items: [
+  //     {
+  //       id: 1,
+  //       title: 'Fullstack Development',
+  //     },
+  //     {
+  //       id: 2,
+  //       title: 'API Integration',
+  //     },
+  //     {
+  //       id: 3,
+  //       title: 'Collaboration',
+  //     },
+  //   ]
+  // },
 ]
 
 export const projects: Project[] = [

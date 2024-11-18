@@ -1,7 +1,9 @@
 // ProjectSection.tsx
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 import AeroCard from '../Aero/AeroCard';
 import { motion, useInView } from "framer-motion";
 import { useAppDispatch } from '@/stores/store';
@@ -11,6 +13,11 @@ import styles from './ProjectSection.module.scss';
 
 export default function ProjectSection() {
   const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  useEffect(() => {
+
+  }, [router]);
 
   const expandEffect = {
     hover: {
@@ -43,6 +50,7 @@ export default function ProjectSection() {
               transition={{ duration: 0.5, delay: 0.2 * index }}
               whileHover="hover"
               variants={expandEffect}
+              onClick={() => router.push(`/projects`)}
             >
               <AeroCard className={styles.projectCard}>
                 <div className={styles.projectHeader}>
@@ -53,8 +61,6 @@ export default function ProjectSection() {
                 </div>
                 <div className={styles.projectBody}>
                   <h1>{topic.title}</h1>
-                  <p>{topic.description}</p>
-                  <p>{topic.description}</p>
                   <p>{topic.description}</p>
                   <p>{topic.description}</p>
                   <p>{topic.description}</p>
