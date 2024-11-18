@@ -50,7 +50,30 @@
     }
   }
 
+
   // 미디어 쿼리
+  @include respond-to("xxlarge") {
+    width: calc(100% - 420px);
+    /* 좌우 패딩을 고려한 유동적인 너비 */
+    max-width: 3840px;
+    gap: 100px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+
+  @include respond-to("xlarge") {
+    width: calc(100% - 100px);
+    gap: 75px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    max-width: 1600px;
+  }
+
+  @include respond-to("large") {
+    width: calc(100% - 100px);
+    gap: 75px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+
+
   @include respond-to("desktop") {
     gap: 50px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

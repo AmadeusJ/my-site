@@ -7,6 +7,19 @@
   padding: 50px;
 
   .careerCard {
-    height: 100%;
+    height: 50%;
+
+    .careerHeader {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .careerBody {
+      img {
+        width: 50%;
+        height: 50%;
+      }
+    }
   }
 }
