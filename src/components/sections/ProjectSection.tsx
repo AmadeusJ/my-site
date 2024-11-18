@@ -55,7 +55,7 @@ export default function ProjectSection() {
               <AeroCard className={styles.projectCard}>
                 <div className={styles.projectHeader}>
                   <motion.img
-                    src={`/images/example.svg`}
+                    src={topic.image}
                     alt={topic.title}
                   />
                 </div>

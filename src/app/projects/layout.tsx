@@ -11,7 +11,7 @@ export default function ProjectsLayout({
   return (
     <div>
       <header>
-        <h1>Projects Section</h1>
+        <div>Header</div>
       </header>
       <main>{children}</main>
     </div>

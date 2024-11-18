@@ -1,28 +1,76 @@
 // app/projects/page.tsx
+'use client';
 
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
+import { Provider } from 'react-redux';
+import { store } from '@/stores/store';
 
+import AeroCard from '@/components/Aero/AeroCard';
 import BackgroundOverlay from '@/components/BackgroundOverlay';
 
-import { projects, projectTopics } from '@/data/projects';
-
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { projects } from '@/data/projects';
+import styles from './page.module.scss';
 export default function ProjectsPage() {
-  const projectIds = [1, 2, 3, 4, 5]; // 예제 데이터
+  const router = useRouter();
   const backgroundColors = [
-    'var(--hero-bg-color)',
-    'var(--project-bg-color)',
-    'var(--tech-bg-color)',
-    'var(--career-bg-color)',
-    'var(--contact-bg-color)',
+    'var(--projects-bg-color)',
   ];
 
   useEffect(() => {
-  }, []);
+  }, [router]);
+
+  const expandEffect = {
+    hover: {
+      scale: 1.2,
+      zIndex: 100,
+      transition: {
+        type: 'spring',
+        stiffness: 300, // 탄성
+        damping: 15, // 감쇠
+        mass: 0.7, // 질량
+        zIndex: 100,
+      },
+    },
+  };
 
   return (
-    <div>
-      <h1>Projects</h1>
-    </div>
+    <Provider store={store}>
+      <AnimatePresence>
+        <BackgroundOverlay key={'projects'} color={backgroundColors[0]} />
+      </AnimatePresence>
+
+      <section className={styles.projectsSection} >
+        {
+          projects.map((project, index) => {
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true });
+            return (
+              <motion.div
+                className={styles.projectCardWrapper}
+                ref={ref}
+                key={project.id}
+                initial={{ opacity: 0, y: 100 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 * index }}
+                whileHover="hover"
+                variants={expandEffect}
+                onClick={() => router.push(`/projects/${project.id}`)}
+              >
+                <AeroCard className={styles.projectCard}>
+                  <div className={styles.projectHeader}>
+                    <img src={project.image} alt={project.title} />
+                  </div>
+                  <div className={styles.projectBody}>
+                    <h1>{project.title}</h1>
+                  </div>
+                </AeroCard>
+              </motion.div>
+            );
+          })
+        }
+      </section>
+    </Provider>
   );
 }

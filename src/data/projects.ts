@@ -3,6 +3,7 @@ export type Project = {
   title: string;
   description: string;
   isMain: boolean;
+  image?: string;
 }
 
 
@@ -11,6 +12,7 @@ export const projectTopics = [
     id: 1,
     title: 'Web Application',
     description: 'Web Application Description',
+    image: '/images/example.svg',
     items: [
       {
         id: 1,
@@ -26,6 +28,7 @@ export const projectTopics = [
     id: 2,
     title: 'Data Visualization',
     description: 'Data Visualization Description',
+    image: '/images/example.svg',
     items: [
       {
         id: 1,
@@ -41,6 +44,7 @@ export const projectTopics = [
     id: 3,
     title: 'A11Y + UI/UX',
     description: 'A11Y & UX Research Description',
+    image: '/images/example.svg',
     items: [
       {
         id: 1,
@@ -75,48 +79,56 @@ export const projects: Project[] = [
     title: 'Project 1',
     description: 'Project 1 Description',
     isMain: true,
+    image: '/images/example.svg',
   },
   {
     id: 2,
     title: 'Project 2',
     description: 'Project 2 Description',
     isMain: true,
+    image: '/images/example.svg',
   },
   {
     id: 3,
     title: 'Project 3',
     description: 'Project 3 Description',
     isMain: true,
+    image: '/images/example.svg',
   },
   {
     id: 4,
     title: 'Project 4',
     description: 'Project 4 Description',
     isMain: false,
+    image: '/images/example.svg',
   },
   {
     id: 5,
     title: 'Project 5',
     description: 'Project 5 Description',
     isMain: false,
+    image: '/images/example.svg',
   },
   {
     id: 6,
     title: 'Project 6',
     description: 'Project 6 Description',
     isMain: false,
+    image: '/images/example.svg',
   },
   {
     id: 7,
     title: 'Project 7',
     description: 'Project 7 Description',
     isMain: false,
+    image: '/images/example.svg',
   },
   {
     id: 8,
     title: 'Project 8',
     description: 'Project 8 Description',
     isMain: false,
+    image: '/images/example.svg',
   },
 
 ];
