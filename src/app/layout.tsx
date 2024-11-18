@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import '@/styles/globals.css';
+import AnimatePresenceWrapper from '@/components/AnimatePresenceWrapper';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -39,9 +40,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* Main Content */}
-        <main>{children}</main>
-
+        <AnimatePresenceWrapper>
+          {/* Main Content */}
+          <main>{children}</main>
+        </AnimatePresenceWrapper>
         {/* Footer */}
         <footer>© 2024 My Portfolio</footer>
       </body>

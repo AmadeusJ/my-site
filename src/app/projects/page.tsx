@@ -12,6 +12,7 @@ import BackgroundOverlay from '@/components/BackgroundOverlay';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { projects } from '@/data/projects';
 import styles from './page.module.scss';
+
 export default function ProjectsPage() {
   const router = useRouter();
   const backgroundColors = [
