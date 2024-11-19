@@ -1,13 +1,8 @@
-// 프로젝트 페이지 레이아웃
+// app/about/layout.tsx
 
 import React from 'react';
 import Header from '@/components/header/Header';
-
-export default function ProjectsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />

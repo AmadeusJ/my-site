@@ -1,0 +1,12 @@
+// app/about/page.module.scss
+
+@import '@/styles/_variables.scss';
+
+.aboutSection {
+  height: 100vh;
+  background: transparent;
+
+  .aboutContents {
+    padding: 50px;
+  }
+}

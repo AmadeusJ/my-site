@@ -42,35 +42,44 @@ export default function ProjectsPage() {
         <BackgroundOverlay key={'projects'} color={backgroundColors[0]} />
       </AnimatePresence>
 
-      <section className={styles.projectsSection} >
-        {
-          projects.map((project, index) => {
-            const ref = useRef(null);
-            const isInView = useInView(ref, { once: true });
-            return (
-              <motion.div
-                className={styles.projectCardWrapper}
-                ref={ref}
-                key={project.id}
-                initial={{ opacity: 0, y: 100 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 * index }}
-                whileHover="hover"
-                variants={expandEffect}
-                onClick={() => router.push(`/projects/${project.id}`)}
-              >
-                <AeroCard className={styles.projectCard}>
-                  <div className={styles.projectHeader}>
-                    <img src={project.image} alt={project.title} />
-                  </div>
-                  <div className={styles.projectBody}>
-                    <h1>{project.title}</h1>
-                  </div>
-                </AeroCard>
-              </motion.div>
-            );
-          })
-        }
+      <section className={styles.projectsSection}>
+        <div className={styles.projectCategory}>
+          <button>All</button>
+          <button>Web Application</button>
+          <button>Data Visualization</button>
+          <button>A11Y + UI/UX</button>
+        </div>
+        <div className={styles.projectList}>
+          {
+            projects.map((project, index) => {
+              const ref = useRef(null);
+              const isInView = useInView(ref, { once: true });
+              return (
+                <motion.div
+                  className={styles.projectCardWrapper}
+                  ref={ref}
+                  key={project.id}
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.2 * index }}
+                  whileHover="hover"
+                  variants={expandEffect}
+                  onClick={() => router.push(`/projects/${project.id}`)}
+                >
+                  <AeroCard className={styles.projectCard}>
+                    <div className={styles.projectHeader}>
+                      <img src={project.image} alt={project.title} />
+                    </div>
+                    <div className={styles.projectBody}>
+                      <h1>{project.title}</h1>
+                    </div>
+                  </AeroCard>
+                </motion.div>
+              );
+            })
+          }
+
+        </div>
       </section>
     </Provider>
   );
