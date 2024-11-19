@@ -33,7 +33,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <BackgroundOverlay key={`project-${id}`} color={backgroundColors[0]} />
       </AnimatePresence>
       <section className={styles.projectDetailSection}>
-        Project Detail
+        <div className={styles.projectDetailContents}>
+          <AeroCard className={styles.projectDetailCard}>
+            <div className={styles.projectDetailText}>
+              <h1>Project Detail</h1>
+            </div>
+          </AeroCard>
+        </div>
       </section>
     </Provider>
   );

@@ -55,16 +55,6 @@ export default function AboutPage() {
               <h1>About FE1</h1>
             </div>
           </AeroCard>
-          <AeroCard className={styles.aboutFECard}>
-            <div className={styles.aboutFEText}>
-              <h1>About FE2</h1>
-            </div>
-          </AeroCard>
-          <AeroCard className={styles.aboutFECard}>
-            <div className={styles.aboutFEText}>
-              <h1>About FE3</h1>
-            </div>
-          </AeroCard>
         </div>
       </section>
     </>

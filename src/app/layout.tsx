@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import '@/styles/globals.css';
+import Footer from '@/components/footer/Footer';
 import AnimatePresenceWrapper from '@/components/AnimatePresenceWrapper';
+import '@/styles/globals.css';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -45,7 +46,7 @@ export default function RootLayout({
           <main>{children}</main>
         </AnimatePresenceWrapper>
         {/* Footer */}
-        <footer>© 2024 My Portfolio</footer>
+        <Footer />
       </body>
     </html>
   );
