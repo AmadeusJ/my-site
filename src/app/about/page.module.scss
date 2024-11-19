@@ -5,8 +5,39 @@
 .aboutSection {
   height: 100vh;
   background: transparent;
+  padding: 50px;
 
   .aboutContents {
-    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .aboutProfile {
+      flex: 4;
+    }
+
+    .aboutMe {
+      flex: 6;
+    }
+  }
+
+  .aboutFEContents {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    max-height: 100%;
+
+    .aboutFECard {
+      height: 100%;
+      max-height: 100%;
+    }
+
+    .aboutFEText {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

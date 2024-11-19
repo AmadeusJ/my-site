@@ -33,7 +33,38 @@ export default function AboutPage() {
 
       <section className={styles.aboutSection}>
         <div className={styles.aboutContents}>
-          <h1>About Me</h1>
+          <div className={styles.aboutProfile}>
+            <AeroCard className={styles.aboutProfileCard}>
+              <div className={styles.aboutProfileImage}></div>
+              <div className={styles.aboutProfileText}>
+                <h1>About Me</h1>
+              </div>
+            </AeroCard>
+          </div>
+          <div className={styles.aboutMe}>
+            <AeroCard className={styles.aboutMeCard}>
+              <div className={styles.aboutMeText}>
+                <h1>About Me</h1>
+              </div>
+            </AeroCard>
+          </div>
+        </div>
+        <div className={styles.aboutFEContents}>
+          <AeroCard className={styles.aboutFECard}>
+            <div className={styles.aboutFEText}>
+              <h1>About FE1</h1>
+            </div>
+          </AeroCard>
+          <AeroCard className={styles.aboutFECard}>
+            <div className={styles.aboutFEText}>
+              <h1>About FE2</h1>
+            </div>
+          </AeroCard>
+          <AeroCard className={styles.aboutFECard}>
+            <div className={styles.aboutFEText}>
+              <h1>About FE3</h1>
+            </div>
+          </AeroCard>
         </div>
       </section>
     </>
