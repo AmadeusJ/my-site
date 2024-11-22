@@ -61,14 +61,13 @@ export default function ProjectSection() {
                 </div>
                 <div className={styles.projectBody}>
                   <h1>{topic.title}</h1>
-                  <p>{topic.description}</p>
-                  <p>{topic.description}</p>
-                  <p>{topic.description}</p>
-                  <p>{topic.description}</p>
-                  <p>{topic.description}</p>
-                  <p>{topic.description}</p>
-                  <p>{topic.description}</p>
-                  <p>{topic.description}</p>
+                  <ul>
+                    {
+                      Array.isArray(topic.description) && topic.description.map((desc, index) => {
+                        return <li key={index}>{desc}</li>
+                      })
+                    }
+                  </ul>
                 </div>
               </AeroCard>
             </motion.div>

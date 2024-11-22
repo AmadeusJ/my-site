@@ -1,17 +1,14 @@
-export type Project = {
-  id: number;
-  title: string;
-  description: string;
-  isMain: boolean;
-  image?: string;
-}
-
-
 export const projectTopics = [
   {
     id: 1,
-    title: 'Web Application',
-    description: 'Web Application Description',
+    title: 'LLM Applications',
+    description: [
+      'Contextual UI',
+      'Data Visualization',
+      'Real-Time Response Handling',
+      'Performance Optimization',
+      'UI/UX Enhancements'
+    ],
     image: '/images/example.svg',
     items: [
       {
@@ -26,8 +23,14 @@ export const projectTopics = [
   },
   {
     id: 2,
-    title: 'Data Visualization',
-    description: 'Data Visualization Description',
+    title: 'Platform / Service Dev',
+    description: [
+      'API Integration',
+      'Customer service management',
+      'Component Driven Development',
+      'Cloud-Native Platforms',
+      'Cross-Functional Collaboration'
+    ],
     image: '/images/example.svg',
     items: [
       {
@@ -43,7 +46,12 @@ export const projectTopics = [
   {
     id: 3,
     title: 'A11Y + UI/UX',
-    description: 'A11Y & UX Research Description',
+    description: [
+      'Accessibility',
+      'Internationalization',
+      'Interaction Flow Optimization',
+      'UX Research',
+    ],
     image: '/images/example.svg',
     items: [
       {
@@ -51,84 +59,24 @@ export const projectTopics = [
         title: 'AI',
       },
     ]
-  },
-  // {
-  //   id: 4,
-  //   title: 'Fullstack + Collabo',
-  //   description: 'Fullstack & Collaboration Description',
-  //   items: [
-  //     {
-  //       id: 1,
-  //       title: 'Fullstack Development',
-  //     },
-  //     {
-  //       id: 2,
-  //       title: 'API Integration',
-  //     },
-  //     {
-  //       id: 3,
-  //       title: 'Collaboration',
-  //     },
-  //   ]
-  // },
+  }
 ]
 
+export type Project = {
+  id: number;
+  name: string;
+  purpose: string;
+  customer: string;
+  startDate: Date;
+  endDate: Date | null;
+  isDone: boolean;
+  description: string[];
+  technologies: string[];
+  roles: string[];
+  results: string[];
+}
+
 export const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Project 1',
-    description: 'Project 1 Description',
-    isMain: true,
-    image: '/images/example.svg',
-  },
-  {
-    id: 2,
-    title: 'Project 2',
-    description: 'Project 2 Description',
-    isMain: true,
-    image: '/images/example.svg',
-  },
-  {
-    id: 3,
-    title: 'Project 3',
-    description: 'Project 3 Description',
-    isMain: true,
-    image: '/images/example.svg',
-  },
-  {
-    id: 4,
-    title: 'Project 4',
-    description: 'Project 4 Description',
-    isMain: false,
-    image: '/images/example.svg',
-  },
-  {
-    id: 5,
-    title: 'Project 5',
-    description: 'Project 5 Description',
-    isMain: false,
-    image: '/images/example.svg',
-  },
-  {
-    id: 6,
-    title: 'Project 6',
-    description: 'Project 6 Description',
-    isMain: false,
-    image: '/images/example.svg',
-  },
-  {
-    id: 7,
-    title: 'Project 7',
-    description: 'Project 7 Description',
-    isMain: false,
-    image: '/images/example.svg',
-  },
-  {
-    id: 8,
-    title: 'Project 8',
-    description: 'Project 8 Description',
-    isMain: false,
-    image: '/images/example.svg',
-  },
+
 
 ];
