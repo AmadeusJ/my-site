@@ -11,10 +11,10 @@
     height: 100%;
     padding: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     .heroLeft {
-      width: 50%;
+      width: 100%;
 
       .heroTitle {
         padding-bottom: 20px;
@@ -41,7 +41,7 @@
     }
 
     .heroRight {
-      width: 50%;
+      width: 100%;
     }
 
   }

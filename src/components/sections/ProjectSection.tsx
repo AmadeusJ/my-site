@@ -50,9 +50,11 @@ export default function ProjectSection() {
               transition={{ duration: 0.5, delay: 0.2 * index }}
               whileHover="hover"
               variants={expandEffect}
-              onClick={() => router.push(`/projects`)}
             >
-              <AeroCard className={styles.projectCard}>
+              <AeroCard
+                className={styles.projectCard}
+                onClick={() => router.push(`/projects`)}
+              >
                 <div className={styles.projectHeader}>
                   <motion.img
                     src={topic.image}
