@@ -61,16 +61,6 @@ $contact-bg-color: linear-gradient(70deg,
     /* 부드러운 라벤더 */
   );
 
-
-:root {
-  --hero-bg-color: #{$hero-bg-color};
-  --project-bg-color: #{$project-bg-color};
-  --tech-bg-color: #{$tech-bg-color};
-  --career-bg-color: #{$career-bg-color};
-  --contact-bg-color: #{$contact-bg-color};
-}
-
-
 // Breakpoints
 $breakpoints: (
   "xxlarge": 3840px,

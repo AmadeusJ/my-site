@@ -8,6 +8,8 @@ import { motion } from 'framer-motion';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchWelcome } from '@/stores/slices/commonSlice';
 import { RootState, AppDispatch } from '@/stores/store';
+import HuggingFaceIcon from '@/assets/emoji/HuggingFace.svg';
+import TwoHandsHeartIcon from '@/assets/emoji/TwoHandsHeart.svg';
 
 export default function HeroSection() {
   const dispatch = useDispatch<AppDispatch>();
@@ -36,10 +38,8 @@ export default function HeroSection() {
         <div className={styles.heroLeft}>
           <div className={styles.heroTitle}>
             {/* 메인 타이틀 (직업) */}
-            <motion.h1
-              className={styles.heroMainTitle}
-            >
-              {[...'환영합니다 ! 🤗   Welcome to my portfolio 🫶'].map((char, index) => (
+            <motion.h1 className={styles.heroMainTitle}>
+              {[...'환영합니다 ! '].map((char, index) => (
                 <motion.span
                   key={index}
                   variants={bounceUp}
@@ -49,14 +49,16 @@ export default function HeroSection() {
                   {char}
                 </motion.span>
               ))}
-            </motion.h1>
-            {/* 서브 타이틀 (이름) */}
-            <motion.h1
-              className={styles.heroSubtitle}
-            >
-              {'Jung Dawoon'.split('').map((char, index) => (
+              <motion.span
+                variants={bounceUp}
+                whileHover="hover"
+                style={{ display: 'inline-block', marginLeft: '8px', verticalAlign: 'middle' }}
+              >
+                <HuggingFaceIcon width="70" height="70" />
+              </motion.span>
+              {[...'   Welcome to my portfolio'].map((char, index) => (
                 <motion.span
-                  key={index}
+                  key={`welcome-${index}`}
                   variants={bounceUp}
                   whileHover="hover"
                   style={{ display: 'inline-block', marginRight: char === ' ' ? '8px' : '0' }}
@@ -64,6 +66,13 @@ export default function HeroSection() {
                   {char}
                 </motion.span>
               ))}
+              <motion.span
+                variants={bounceUp}
+                whileHover="hover"
+                style={{ display: 'inline-block', marginLeft: '8px', verticalAlign: 'middle' }}
+              >
+                <TwoHandsHeartIcon width="70" height="70" />
+              </motion.span>
             </motion.h1>
           </div>
           <div className={styles.heroContent}>
