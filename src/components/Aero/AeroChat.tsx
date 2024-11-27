@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import styles from './AeroChat.module.scss';
 
-export default function AeroChat() {
+export default function AeroChat({ messages, onSendMessage }: { messages: string[], onSendMessage: (message: string) => void }) {
   return (
     <div className={styles.aeroChat}>
       <div className={styles.aeroChatMessages}>

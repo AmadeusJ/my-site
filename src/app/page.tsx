@@ -35,7 +35,7 @@ export default function Home() {
       const sectionIndex = Math.floor((scrollPosition + threshold) / windowHeight);
 
       if (sectionIndex !== activeSection) {
-        console.log('sectionIndex: ', sectionIndex);
+        // console.log('sectionIndex: ', sectionIndex);
         setActiveSection(sectionIndex);
       }
     };
