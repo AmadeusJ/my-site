@@ -33,7 +33,7 @@ export default function HeroSection() {
             <motion.h1
               className={styles.heroMainTitle}
             >
-              {'환영합니다 ! Welcome to my portfolio.'.split('').map((char, index) => (
+              {[...'환영합니다 ! 🤗   Welcome to my portfolio 🫶'].map((char, index) => (
                 <motion.span
                   key={index}
                   variants={bounceUp}
