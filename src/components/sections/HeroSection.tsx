@@ -5,10 +5,16 @@ import React, { useEffect } from 'react';
 import AeroCard from '../Aero/AeroCard';
 import styles from './HeroSection.module.scss';
 import { motion } from 'framer-motion';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchWelcome } from '@/stores/slices/commonSlice';
+import { RootState, AppDispatch } from '@/stores/store';
 
 export default function HeroSection() {
+  const dispatch = useDispatch<AppDispatch>();
+  const { welcome, status, error } = useSelector((state: RootState) => state.common);
 
   useEffect(() => {
+    dispatch(fetchWelcome());
     console.log('HeroSection mounted');
   }, []);
 
