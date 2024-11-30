@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import AeroCard from '../Aero/AeroCard';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import TechDescription from '../element/TechDescription';
 
 import styles from './TechSection.module.scss';
@@ -72,7 +72,9 @@ export default function TechSection() {
         </div>
         <div className={styles.techDescription}>
           <AeroCard className={styles.techDescriptionCard}>
-            <TechDescription category={hoveredCategory} />
+            <AnimatePresence mode='wait'>
+              <TechDescription category={hoveredCategory} />
+            </AnimatePresence>
           </AeroCard>
         </div>
       </AeroCard>
