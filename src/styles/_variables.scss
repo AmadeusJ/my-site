@@ -18,8 +18,8 @@ $hero-text-color: #333A4D;
 
 // Project Section
 $project-bg-color: linear-gradient(120deg,
-    rgba(184, 255, 230, 1) 0%,
-    rgba(250, 250, 205, 0.8) 40%,
+    rgba(184, 255, 230, 1) 20%,
+    rgba(250, 250, 205, 0.8) 60%,
     rgba(255, 250, 205, 0.6) 70%,
     rgba(255, 245, 210, 1) 100%);
 $project-highlight-color: #93C5FD;
@@ -27,24 +27,26 @@ $project-highlight-color: #93C5FD;
 
 // Tech Section
 $tech-bg-color: linear-gradient(120deg,
-    rgba(173, 216, 230, 1) 0%,
+    rgba(173, 216, 230, 1) 20%,
     /* 파스텔 블루 */
-    rgba(144, 238, 144, 0.8) 40%,
+    rgba(144, 238, 144, 0.8) 60%,
     /* 라이트 라임 그린 */
-    rgba(173, 255, 47, 0.6) 70%,
+    rgba(173, 255, 47, 0.6) 80%,
     /* 연한 노란빛 라임 */
-    rgba(34, 139, 34, 1) 100%
+    rgba(34, 139, 34, 1) 120%
     /* 진한 그린 */
   );
 
 // Career Section
-$career-bg-color: linear-gradient(80deg,
-    rgba(255, 235, 205, 1) 0%,
-    /* 라이트 베이지 */
-    rgba(255, 200, 140, 1) 50%,
-    /* 따뜻한 오렌지빛 베이지 */
-    rgba(255, 160, 122, 1) 100%
-    /* 부드러운 살구 오렌지 */
+$career-bg-color: linear-gradient(120deg,
+    rgba(255, 200, 140, 1) 0%,
+    /* 밝은 주황색 */
+    rgba(255, 160, 122, 1) 30%,
+    /* 살구빛 주황색 */
+    rgba(100, 120, 200, 1) 70%,
+    /* 푸른빛이 섞인 중간색 */
+    rgba(50, 60, 100, 1) 100%
+    /* 네이비 */
   );
 
 // Contact Section
