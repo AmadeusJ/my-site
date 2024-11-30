@@ -7,10 +7,11 @@
   padding: 50px;
 
   .techContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    align-items: center;
     gap: 10px;
+    height: 100%;
 
     .techSkills {
       padding: 10px;
@@ -19,14 +20,14 @@
       gap: 20px;
       justify-content: center;
       align-items: center;
-      max-width: 50%;
     }
 
     .techDescription {
+      height: 100%;
+      align-items: center;
       padding: 10px;
-      flex-grow: 1;
-      max-width: 60%;
-
+      display: flex;
+      width: 100%;
     }
   }
 
@@ -64,8 +65,37 @@
   }
 
   .techDescriptionCard {
+    height: 100%;
+    width: 100%;
     margin: 10px;
-    padding: 20px;
+    padding: 30px;
     background: rgba(255, 255, 255, 0.1);
+  }
+
+  // 반응형 처리
+  @media (max-width: 768px) {
+    .techContainer {
+      flex-direction: column; // 세로로 배치
+      justify-content: center;
+      gap: 30px; // 간격 조정
+    }
+
+    .techSkills {
+      grid-template-columns: 1fr;
+    }
+
+    .techDescription {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .techSkills {
+      grid-template-columns: repeat(1, 1fr); // 1열로 변경
+    }
+
+    .techDescription {
+      padding: 10px; // 간격 축소
+    }
   }
 }

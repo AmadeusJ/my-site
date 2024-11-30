@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import AeroCard from '../Aero/AeroCard';
 import { motion } from 'framer-motion';
+import TechDescription from '../element/TechDescription';
 
 import styles from './TechSection.module.scss';
 import { skills } from '@/data/skills';
@@ -71,24 +72,7 @@ export default function TechSection() {
         </div>
         <div className={styles.techDescription}>
           <AeroCard className={styles.techDescriptionCard}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-            </p>
+            <TechDescription category={hoveredCategory} />
           </AeroCard>
         </div>
       </AeroCard>
