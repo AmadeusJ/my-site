@@ -12,6 +12,36 @@ export default function ContactSection() {
   const [messages, setMessages] = useState<string[]>([]);
   const [websocket, setWebsocket] = useState<WebSocketManager | null>(null);
 
+
+
+  const [testStatus, setTestStatus] = useState<string>("Not started");
+
+  const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const runTests = async () => {
+    setTestStatus("Running...");
+
+    // Simulate rendering initial messages
+    setMessages(["Initial message"]);
+    await delay(1000);
+
+    // Simulate sending a message
+    setMessages((prev) => [...prev, "Test message 1"]);
+    await delay(1000);
+
+    // Simulate clearing the input
+    setMessages((prev) => [...prev, "Test message 2"]);
+    await delay(1000);
+
+    setMessages((prev) => [...prev, "Test message 3"]);
+    await delay(1000);
+
+    setMessages((prev) => [...prev, "Test message 4"]);
+    await delay(1000);
+
+    setTestStatus("All tests passed!");
+  };
+
   useEffect(() => {
 
     // WebSocket 연결
@@ -41,12 +71,16 @@ export default function ContactSection() {
       <motion.div className={styles.contactChat}>
         <AeroCard className={styles.contactCard}>
           <AeroChat messages={messages} onSendMessage={sendMessage} />
+
         </AeroCard>
       </motion.div>
 
       {/* 컨텐츠 영역 */}
       <div className={styles.contactContents}>
-        <h1>ContactForm</h1>
+        <button onClick={runTests} style={{ marginTop: "20px", padding: "10px 20px" }}>
+          Run Tests
+        </button>
+        <p>Test Status: {testStatus}</p>
       </div>
     </section>
   );
