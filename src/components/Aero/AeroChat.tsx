@@ -1,35 +1,60 @@
 // AeroChat.tsx
-import React from 'react';
+import React, { useState } from "react";
 import { motion } from 'framer-motion';
 
 import styles from './AeroChat.module.scss';
 
 export default function AeroChat({ messages, onSendMessage }: { messages: string[], onSendMessage: (message: string) => void }) {
+  const [input, setInput] = useState("");
+
+  const handleSendMessage = () => {
+    if (input.trim()) {
+      onSendMessage(input);
+      setInput("");
+    }
+  };
+
+  // 메시지 애니메이션 정의
+  const messageVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  };
+
   return (
     <div className={styles.aeroChat}>
       <div className={styles.aeroChatMessages}>
-        <div className={`${styles.message} ${styles.receivedMessage}`}>
-          <div className={styles.messageBubble}>
-            <p>안녕하세요! 정다운입니다</p>
-          </div>
-        </div>
-        <div className={`${styles.message} ${styles.sentMessage}`}>
-          <div className={styles.messageBubble}>
-            <p>Message 1</p>
-          </div>
-        </div>
+        {messages.map((message, index) => (
+          <motion.div
+            key={index}
+            className={`${styles.message} ${index % 2 === 0 ? styles.receivedMessage : styles.sentMessage
+              }`}
+            initial="hidden"
+            animate="visible"
+            variants={messageVariants}
+          >
+            <div className={styles.messageBubble}>
+              <p>{message}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
-      <form className={styles.chatForm}>
+      <div className={styles.chatForm}>
         <input
           type="text"
           placeholder="메시지를 입력하세요..."
           className={styles.chatInput}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
         />
-        <button type="submit" className={styles.sendButton}>
+        <button
+          type="button"
+          className={styles.sendButton}
+          onClick={handleSendMessage}
+        >
           보내기
         </button>
-      </form>
+      </div>
     </div>
   )
 }
