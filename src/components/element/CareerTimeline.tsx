@@ -25,7 +25,7 @@ const CareerTimeline = () => {
           contentStyle={{
             background: "rgba(255, 255, 255, 0.2)", // 카드 배경
             backdropFilter: "blur(10px)", // 블러 효과
-            color: "#fff", // 텍스트 색상
+            color: "#333A4D", // 텍스트 색상
             border: "1px solid rgba(255, 255, 255, 0.3)", // 얇은 테두리
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)", // 그림자 효과
             borderRadius: "10px", // 카드 둥근 모서리
@@ -52,7 +52,7 @@ const CareerTimeline = () => {
           contentStyle={{
             background: "rgba(255, 255, 255, 0.2)",
             backdropFilter: "blur(10px)",
-            color: "#fff",
+            color: "#333A4D",
             border: "1px solid rgba(255, 255, 255, 0.3)",
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
             borderRadius: "10px",
@@ -79,7 +79,7 @@ const CareerTimeline = () => {
           contentStyle={{
             background: "rgba(255, 255, 255, 0.2)", // 카드 배경
             backdropFilter: "blur(10px)", // 블러 효과
-            color: "#fff", // 텍스트 색상
+            color: "#333A4D", // 텍스트 색상
             border: "1px solid rgba(255, 255, 255, 0.3)", // 얇은 테두리
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)", // 그림자 효과
             borderRadius: "10px", // 카드 둥근 모서리
@@ -106,7 +106,7 @@ const CareerTimeline = () => {
           contentStyle={{
             background: "rgba(255, 255, 255, 0.2)",
             backdropFilter: "blur(10px)",
-            color: "#fff",
+            color: "#333A4D",
             border: "1px solid rgba(255, 255, 255, 0.3)",
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
             borderRadius: "10px",
