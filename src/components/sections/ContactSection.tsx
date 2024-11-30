@@ -6,6 +6,10 @@ import AeroChat from '../Aero/AeroChat';
 import { motion } from 'framer-motion';
 import styles from './ContactSection.module.scss';
 import { WebSocketManager } from '../../utils/websocket';
+import EmailForm from '../element/EmailForm';
+import ResumeButton from '../element/ResumeButton';
+import AboutMeButton from '../element/AboutMeButton';
+
 
 
 export default function ContactSection() {
@@ -71,16 +75,36 @@ export default function ContactSection() {
       <motion.div className={styles.contactChat}>
         <AeroCard className={styles.contactCard}>
           <AeroChat messages={messages} onSendMessage={sendMessage} />
-
         </AeroCard>
       </motion.div>
 
       {/* 컨텐츠 영역 */}
       <div className={styles.contactContents}>
+        {/* 테스트 버튼 */}
         <button onClick={runTests} style={{ marginTop: "20px", padding: "10px 20px" }}>
           Run Tests
         </button>
         <p>Test Status: {testStatus}</p>
+
+        {/* 컨텐츠 영역 소개 */}
+        <p>
+          If you have any questions or would like to discuss a project, please feel free to contact me using the form below.
+        </p>
+
+        <div className={styles.contactButtons}>
+          {/* 경력기술서 다운로드 버튼 */}
+          <motion.div>
+            <ResumeButton />
+          </motion.div>
+          {/* About Me 이동 버튼 */}
+          <motion.div>
+            <AboutMeButton />
+          </motion.div>
+        </div>
+        {/* 이메일 폼 */}
+        <div className={styles.emailFormSection}>
+          <EmailForm />
+        </div>
       </div>
     </section>
   );
