@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchWelcome } from '@/stores/slices/commonSlice';
 import { RootState, AppDispatch } from '@/stores/store';
+import AeroTooltip from '../Tooltip/AeroTooltip';
 
 export default function HeroSection() {
   const dispatch = useDispatch<AppDispatch>();
@@ -61,6 +62,19 @@ export default function HeroSection() {
     },
   };
 
+
+  // HeroIcon 확대 애니메이션
+  const expandEffect = {
+    hover: {
+      scale: 1.3,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section className={`section ${styles.heroSection}`}>
       <AeroCard className={`${styles.heroCard}`}>
@@ -87,7 +101,7 @@ export default function HeroSection() {
             <motion.h1
               className={styles.heroSubtitle}
             >
-              {'Jung Dawoon'.split('').map((char, index) => (
+              {'방문자님 반갑습니다! 찾아주셔서 감사합니다 : )'.split('').map((char, index) => (
                 <motion.span
                   key={index}
                   variants={bounceUp}
@@ -100,20 +114,51 @@ export default function HeroSection() {
             </motion.h1>
           </div>
           <div className={styles.heroContent}>
-            <div></div>
-            <motion.p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+            <motion.p
+              className={styles.heroText}
+            >
+              이곳은 저의 Portfolio 사이트로, 제가 진행한 다양한 프로젝트를 소개하는 공간입니다. 앞으로도 새로운 프로젝트들이 지속적으로 추가될 예정이니 많은 관심 부탁드립니다. 방문해 주셔서 감사합니다!
             </motion.p>
           </div>
         </div>
         <div className={styles.heroRight}>
-          <div className={styles.heroIcons}>
-            <div className={styles.heroIcon}>
-              <motion.div>
-                1
-              </motion.div>
-            </div>
-          </div>
+          <motion.div
+            className={styles.heroIconContainer}
+            variants={expandEffect}
+            whileHover="hover"
+          >
+            <AeroCard className={`${styles.heroIconCard} ${styles.tooltipContainer}`}>
+              Projects
+            </AeroCard>
+          </motion.div>
+
+          <motion.div
+            className={styles.heroIconContainer}
+            variants={expandEffect}
+            whileHover="hover"
+          >
+            <AeroCard className={styles.heroIconCard}>
+              Skills
+            </AeroCard>
+          </motion.div>
+          <motion.div
+            className={styles.heroIconContainer}
+            variants={expandEffect}
+            whileHover="hover"
+          >
+            <AeroCard className={styles.heroIconCard}>
+              Career
+            </AeroCard>
+          </motion.div>
+          <motion.div
+            className={styles.heroIconContainer}
+            variants={expandEffect}
+            whileHover="hover"
+          >
+            <AeroCard className={styles.heroIconCard}>
+              Contact
+            </AeroCard>
+          </motion.div>
         </div>
       </AeroCard>
     </section>

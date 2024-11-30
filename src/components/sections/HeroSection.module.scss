@@ -2,13 +2,16 @@
 @import '@/styles/_variables.scss';
 
 .heroSection {
-  height: '100vh';
+  height: 100vh;
   background: 'transparent';
   // background: $hero-bg-color;
   padding: 50px;
+  display: flex; // 부모 Flexbox 설정
+  justify-content: center; // 가로 가운데 정렬 (필요 시)
 
   .heroCard {
-    height: 100%;
+    flex: 1; // 부모 높이를 꽉 채움
+    height: 65%;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -35,13 +38,32 @@
       .heroContent {
         p {
           color: $hero-text-color;
-          font-size: 18px;
+          font-size: 28px;
         }
       }
     }
 
     .heroRight {
       width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+
+      .heroIconContainer {
+        cursor: pointer;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 40px;
+
+        .heroIconCard {
+          width: 100px;
+          height: 100px;
+        }
+      }
     }
 
   }
