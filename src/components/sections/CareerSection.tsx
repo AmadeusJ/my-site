@@ -1,4 +1,5 @@
 // CareerSection.tsx
+import CareerTimeline from '../element/CareerTimeline';
 
 import React from 'react';
 import AeroCard from '../Aero/AeroCard';
@@ -13,7 +14,7 @@ export default function CareerSection() {
         </div>
         <div className={styles.careerBody}>
           <motion.div>
-            <motion.img src="/images/career-map.png" alt="career-main" />
+            <CareerTimeline />
           </motion.div>
         </div>
       </AeroCard>
