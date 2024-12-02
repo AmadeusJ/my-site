@@ -91,20 +91,28 @@ export default function ContactSection() {
           If you have any questions or would like to discuss a project, please feel free to contact me using the form below.
         </p>
 
-        <div className={styles.contactButtons}>
-          {/* 경력기술서 다운로드 버튼 */}
-          <motion.div>
-            <ResumeButton />
-          </motion.div>
-          {/* About Me 이동 버튼 */}
-          <motion.div>
-            <AboutMeButton />
-          </motion.div>
+        <div className={styles.contactFormWrapper}>
+          <div className={styles.contactArea}>
+            <div className={styles.contactButtons}>
+              {/* 경력기술서 다운로드 버튼 */}
+              <motion.div>
+                <ResumeButton />
+              </motion.div>
+              {/* About Me 이동 버튼 */}
+              <motion.div>
+                <AboutMeButton />
+              </motion.div>
+            </div>
+            {/* 이메일 폼 */}
+            <div className={styles.emailFormSection}>
+              <EmailForm />
+            </div>
+          </div>
+          <div className={styles.lottieArea}>
+            Lottie
+          </div>
         </div>
-        {/* 이메일 폼 */}
-        <div className={styles.emailFormSection}>
-          <EmailForm />
-        </div>
+
       </div>
     </section>
   );
