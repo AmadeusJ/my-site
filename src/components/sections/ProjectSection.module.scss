@@ -11,43 +11,109 @@
   // background: $project-bg-color;
   padding: 50px;
   margin: 0 auto;
+  position: relative;
   /* 좌우 중앙 정렬 */
 
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 74px;
   // align-items: center;
   // justify-content: center;
 
-  .projectCardWrapper {
+  .projectWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 74px;
     position: relative;
-    z-index: 2;
-    max-height: 200px;
-  }
+    z-index: 1;
+    overflow: visible;
+    height: 100%;
+    min-height: calc(100% - 100px);
 
-  .projectCard {
-    padding: 20px;
-    cursor: pointer;
+    .projectCardWrapper {
+      position: relative;
+      z-index: 2;
 
-    .projectHeader {
-      max-height: 200px;
+      .projectCard {
+        padding: 20px;
+        cursor: pointer;
 
-      img {
-        width: 100%;
-        height: 100%;
+        .projectHeader {
+          max-height: 200px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .projectBody {
+          padding: 20px;
+
+          h1 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              font-size: 1rem;
+              color: rgba(0, 0, 0, 0.8);
+              line-height: 1.5;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
       }
     }
 
-    .projectBody {
-      h1 {
-        margin-bottom: 15px;
+
+  }
+
+  .lottieArea {
+    z-index: 3;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    padding: 20px;
+    border-radius: 12px;
+    height: 260px;
+
+    .moreInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: right;
+      justify-content: right;
+
+      p {
+        font-size: 1.2rem;
+        color: rgba(0, 0, 0, 0.7);
+        margin-bottom: 10px;
       }
 
-      padding: 20px;
-      height: 100%;
-      min-height: 100px;
-      max-height: 400px;
-      overflow: hidden;
+      .moreButton {
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: white;
+        background: linear-gradient(90deg, #007aff, #007aff);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: linear-gradient(90deg, #005bb5, #003f80);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
     }
   }
 

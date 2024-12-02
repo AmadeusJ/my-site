@@ -35,48 +35,63 @@ export default function ProjectSection() {
 
   return (
     <section className={`section ${styles.projectSection}`}>
-      {
-        projectTopics.map((topic, index) => {
-          const ref = useRef(null);
-          const isInView = useInView(ref, { once: true });
+      <div className={styles.projectWrapper}>
+        {
+          projectTopics.map((topic, index) => {
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true });
 
-          return (
-            <motion.div
-              className={styles.projectCardWrapper}
-              ref={ref}
-              key={topic.id}
-              initial={{ opacity: 0, y: 100 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 * index }}
-              whileHover="hover"
-              variants={expandEffect}
-            >
-              <AeroCard
-                className={styles.projectCard}
-                onClick={() => router.push(`/projects`)}
+            return (
+              <motion.div
+                className={styles.projectCardWrapper}
+                ref={ref}
+                key={topic.id}
+                initial={{ opacity: 0, y: 100 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.3, delay: 0.2 * index }}
+                whileHover="hover"
+                variants={expandEffect}
               >
-                <div className={styles.projectHeader}>
-                  <motion.img
-                    src={topic.image}
-                    alt={topic.title}
-                  />
-                </div>
-                <div className={styles.projectBody}>
-                  <h1>{topic.title}</h1>
-                  <ul>
-                    {
-                      Array.isArray(topic.description) && topic.description.map((desc, index) => {
-                        return <li key={index}>{desc}</li>
-                      })
-                    }
-                  </ul>
-                </div>
-              </AeroCard>
-            </motion.div>
+                <AeroCard
+                  className={styles.projectCard}
+                  onClick={() => router.push(`/projects`)}
+                >
+                  <div className={styles.projectHeader}>
+                    <motion.img
+                      src={topic.image}
+                      alt={topic.title}
+                    />
+                  </div>
+                  <div className={styles.projectBody}>
+                    <h1>{topic.title}</h1>
+                    <ul>
+                      {
+                        Array.isArray(topic.description) && topic.description.map((desc, index) => {
+                          return <li key={index}>{desc}</li>
+                        })
+                      }
+                    </ul>
+                  </div>
+                </AeroCard>
+              </motion.div>
 
-          )
-        })
-      }
+            )
+          })
+        }
+      </div>
+      {/* "더 알아보기" 버튼 및 Lottie 영역 */}
+      <div className={styles.lottieArea}>
+        <div className={styles.moreInfo}>
+          <motion.div
+            className={styles.moreButton}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => router.push(`/projects`)}
+          >
+            Explore More >>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
