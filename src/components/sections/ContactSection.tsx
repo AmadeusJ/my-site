@@ -1,6 +1,6 @@
 // ContactSection.tsx
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import AeroCard from '../Aero/AeroCard';
 import AeroChat from '../Aero/AeroChat';
 import { motion } from 'framer-motion';
@@ -9,10 +9,12 @@ import { WebSocketManager } from '../../utils/websocket';
 import EmailForm from '../element/EmailForm';
 import ResumeButton from '../element/ResumeButton';
 import AboutMeButton from '../element/AboutMeButton';
-
+import Lottie from 'lottie-react';
+import animationContact from '@/assets/animations/paper-plane.json';
 
 
 export default function ContactSection() {
+  const contactRef = useRef<Lottie>(null);
   const [messages, setMessages] = useState<string[]>([]);
   const [websocket, setWebsocket] = useState<WebSocketManager | null>(null);
 
@@ -24,6 +26,7 @@ export default function ContactSection() {
 
   const runTests = async () => {
     setTestStatus("Running...");
+    contactRef.current?.play();
 
     // Simulate rendering initial messages
     setMessages(["Initial message"]);
@@ -44,6 +47,7 @@ export default function ContactSection() {
     await delay(1000);
 
     setTestStatus("All tests passed!");
+    contactRef.current?.stop();
   };
 
   useEffect(() => {
@@ -109,7 +113,13 @@ export default function ContactSection() {
             </div>
           </div>
           <div className={styles.lottieArea}>
-            Lottie
+            <Lottie
+              lottieRef={contactRef}
+              animationData={animationContact}
+              style={{ width: '100%', height: '100%' }}
+              loop={false}
+              autoplay={false}
+            />
           </div>
         </div>
 

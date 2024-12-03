@@ -1,3 +1,5 @@
+import animationWebApp from '@/assets/animations/web-app.json';
+
 export const projectTopics = [
   {
     id: 1,
@@ -19,7 +21,8 @@ export const projectTopics = [
         id: 2,
         title: 'LLM Applications',
       },
-    ]
+    ],
+    animationData: animationWebApp,
   },
   {
     id: 2,

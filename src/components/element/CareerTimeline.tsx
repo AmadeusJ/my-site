@@ -15,7 +15,7 @@ const CareerTimeline = () => {
     <div ref={ref}>
       <VerticalTimeline animate={inView}>
         <VerticalTimelineElement
-          date="2021 - Present"
+          date="2021.03 - Present"
           iconStyle={{
             background: "rgba(255, 255, 255, 0.2)", // 반투명한 흰색 배경
             backdropFilter: "blur(10px)", // 블러 효과
@@ -36,7 +36,7 @@ const CareerTimeline = () => {
           }}
           icon={<div style={{ fontSize: "24px", textAlign: "center" }}>🚀</div>} // 아이콘
         >
-          <h3>Frontend Team Lead</h3>
+          <h3>(주)마인즈앤컴퍼니</h3>
           <h4>Minds & Company</h4>
           <p>Developed scalable AI-driven frontend platforms.</p>
         </VerticalTimelineElement>
@@ -63,7 +63,7 @@ const CareerTimeline = () => {
           }}
           icon={<div style={{ fontSize: "24px", textAlign: "center" }}>📚</div>}
         >
-          <h3>Full-Stack Developer</h3>
+          <h3>(주)메일플러그</h3>
           <h4>MailPlug</h4>
           <p>Built collaboration tools with React and Django.</p>
         </VerticalTimelineElement>
@@ -90,8 +90,8 @@ const CareerTimeline = () => {
           }}
           icon={<div style={{ fontSize: "24px", textAlign: "center" }}>🚀</div>} // 아이콘
         >
-          <h3>Frontend Team Lead</h3>
-          <h4>Minds & Company</h4>
+          <h3>숭실대학교</h3>
+          <h4>Soongsil University</h4>
           <p>Developed scalable AI-driven frontend platforms.</p>
         </VerticalTimelineElement>
 
@@ -117,8 +117,8 @@ const CareerTimeline = () => {
           }}
           icon={<div style={{ fontSize: "24px", textAlign: "center" }}>📚</div>}
         >
-          <h3>Full-Stack Developer</h3>
-          <h4>MailPlug</h4>
+          <h3>경북고등학교</h3>
+          <h4>Gyeongbuk High School</h4>
           <p>Built collaboration tools with React and Django.</p>
         </VerticalTimelineElement>
       </VerticalTimeline>

@@ -5,6 +5,7 @@ import React, { useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import AeroCard from '../Aero/AeroCard';
+import Lottie from 'lottie-react';
 import { motion, useInView } from "framer-motion";
 import { useAppDispatch } from '@/stores/store';
 import { projects, projectTopics } from '@/data/projects';
@@ -33,14 +34,15 @@ export default function ProjectSection() {
     },
   };
 
+
   return (
     <section className={`section ${styles.projectSection}`}>
       <div className={styles.projectWrapper}>
         {
           projectTopics.map((topic, index) => {
             const ref = useRef(null);
+            const lottiRef = useRef(null);
             const isInView = useInView(ref, { once: true });
-
             return (
               <motion.div
                 className={styles.projectCardWrapper}
@@ -51,15 +53,20 @@ export default function ProjectSection() {
                 transition={{ duration: 0.3, delay: 0.2 * index }}
                 whileHover="hover"
                 variants={expandEffect}
+                onMouseEnter={() => lottiRef.current?.play()}
+                onMouseLeave={() => lottiRef.current?.stop()}
               >
                 <AeroCard
                   className={styles.projectCard}
                   onClick={() => router.push(`/projects`)}
                 >
                   <div className={styles.projectHeader}>
-                    <motion.img
-                      src={topic.image}
-                      alt={topic.title}
+                    <Lottie
+                      lottieRef={lottiRef}
+                      animationData={topic.animationData}
+                      style={{ width: '100%', height: '100%' }}
+                      autoplay={false}
+                      loop={true}
                     />
                   </div>
                   <div className={styles.projectBody}>
