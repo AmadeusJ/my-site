@@ -14,23 +14,23 @@ export const skills = [
         level: 4,
       },
       {
+        name: 'Vue.js',
+        icon: '/svgs/vuejs.svg',
+        level: 4,
+      },
+      {
         name: 'TypeScript',
         icon: '/svgs/typescript.svg',
         level: 4,
       },
-      // {
-      //   name: 'JavaScript',
-      //   icon: '/svgs/javascript.svg',
-      //   level: 4,
-      // },
       {
-        name: 'HTML',
-        icon: '/svgs/html.svg',
+        name: 'JavaScript',
+        icon: '/svgs/js.svg',
         level: 4,
       },
       {
-        name: 'CSS',
-        icon: '/svgs/css.svg',
+        name: 'SASS',
+        icon: '/svgs/sass.svg',
         level: 4,
       },
     ]
@@ -43,27 +43,94 @@ export const skills = [
         icon: '/svgs/python.svg',
         level: 5,
       },
-
+      {
+        name: 'Django',
+        icon: '/svgs/django.svg',
+        level: 4,
+      },
+      {
+        name: 'FastAPI',
+        icon: '/svgs/fastapi.svg',
+        level: 4,
+        background: "#03998B"
+      },
+      {
+        name: 'MySQL',
+        icon: '/svgs/mysql.svg',
+        level: 4,
+      },
+      {
+        name: 'PostgreSQL',
+        icon: '/svgs/postgresql.svg',
+        level: 4,
+      },
+      {
+        name: 'MariaDB',
+        icon: '/svgs/mariadb.svg',
+        level: 4,
+      },
+      {
+        name: 'Redis',
+        icon: '/svgs/redis.svg',
+        level: 4,
+      }
     ]
   },
   {
-    category: 'DevOps',
+    category: 'ETC',
     details: [
       {
-        name: 'Docker',
-        icon: '/svgs/docker3.svg',
+        name: 'Linux',
+        icon: '/svgs/linux.svg',
         level: 4,
       },
+      {
+        name: 'Docker',
+        icon: '/svgs/docker.svg',
+        level: 4,
+        background: "rgb(1, 106, 192)"
+      },
+      {
+        name: 'Nginx',
+        icon: '/svgs/nginx.svg',
+        level: 4,
+      },
+      {
+        name: 'AWS',
+        icon: '/svgs/aws.svg',
+        level: 4,
+      },
+
     ],
   },
   {
     category: 'Tools',
     details: [
       {
-        name: 'Git',
-        icon: '/svgs/git.svg',
+        name: 'GitFlow',
+        icon: '/svgs/gitflow.svg',
         level: 4,
       },
+      {
+        name: 'Git',
+        icon: '/svgs/github.svg',
+        level: 4,
+      },
+      {
+        name: 'Jenkins',
+        icon: '/svgs/jenkins.svg',
+        level: 4,
+      },
+      {
+        name: 'Jira',
+        icon: '/svgs/jira.svg',
+        level: 4,
+      },
+      {
+        name: 'Figma',
+        icon: '/svgs/figma.svg',
+        level: 4,
+      }
     ],
   },
 ];

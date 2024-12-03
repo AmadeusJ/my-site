@@ -25,12 +25,12 @@
 
         .heroMainTitle {
           color: $hero-highlight-color;
-          font-size: 55px;
+          font-size: 45px;
         }
 
         .heroSubtitle {
           color: $hero-highlight-color-2;
-          font-size: 45px;
+          font-size: 35px;
         }
 
       }
@@ -38,7 +38,7 @@
       .heroContent {
         p {
           color: $hero-text-color;
-          font-size: 28px;
+          font-size: 20px;
         }
       }
     }
@@ -51,7 +51,6 @@
       flex-direction: row;
 
       .heroIconContainer {
-        cursor: pointer;
         padding: 50px;
         display: flex;
         justify-content: center;
@@ -60,8 +59,15 @@
         gap: 40px;
 
         .heroIconCard {
+          cursor: pointer;
           width: 100px;
           height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 5px;
+          background: rgba(255, 255, 255, 0.1);
+
         }
       }
     }

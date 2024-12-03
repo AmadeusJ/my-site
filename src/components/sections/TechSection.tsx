@@ -63,6 +63,7 @@ export default function TechSection() {
                     style={{
                       display: 'block',
                       margin: '0 auto',
+                      background: detail?.background,
                     }}
                   />
                 ))}

@@ -61,17 +61,17 @@ export default function ProjectsPage() {
                   key={project.id}
                   initial={{ opacity: 0, y: 100 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.2 * index }}
+                  transition={{ duration: 0.3, delay: 0.2 * index }}
                   whileHover="hover"
                   variants={expandEffect}
                   onClick={() => router.push(`/projects/${project.id}`)}
                 >
                   <AeroCard className={styles.projectCard}>
                     <div className={styles.projectHeader}>
-                      <img src={project.image} alt={project.title} />
+                      <img src={project.image} alt={project.name} />
                     </div>
                     <div className={styles.projectBody}>
-                      <h1>{project.title}</h1>
+                      <h1>{project.name}</h1>
                     </div>
                   </AeroCard>
                 </motion.div>
