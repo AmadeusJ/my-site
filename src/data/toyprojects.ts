@@ -1,6 +1,7 @@
-export const toyProjects = [
-  {
-    id: 1,
-    title: 'Toy Projects',
-  },
+import { AnimationItem } from 'lottie-web';
+import { Project } from './projects';
+
+
+export const toyProjects: Project[] = [
+
 ];

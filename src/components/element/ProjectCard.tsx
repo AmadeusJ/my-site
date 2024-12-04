@@ -23,6 +23,18 @@ const expandEffect = {
       damping: 15, // 감쇠
       mass: 0.7, // 질량
     },
+    transitionEnd: {
+      zIndex: 2, // 애니메이션 종료 후 z-index 원상복귀 (필요시)
+    },
+  },
+  rest: {
+    scale: 1,
+    zIndex: 2,
+    transition: {
+      type: 'tween',
+      duration: 0.2,
+      // 애니메이션 복귀 시 delay 없음
+    },
   },
 };
 

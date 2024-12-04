@@ -81,7 +81,7 @@ export const projectTopics = [
 
 export type Project = {
   id: number;
-  category: number[];
+  category: number[] | undefined;
   name: string;
   purpose: string[];
   customer: string[] | undefined;
@@ -95,8 +95,8 @@ export type Project = {
   image: string | undefined;
   animationData: AnimationItem | undefined;
   svg: {
-    width: nu;
-    height: string;
+    width: number;
+    height: number;
   } | undefined;
 }
 
@@ -223,7 +223,7 @@ export const projects: Project[] = [
   {
     id: 5,
     category: [2],
-    name: 'AI Connect 인공지능 경진대회 플랫폼',
+    name: 'AI 경진대회 플랫폼',
     purpose: ['인공지능 경진대회 플랫폼 개발'],
     customer: ['AI Connect'],
     startDate: '2021.05',
