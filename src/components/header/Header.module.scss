@@ -1,9 +1,9 @@
 // 카테고리 헤더
 
 .categoryHeader {
-  padding: 20px 20px;
+  padding: 10px 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   /* 다른 요소 위에 표시 */
@@ -12,10 +12,13 @@
   top: 0;
 
   .categoryHeaderCard {
-    padding: 10px;
-    flex-grow: 1;
+    height: 90px;
+    padding: 5px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     /* 카드가 화면에 맞게 늘어남 */
-
   }
 }
 
@@ -33,26 +36,26 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 호버 상태 */
-.categoryHeaderCard button:hover {
-  background-color: rgba(144, 202, 249, 0.2);
-  /* 라이트 블루 호버 효과 */
-  color: #007aff;
-}
+// /* 호버 상태 */
+// .categoryHeaderCard button:hover {
+//   background-color: rgba(144, 202, 249, 0.2);
+//   /* 라이트 블루 호버 효과 */
+//   color: #007aff;
+// }
 
-/* 포커스 상태 */
-.categoryHeaderCard button:focus {
-  outline: none;
-  border-color: #007aff;
-  background-color: rgba(144, 202, 249, 0.2);
-  /* 동일한 호버 효과 */
-  color: #007aff;
-}
+// /* 포커스 상태 */
+// .categoryHeaderCard button:focus {
+//   outline: none;
+//   border-color: #007aff;
+//   background-color: rgba(144, 202, 249, 0.2);
+//   /* 동일한 호버 효과 */
+//   color: #007aff;
+// }
 
-/* 활성화된 버튼 스타일 */
-.categoryHeaderCard button.active {
-  background-color: rgba(0, 122, 255, 0.1);
-  color: #007aff;
-  font-weight: bold;
-  border-color: #007aff;
-}
+// /* 활성화된 버튼 스타일 */
+// .categoryHeaderCard button.active {
+//   background-color: rgba(0, 122, 255, 0.1);
+//   color: #007aff;
+//   font-weight: bold;
+//   border-color: #007aff;
+// }
