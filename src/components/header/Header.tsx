@@ -45,14 +45,14 @@ export default function Header() {
             alt="Projects"
           />
         </button>
-        <button>
+        <button onClick={() => router.push('/toyprojects')}>
           <motion.img
             variants={expandEffect}
             whileHover="hover"
             width={65}
             height={65}
             src="/icons/joystick2.svg"
-            alt="Contact"
+            alt="Toy Projects"
           />
         </button>
         <button onClick={() => router.push('/about')}>
