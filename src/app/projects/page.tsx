@@ -27,6 +27,8 @@ export default function ProjectsPage() {
 
   useEffect(() => {
     console.log(categoryQuery);
+    setFilteredProjects([]);
+    setActiveCategory(categoryQuery)
     if (categoryQuery === 'All') {
       setFilteredProjects(projects);
     } else {
@@ -91,7 +93,7 @@ export default function ProjectsPage() {
         <div className={styles.projectList}>
           {
             filteredProjects.map((project, index) => {
-              return <ProjectCard key={project.id} project={project} index={index} />
+              return <ProjectCard key={`${project.id}-${index}`} project={project} index={index} />
             })
           }
         </div>
