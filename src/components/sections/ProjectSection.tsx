@@ -58,7 +58,7 @@ export default function ProjectSection() {
               >
                 <AeroCard
                   className={styles.projectCard}
-                  onClick={() => router.push(`/projects`)}
+                  onClick={() => router.push(`/projects?category=${topic.id}`)}
                 >
                   <div className={styles.projectHeader}>
                     <Lottie
