@@ -8,6 +8,9 @@ import Project3 from '@/assets/animations/projects/project3.json';
 import Project4 from '@/assets/animations/projects/project4.json';
 import Project5 from '@/assets/animations/projects/project5.json';
 import Project6 from '@/assets/animations/projects/project6.json';
+import Project7 from '@/assets/animations/projects/project7.json';
+import Project8 from '@/assets/animations/projects/project8.json';
+import Project9 from '@/assets/animations/projects/project9.json';
 
 export const projectTopics = [
   {
@@ -265,6 +268,11 @@ export const projects: Project[] = [
       "안정적이고 직관적인 모델 관리 환경 제공"
     ],
     image: '/images/example.svg',
+    animationData: Project7,
+    svg: {
+      width: 275,
+      height: 275,
+    }
   },
   {
     id: 7,
@@ -283,6 +291,11 @@ export const projects: Project[] = [
     ],
     results: [],
     image: '/images/example.svg',
+    animationData: Project8,
+    svg: {
+      width: 275,
+      height: 275,
+    }
   },
   {
     id: 8,
@@ -303,6 +316,11 @@ export const projects: Project[] = [
     ],
     results: [],
     image: '/images/example.svg',
+    animationData: Project9,
+    svg: {
+      width: 275,
+      height: 275,
+    }
   }
 
 ];
