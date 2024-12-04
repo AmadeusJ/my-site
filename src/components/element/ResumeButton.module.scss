@@ -1,1 +1,11 @@
 @import '@/styles/_variables.scss';
+
+.resumeButton {
+  cursor: pointer;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

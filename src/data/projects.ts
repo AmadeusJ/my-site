@@ -1,4 +1,6 @@
-import animationWebApp from '@/assets/animations/web-app.json';
+import animationWebApp from '@/assets/animations/category1.json';
+import animationPlatform from '@/assets/animations/category2.json';
+import animationA11y from '@/assets/animations/category3.json';
 
 export const projectTopics = [
   {
@@ -44,7 +46,8 @@ export const projectTopics = [
         id: 2,
         title: 'Data Visualization',
       },
-    ]
+    ],
+    animationData: animationPlatform,
   },
   {
     id: 3,
@@ -61,7 +64,8 @@ export const projectTopics = [
         id: 1,
         title: 'AI',
       },
-    ]
+    ],
+    animationData: animationA11y,
   }
 ]
 

@@ -84,11 +84,6 @@ export default function ContactSection() {
 
       {/* 컨텐츠 영역 */}
       <div className={styles.contactContents}>
-        {/* 테스트 버튼 */}
-        <button onClick={runTests} style={{ marginTop: "20px", padding: "10px 20px" }}>
-          Run Tests
-        </button>
-        <p>Test Status: {testStatus}</p>
 
         {/* 컨텐츠 영역 소개 */}
         <p>

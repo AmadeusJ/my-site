@@ -34,7 +34,15 @@ const CareerTimeline = () => {
           contentArrowStyle={{
             borderRight: "7px solid rgba(255, 255, 255, 0.2)", // 화살표 색상 및 배경
           }}
-          icon={<div style={{ fontSize: "24px", textAlign: "center" }}>🚀</div>} // 아이콘
+          icon={<div style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+            <img src="/icons/bar-chart.svg" alt="MailPlug" />
+          </div>}
         >
           <h3>(주)마인즈앤컴퍼니</h3>
           <h4>Minds & Company</h4>
@@ -61,7 +69,15 @@ const CareerTimeline = () => {
           contentArrowStyle={{
             borderRight: "7px solid rgba(255, 255, 255, 0.2)",
           }}
-          icon={<div style={{ fontSize: "24px", textAlign: "center" }}>📚</div>}
+          icon={<div style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+            <img src="/icons/rocket.svg" alt="MailPlug" />
+          </div>}
         >
           <h3>(주)메일플러그</h3>
           <h4>MailPlug</h4>
@@ -88,7 +104,15 @@ const CareerTimeline = () => {
           contentArrowStyle={{
             borderRight: "7px solid rgba(255, 255, 255, 0.2)", // 화살표 색상 및 배경
           }}
-          icon={<div style={{ fontSize: "24px", textAlign: "center" }}>🚀</div>} // 아이콘
+          icon={<div style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+            <img src="/icons/book.svg" alt="MailPlug" />
+          </div>}
         >
           <h3>숭실대학교</h3>
           <h4>Soongsil University</h4>
@@ -115,7 +139,15 @@ const CareerTimeline = () => {
           contentArrowStyle={{
             borderRight: "7px solid rgba(255, 255, 255, 0.2)",
           }}
-          icon={<div style={{ fontSize: "24px", textAlign: "center" }}>📚</div>}
+          icon={<div style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+            <img src="/icons/graduation.svg" alt="MailPlug" />
+          </div>}
         >
           <h3>경북고등학교</h3>
           <h4>Gyeongbuk High School</h4>
