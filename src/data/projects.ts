@@ -1,6 +1,13 @@
 import animationWebApp from '@/assets/animations/category1.json';
 import animationPlatform from '@/assets/animations/category2.json';
 import animationA11y from '@/assets/animations/category3.json';
+import { AnimationItem } from 'lottie-web';
+import Project1 from '@/assets/animations/projects/project1.json';
+import Project2 from '@/assets/animations/projects/project2.json';
+import Project3 from '@/assets/animations/projects/project3.json';
+import Project4 from '@/assets/animations/projects/project4.json';
+import Project5 from '@/assets/animations/projects/project5.json';
+import Project6 from '@/assets/animations/projects/project6.json';
 
 export const projectTopics = [
   {
@@ -83,6 +90,11 @@ export type Project = {
   roles: string[];
   results: string[] | undefined;
   image: string | undefined;
+  animationData: AnimationItem | undefined;
+  svg: {
+    width: nu;
+    height: string;
+  } | undefined;
 }
 
 export const projects: Project[] = [
@@ -105,6 +117,11 @@ export const projects: Project[] = [
     ],
     results: ["미래에셋금융에 서비스 판매"],
     image: '/images/example.svg',
+    animationData: Project1,
+    svg: {
+      width: 275,
+      height: 275,
+    }
   },
   {
     id: 2,
@@ -123,6 +140,11 @@ export const projects: Project[] = [
     ],
     results: ["예·적금 상담 및 상품 추천 서비스 제공"],
     image: '/images/example.svg',
+    animationData: Project2,
+    svg: {
+      width: 215,
+      height: 215,
+    }
   },
   {
     id: 3,
@@ -141,9 +163,14 @@ export const projects: Project[] = [
     ],
     results: ["데이터 검색 정확도와 처리 속도 향상"],
     image: '/images/example.svg',
+    animationData: Project3,
+    svg: {
+      width: 275,
+      height: 275,
+    }
   },
   {
-    id: 3,
+    id: 4,
     category: [1],
     name: 'LLMOps',
     purpose: ['기업 내 LLM 운영 환경 구축'],
@@ -159,6 +186,11 @@ export const projects: Project[] = [
     ],
     results: ["운영 효율성과 데이터 관리 역량 향상"],
     image: '/images/example.svg',
+    animationData: Project4,
+    svg: {
+      width: 285,
+      height: 285,
+    }
   },
   {
     id: 4,
@@ -179,6 +211,11 @@ export const projects: Project[] = [
     ],
     results: ["SQL 작성 속도 및 정확도 향상"],
     image: '/images/example.svg',
+    animationData: Project5,
+    svg: {
+      width: 275,
+      height: 275,
+    }
   },
   {
     id: 5,
@@ -202,6 +239,11 @@ export const projects: Project[] = [
       "각종 국가기관(과기부) / 사기업 등에서 대회운영 사업 수주하여 진행"
     ],
     image: '/images/example.svg',
+    animationData: Project6,
+    svg: {
+      width: 275,
+      height: 275,
+    }
   },
   {
     id: 6,

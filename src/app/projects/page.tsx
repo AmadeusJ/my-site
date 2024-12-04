@@ -1,16 +1,15 @@
 // app/projects/page.tsx
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Provider } from 'react-redux';
 import { store } from '@/stores/store';
-import AeroCard from '@/components/Aero/AeroCard';
 import ProjectCard from '@/components/element/ProjectCard';
 import BackgroundOverlay from '@/components/BackgroundOverlay';
 import CategoryButton from '@/components/button/CategoryButton';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { Project, projects } from '@/data/projects';
+import { AnimatePresence } from 'framer-motion';
+import { projects } from '@/data/projects';
 import styles from './page.module.scss';
 import { parseCategory } from '@/utils/tools';
 
@@ -26,8 +25,7 @@ export default function ProjectsPage() {
   ];
 
   useEffect(() => {
-    console.log(categoryQuery);
-    setFilteredProjects([]);
+    setFilteredProjects([]);  // 초기화
     setActiveCategory(categoryQuery)
     if (categoryQuery === 'All') {
       setFilteredProjects(projects);
@@ -38,7 +36,6 @@ export default function ProjectsPage() {
         )
       );
     }
-    console.log('filteredProjects: ', filteredProjects);
   }, [categoryQuery]);
 
   const expandEffect = {
@@ -93,7 +90,12 @@ export default function ProjectsPage() {
         <div className={styles.projectList}>
           {
             filteredProjects.map((project, index) => {
-              return <ProjectCard key={`${project.id}-${index}`} project={project} index={index} />
+              return <ProjectCard
+                key={`${project.id}-${index}`}
+                project={project}
+                index={index}
+                prefix={`projects`}
+              />
             })
           }
         </div>

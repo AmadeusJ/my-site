@@ -5,9 +5,12 @@ import { motion, useInView } from 'framer-motion';
 import AeroCard from '@/components/Aero/AeroCard';
 import styles from './ProjectCard.module.scss';
 import { Project } from '@/data/projects';
+import Lottie from 'lottie-react';
+
 interface ProjectCardProps {
   project: Project;
   index: number;
+  prefix: string;
 }
 
 const expandEffect = {
@@ -23,8 +26,9 @@ const expandEffect = {
   },
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, prefix }) => {
   const ref = useRef(null);
+  const lottieRef = useRef(null);
   const isInView = useInView(ref, { once: true });
   const router = useRouter();
 
@@ -38,11 +42,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       transition={{ duration: 0.3, delay: 0.2 * index }}
       whileHover="hover"
       variants={expandEffect}
-      onClick={() => router.push(`/projects/${project.id}`)}
+      onClick={() => router.push(`/${prefix}/${project.id}`)}
+      onMouseEnter={() => lottieRef.current?.play()}
+      onMouseLeave={() => lottieRef.current?.stop()}
     >
       <AeroCard className={styles.projectCard}>
         <div className={styles.projectHeader}>
-          <img src={project.image} alt={project.name} />
+          {
+            project.animationData && (
+              <Lottie
+                lottieRef={lottieRef}
+                className={styles.lottieAnimation}
+                animationData={project.animationData}
+                loop={true}
+                autoplay={false}
+                style={{
+                  width: `${project.svg?.width}px`,
+                  height: `${project.svg?.height}px`,
+                }}
+              />
+            ) || (
+              <img src={project.image} alt={project.name} />
+            )
+          }
         </div>
         <div className={styles.projectBody}>
           <h1>{project.name}</h1>
