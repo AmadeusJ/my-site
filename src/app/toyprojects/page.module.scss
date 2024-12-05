@@ -1,5 +1,17 @@
 // app/toyprojects/page.module.scss
+.toyProjectsSection {
+  padding: 100px 0;
+  width: calc(100% - 100px);
+  max-width: 2000px;
+  margin: 0 auto;
+  height: 100vh;
+  background: transparent;
+  padding: 20px;
+  padding-bottom: 50px;
 
-.toyProjectsPage {
-  background-color: var(--projects-bg-color);
+  .projectList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 74px;
+  }
 }

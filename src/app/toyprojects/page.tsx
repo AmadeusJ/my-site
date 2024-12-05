@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import ProjectCard from '@/components/element/ProjectCard';
 import BackgroundOverlay from '@/components/BackgroundOverlay';
 import { AnimatePresence } from 'framer-motion';
-// import { toyProjects } from '@/data/toyprojects';
+import { toyProjects } from '@/data/toyprojects';
 import styles from './page.module.scss';
 
 export default function ToyProjectsPage() {
@@ -22,6 +22,21 @@ export default function ToyProjectsPage() {
       <AnimatePresence>
         <BackgroundOverlay color={backgroundColors[0]} />
       </AnimatePresence>
+
+      <section className={styles.toyProjectsSection}>
+        <div className={styles.projectList}>
+          {
+            toyProjects.map((project, index) => {
+              return <ProjectCard
+                key={`${project.id}-${index}`}
+                project={project}
+                index={index}
+                prefix={'toyprojects'}
+              />
+            })
+          }
+        </div>
+      </section>
     </Provider>
   );
 }

@@ -1,15 +1,9 @@
-import React from 'react';
-import Header from '@/components/header/Header';
+import ProjectLayout from '@/app/projectLayout';
 
 export default function ToyProjectsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <Header />
-      <main>{children}</main>
-    </>
-  );
+  return <ProjectLayout>{children}</ProjectLayout>;
 }

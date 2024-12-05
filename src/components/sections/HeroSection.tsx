@@ -9,10 +9,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchWelcome } from '@/stores/slices/commonSlice';
 import Lottie from 'lottie-react';
 import { RootState, AppDispatch } from '@/stores/store';
-import animationProject from '@/assets/animations/project.json';
-import animationTech from '@/assets/animations/tech.json';
-import animationCareer from '@/assets/animations/career.json';
-import animationContact from '@/assets/animations/contact.json';
+import animationProject from '@/assets/animations/launch.json';
+import animationTech from '@/assets/animations/backend.json';
+import animationCareer from '@/assets/animations/career-ladder.json';
+import animationContact from '@/assets/animations/paper-plane.json';
 import AeroTooltip from '../Tooltip/AeroTooltip';
 
 export default function HeroSection() {

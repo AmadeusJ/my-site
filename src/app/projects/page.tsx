@@ -38,20 +38,6 @@ export default function ProjectsPage() {
     }
   }, [categoryQuery]);
 
-  const expandEffect = {
-    hover: {
-      scale: 1.2,
-      zIndex: 100,
-      transition: {
-        type: 'spring',
-        stiffness: 300, // 탄성
-        damping: 15, // 감쇠
-        mass: 0.7, // 질량
-        zIndex: 100,
-      },
-    },
-  };
-
   const categories = [
     'All',
     'LLM Application',

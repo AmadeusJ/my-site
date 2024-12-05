@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import styles from './AboutMeButton.module.scss';
 import Lottie from 'lottie-react';
-import animationNinja from '@/assets/animations/ninja.json';
+import animationNinja from '@/assets/animations/male.json';
 import { motion } from 'framer-motion';
 
 export default function AboutMeButton() {

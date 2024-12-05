@@ -5,10 +5,11 @@ import { motion, useInView } from 'framer-motion';
 import AeroCard from '@/components/Aero/AeroCard';
 import styles from './ProjectCard.module.scss';
 import { Project } from '@/data/projects';
+import { ToyProject } from '@/data/toyprojects';
 import Lottie from 'lottie-react';
 
 interface ProjectCardProps {
-  project: Project;
+  project: Project | ToyProject;
   index: number;
   prefix: string;
 }
