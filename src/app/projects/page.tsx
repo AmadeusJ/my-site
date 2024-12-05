@@ -12,7 +12,7 @@ import { AnimatePresence } from 'framer-motion';
 import { projects } from '@/data/projects';
 import styles from './page.module.scss';
 import { parseCategory } from '@/utils/tools';
-
+import ChatWrapper from '@/components/element/ChatWrapper';
 export default function ProjectsPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -85,6 +85,7 @@ export default function ProjectsPage() {
             })
           }
         </div>
+        <ChatWrapper messages={[]} onSendMessage={() => { }} />
       </section>
     </Provider>
   );

@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { welcome } from '@/app/api/common';
+import { welcome, WelcomeRequest } from '@/app/api/common';
 
 interface WelcomeResponse {
-  todayVisitors: number;
   totalVisitors: number;
 }
 
@@ -14,15 +13,14 @@ interface CommonState {
 
 const initialState: CommonState = {
   welcome: {
-    todayVisitors: 0,
     totalVisitors: 0,
   },
   status: 'idle',
   error: null,
 };
 
-export const fetchWelcome = createAsyncThunk('common/fetchWelcome', async () => {
-  const response = await welcome();
+export const postWelcome = createAsyncThunk('common/postWelcome', async (data: WelcomeRequest) => {
+  const response = await welcome(data);
   return response.data;
 });
 
@@ -31,14 +29,14 @@ const commonSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchWelcome.pending, (state) => {
+    builder.addCase(postWelcome.pending, (state) => {
       state.status = 'loading';
     });
-    builder.addCase(fetchWelcome.fulfilled, (state, action) => {
+    builder.addCase(postWelcome.fulfilled, (state, action) => {
       state.status = 'succeeded';
       state.welcome = action.payload;
     });
-    builder.addCase(fetchWelcome.rejected, (state, action) => {
+    builder.addCase(postWelcome.rejected, (state, action) => {
       state.status = 'failed';
       state.error = action.error.message || null;
     });

@@ -18,17 +18,17 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'My Portfolio',
-    template: '%s | My Portfolio',
+    default: 'Jung Dawoon',
+    template: '%s | Jung Dawoon',
   },
-  description: 'My Portfolio',
-  keywords: 'portfolio, my portfolio, web development, software development',
-  authors: [{ name: 'My Portfolio', url: 'https://myportfolio.com' }],
+  description: 'Jung Dawoon Portfolio',
+  keywords: 'portfolio, jung dawoon, web development, software development',
+  authors: [{ name: 'Jung Dawoon', url: 'https://jungdawoon.com' }],
   openGraph: {
-    title: 'My Portfolio',
-    description: 'My Portfolio',
-    url: 'https://myportfolio.com',
-    siteName: 'My Portfolio',
+    title: 'Jung Dawoon',
+    description: 'Jung Dawoon Portfolio',
+    url: 'https://jungdawoon.com',
+    siteName: 'Jung Dawoon',
     locale: 'en_US',
     type: 'website',
   },

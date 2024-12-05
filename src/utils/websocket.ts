@@ -12,8 +12,7 @@ export class WebSocketManager {
       return;
     }
 
-    // userId가 없으면 생성 후 localStorage에 저장
-    const userId = getOrCreateUserId();
+    const { userId } = getOrCreateUserId();
 
     const websocketUrl = process.env.NEXT_PUBLIC_WEBSOCKET_URL;
     if (!websocketUrl) {
