@@ -11,6 +11,7 @@ import ResumeButton from '../element/ResumeButton';
 import AboutMeButton from '../element/AboutMeButton';
 import Lottie from 'lottie-react';
 import animationContact from '@/assets/animations/paper-plane.json';
+import { Tooltip } from '@nextui-org/react';
 
 
 export default function ContactSection() {
@@ -94,13 +95,17 @@ export default function ContactSection() {
           <div className={styles.contactArea}>
             <div className={styles.contactButtons}>
               {/* 경력기술서 다운로드 버튼 */}
-              <motion.div>
-                <ResumeButton />
-              </motion.div>
+              <Tooltip content={"Resume"} showArrow color="primary" placement="top">
+                <motion.div>
+                  <ResumeButton />
+                </motion.div>
+              </Tooltip>
               {/* About Me 이동 버튼 */}
-              <motion.div>
-                <AboutMeButton />
-              </motion.div>
+              <Tooltip content={"About Me"} showArrow color="primary" placement="top">
+                <motion.div>
+                  <AboutMeButton />
+                </motion.div>
+              </Tooltip>
             </div>
             {/* 이메일 폼 */}
             <div className={styles.emailFormSection}>
