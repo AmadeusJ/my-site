@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { Provider } from 'react-redux';
+import { NextUIProvider } from '@nextui-org/react';
+
 import { store } from '@/stores/store';
 import HeroSection from '@/components/sections/HeroSection';
 import ProjectSection from '@/components/sections/ProjectSection';
@@ -46,19 +48,21 @@ export default function Home() {
 
   return (
     <Provider store={store}>
+      <NextUIProvider>
+        <AnimatePresence>
+          <BackgroundOverlay key={activeSection} color={backgroundColors[activeSection]} />
+        </AnimatePresence>
 
-      <AnimatePresence>
-        <BackgroundOverlay key={activeSection} color={backgroundColors[activeSection]} />
-      </AnimatePresence>
+        {/* Full Page Animation */}
+        <HeroSection />
 
-      {/* Full Page Animation */}
-      <HeroSection />
+        {/* Freeze Animation */}
+        <ProjectSection />
+        <TechSection />
+        <CareerSection />
+        <ContactSection />
 
-      {/* Freeze Animation */}
-      <ProjectSection />
-      <TechSection />
-      <CareerSection />
-      <ContactSection />
+      </NextUIProvider>
     </Provider>
   );
 }

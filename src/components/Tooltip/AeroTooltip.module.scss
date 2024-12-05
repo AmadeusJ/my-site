@@ -1,25 +1,74 @@
-.tooltip {
-  position: absolute;
-  padding: 10px 15px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.2);
-  /* 반투명 배경 */
-  backdrop-filter: blur(10px);
-  /* 블러 효과 */
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  /* 얇은 테두리 */
-  color: #fff;
-  font-size: 14px;
-  white-space: nowrap;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  /* 부드러운 그림자 */
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateY(10px);
-  opacity: 0;
-}
+// .tooltip {
+//   position: absolute;
+//   padding: 10px 15px;
+//   border-radius: 10px;
+//   background: rgba(255, 255, 255, 0.2);
+//   /* 반투명 배경 */
+//   backdrop-filter: blur(10px);
+//   /* 블러 효과 */
+//   border: 1px solid rgba(255, 255, 255, 0.3);
+//   /* 얇은 테두리 */
+//   color: #fff;
+//   font-size: 14px;
+//   white-space: nowrap;
+//   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+//   /* 부드러운 그림자 */
+//   transition: transform 0.3s ease, opacity 0.3s ease;
+//   transform: translateY(10px);
+//   opacity: 0;
+//   z-index: 10;
 
-.tooltip-container:hover .tooltip {
-  transform: translateY(0);
-  /* 위로 올라오는 효과 */
-  opacity: 1;
-}
+//   /* 말풍선 꼬리 */
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     width: 0;
+//     height: 0;
+//     border-style: solid;
+//   }
+// }
+
+// .tooltip-container:hover .tooltip {
+//   transform: translateY(0);
+//   /* 위로 올라오는 효과 */
+//   opacity: 1;
+// }
+
+// .tooltipArrow {
+//   position: absolute;
+//   width: 0;
+//   height: 0;
+//   border-style: solid;
+// }
+
+// .tooltipArrow-top {
+//   bottom: -5px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   border-width: 5px 5px 0 5px;
+//   border-color: rgba(255, 255, 255, 0.3) transparent transparent transparent;
+// }
+
+// .tooltipArrow-bottom {
+//   top: -5px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   border-width: 0 5px 5px 5px;
+//   border-color: transparent transparent rgba(255, 255, 255, 0.2) transparent;
+// }
+
+// .tooltipArrow-left {
+//   top: 50%;
+//   right: -5px;
+//   transform: translateY(-50%);
+//   border-width: 5px 5px 5px 0;
+//   border-color: transparent rgba(255, 255, 255, 0.2) transparent transparent;
+// }
+
+// .tooltipArrow-right {
+//   top: 50%;
+//   left: -5px;
+//   transform: translateY(-50%);
+//   border-width: 5px 0 5px 5px;
+//   border-color: transparent transparent transparent rgba(255, 255, 255, 0.2);
+// }

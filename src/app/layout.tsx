@@ -5,7 +5,6 @@ import AnimatePresenceWrapper from '@/components/AnimatePresenceWrapper';
 import '@/styles/globals.css';
 import "react-vertical-timeline-component/style.min.css";
 
-
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',

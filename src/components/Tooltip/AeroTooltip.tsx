@@ -60,6 +60,9 @@ const AeroTooltip: React.FC<AeroTooltipProps> = ({
         }}
       >
         {text}
+        <span
+          className={`${styles.tooltipArrow} ${styles[`tooltipArrow-${position}`]}`}
+        ></span>
       </motion.div>
       {children}
     </div>

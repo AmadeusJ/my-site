@@ -13,7 +13,8 @@ import animationProject from '@/assets/animations/launch.json';
 import animationTech from '@/assets/animations/backend.json';
 import animationCareer from '@/assets/animations/career-ladder.json';
 import animationContact from '@/assets/animations/paper-plane.json';
-import AeroTooltip from '../Tooltip/AeroTooltip';
+import { Tooltip } from "@nextui-org/react";
+
 
 export default function HeroSection() {
   const dispatch = useDispatch<AppDispatch>();
@@ -120,75 +121,85 @@ export default function HeroSection() {
           </div>
         </div>
         <div className={styles.heroRight}>
-          <motion.div
-            className={styles.heroIconContainer}
-            variants={expandEffect}
-            whileHover="hover"
-          >
-            <AeroCard className={`${styles.heroIconCard} ${styles.tooltipContainer}`}>
-              <Lottie
-                lottieRef={projectRef}
-                animationData={animationProject}
-                loop={true}
-                autoplay={false}
-                style={{ width: '100%', height: '100%' }}
-                onMouseEnter={() => projectRef.current?.play()}
-                onMouseLeave={() => projectRef.current?.stop()}
-              />
-            </AeroCard>
-          </motion.div>
+          <Tooltip content={"Projects"} showArrow color="primary" placement="bottom">
+            <motion.div
+              className={styles.heroIconContainer}
+              variants={expandEffect}
+              whileHover="hover"
+            >
+              <AeroCard className={`${styles.heroIconCard} ${styles.tooltipContainer}`}>
+                <Lottie
+                  lottieRef={projectRef}
+                  animationData={animationProject}
+                  loop={true}
+                  autoplay={false}
+                  style={{ width: '100%', height: '100%' }}
+                  onMouseEnter={() => projectRef.current?.play()}
+                  onMouseLeave={() => projectRef.current?.stop()}
+                />
+              </AeroCard>
+            </motion.div>
+          </Tooltip>
 
-          <motion.div
-            className={styles.heroIconContainer}
-            variants={expandEffect}
-            whileHover="hover"
-          >
-            <AeroCard className={styles.heroIconCard}>
-              <Lottie
-                lottieRef={techRef}
-                animationData={animationTech}
-                loop={true}
-                autoplay={false}
-                style={{ width: '100%', height: '100%' }}
-                onMouseEnter={() => techRef.current?.play()}
-                onMouseLeave={() => techRef.current?.stop()}
-              />
-            </AeroCard>
-          </motion.div>
-          <motion.div
-            className={styles.heroIconContainer}
-            variants={expandEffect}
-            whileHover="hover"
-          >
-            <AeroCard className={styles.heroIconCard}>
-              <Lottie
-                lottieRef={careerRef}
-                animationData={animationCareer}
-                loop={true}
-                autoplay={false}
-                style={{ width: '100%', height: '100%' }}
-                onMouseEnter={() => careerRef.current?.play()}
-                onMouseLeave={() => careerRef.current?.stop()}
-              />
-            </AeroCard>
-          </motion.div>
-          <motion.div
-            className={styles.heroIconContainer}
-            variants={expandEffect}
-            whileHover="hover"
-          >
-            <AeroCard className={styles.heroIconCard}>
-              <Lottie
-                lottieRef={contactRef}
-                animationData={animationContact}
-                loop={true}
-                autoplay={false}
-                style={{ width: '100%', height: '100%' }}
-                onMouseEnter={() => contactRef.current?.play()}
-                onMouseLeave={() => contactRef.current?.stop()}
-              />
-            </AeroCard>
-          </motion.div>
+          <Tooltip content={"Skills"} showArrow color="primary" placement="bottom">
+            <motion.div
+              className={styles.heroIconContainer}
+              variants={expandEffect}
+              whileHover="hover"
+            >
+              <AeroCard className={styles.heroIconCard}>
+                <Lottie
+                  lottieRef={techRef}
+                  animationData={animationTech}
+                  loop={true}
+                  autoplay={false}
+                  style={{ width: '100%', height: '100%' }}
+                  onMouseEnter={() => techRef.current?.play()}
+                  onMouseLeave={() => techRef.current?.stop()}
+                />
+              </AeroCard>
+            </motion.div>
+          </Tooltip>
+
+          <Tooltip content={"Career"} showArrow color="primary" placement="bottom">
+            <motion.div
+              className={styles.heroIconContainer}
+              variants={expandEffect}
+              whileHover="hover"
+            >
+              <AeroCard className={styles.heroIconCard}>
+                <Lottie
+                  lottieRef={careerRef}
+                  animationData={animationCareer}
+                  loop={true}
+                  autoplay={false}
+                  style={{ width: '100%', height: '100%' }}
+                  onMouseEnter={() => careerRef.current?.play()}
+                  onMouseLeave={() => careerRef.current?.stop()}
+                />
+              </AeroCard>
+            </motion.div>
+          </Tooltip>
+
+          <Tooltip content={"Contact"} showArrow color="primary" placement="bottom">
+            <motion.div
+              className={styles.heroIconContainer}
+              variants={expandEffect}
+              whileHover="hover"
+            >
+              <AeroCard className={styles.heroIconCard}>
+                <Lottie
+                  lottieRef={contactRef}
+                  animationData={animationContact}
+                  loop={true}
+                  autoplay={false}
+                  style={{ width: '100%', height: '100%' }}
+                  onMouseEnter={() => contactRef.current?.play()}
+                  onMouseLeave={() => contactRef.current?.stop()}
+                />
+              </AeroCard>
+            </motion.div>
+          </Tooltip>
         </div>
       </AeroCard>
     </section>
