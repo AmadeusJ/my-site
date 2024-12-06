@@ -1,5 +1,6 @@
 import { getOrCreateUserId } from "./userUtils";
-
+import { ContactChat } from "@/stores/slices/contactSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 export class WebSocketManager {
   private socket: WebSocket | null = null;
@@ -39,9 +40,9 @@ export class WebSocketManager {
     };
   }
 
-  sendMessage(message: string): void {
+  sendMessage(message: ContactChat): void {
     if (this.socket && this.socket.readyState === WebSocket.OPEN) {
-      this.socket.send(message);
+      this.socket.send(JSON.stringify(message));
     } else {
       console.error('WebSocket is not connected');
     }

@@ -7,6 +7,7 @@ import { RootState } from '@/stores/store';
 import { ContactChat, sendMessage } from '@/stores/slices/contactSlice';
 import { useInView } from 'react-intersection-observer';
 import styles from './AeroChat.module.scss';
+import { getOrCreateUserId } from "@/utils/userUtils";
 
 export default function AeroChat() {
   const websocket = useWebSocket();
@@ -25,18 +26,29 @@ export default function AeroChat() {
     if (inView && !messages.length && !hasSentInitialMessage.current) {
       // websocket.sendMessage('안녕하세요! 무엇을 도와드릴까요?');
       dispatch(sendMessage({
-        id: 1,
         sender_id: 'system',
         content: '안녕하세요! 무엇을 도와드릴까요?',
-        created_at: new Date().toISOString(),
       }));
       hasSentInitialMessage.current = true;
     }
   }, [inView, messages, dispatch]);
 
+  // 메시지 보내기
   const handleSendMessage = () => {
+    // Get the user ID
+    const { userId } = getOrCreateUserId();
+
     if (input.trim()) {
-      websocket.sendMessage(input);
+      // Send the message to the WebSocket server
+      websocket.sendMessage({
+        sender_id: userId,
+        content: input,
+      });
+      // Store the message in the Redux store
+      dispatch(sendMessage({
+        sender_id: userId,
+        content: input,
+      }));
       setInput("");
     }
   };

@@ -3,10 +3,10 @@ import { fetchPrevChatMessages } from '@/app/api/chat';
 
 // 채팅 메시지 타입
 export interface ContactChat {
-  id: number;
-  sender_id: string | undefined;
-  content: string | undefined;
-  created_at: string | undefined;
+  id?: number;
+  sender_id: string;
+  content: string;
+  created_at?: string;
 }
 
 interface ContactChatState {
