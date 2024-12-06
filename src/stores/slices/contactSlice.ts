@@ -42,7 +42,7 @@ const contactSlice = createSlice({
     });
     builder.addCase(fetchPrevChatMessagesThunk.fulfilled, (state, action: PayloadAction<{ messages: ContactChat[] }>) => {
       state.status = 'succeeded';
-      if (action.payload && action.payload.messages) {
+      if (action.payload && action.payload.messages.length) {
         // messages가 배열인 것으로 가정하고 처리
         state.messages = action.payload.messages.map(
           (message: ContactChat) => ({
@@ -51,15 +51,6 @@ const contactSlice = createSlice({
             content: message.content,
             created_at: message.created_at,
           }));
-      } else {
-        // 데이터가 없는 경우 기본 메시지 추가
-        const defaultSenderId = action.payload?.messages[0]?.sender_id || 'system';
-        state.messages.push({
-          id: 1,
-          sender_id: defaultSenderId,
-          content: '안녕하세요! 무엇을 도와드릴까요?',
-          created_at: new Date().toISOString(),
-        });
       }
     });
     builder.addCase(fetchPrevChatMessagesThunk.rejected, (state, action) => {

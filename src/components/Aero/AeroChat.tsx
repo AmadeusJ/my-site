@@ -1,17 +1,38 @@
 // AeroChat.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from 'framer-motion';
 import { useWebSocket } from '@/components/context/WebSocketContext';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/stores/store';
 import { ContactChat, sendMessage } from '@/stores/slices/contactSlice';
-
+import { useInView } from 'react-intersection-observer';
 import styles from './AeroChat.module.scss';
 
 export default function AeroChat() {
   const websocket = useWebSocket();
-  const messages = useSelector((state: RootState) => state.contact.messages);
+  const dispatch = useDispatch();
+  const messages = useSelector((state: RootState) => state.contact.messages) as ContactChat[];
   const [input, setInput] = useState("");
+  const hasSentInitialMessage = useRef(false);
+
+  // useInView를 사용하여 AeroChat의 가시성을 추적
+  const { ref, inView } = useInView({ threshold: 0.8 });
+
+
+  console.log('messages: ', messages);
+
+  useEffect(() => {
+    if (inView && !messages.length && !hasSentInitialMessage.current) {
+      // websocket.sendMessage('안녕하세요! 무엇을 도와드릴까요?');
+      dispatch(sendMessage({
+        id: 1,
+        sender_id: 'system',
+        content: '안녕하세요! 무엇을 도와드릴까요?',
+        created_at: new Date().toISOString(),
+      }));
+      hasSentInitialMessage.current = true;
+    }
+  }, [inView, messages, dispatch]);
 
   const handleSendMessage = () => {
     if (input.trim()) {
@@ -27,7 +48,7 @@ export default function AeroChat() {
   };
 
   return (
-    <div className={styles.aeroChat}>
+    <div className={styles.aeroChat} ref={ref}>
       <div className={styles.aeroChatMessages}>
         {messages.map((message, index) => (
           <motion.div
@@ -39,7 +60,7 @@ export default function AeroChat() {
             variants={messageVariants}
           >
             <div className={styles.messageBubble}>
-              <p>{message}</p>
+              <p>{message.content}</p>
             </div>
           </motion.div>
         ))}
