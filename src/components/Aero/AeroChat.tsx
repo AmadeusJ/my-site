@@ -1,10 +1,12 @@
 // AeroChat.tsx
 import React, { useState } from "react";
 import { motion } from 'framer-motion';
+import { ContactChat } from "@/stores/slices/contactSlice";
+
 
 import styles from './AeroChat.module.scss';
 
-export default function AeroChat({ messages, onSendMessage }: { messages: string[], onSendMessage: (message: string) => void }) {
+export default function AeroChat({ messages, onSendMessage }: { messages: ContactChat[], onSendMessage: (message: string) => void }) {
   const [input, setInput] = useState("");
 
   const handleSendMessage = () => {
