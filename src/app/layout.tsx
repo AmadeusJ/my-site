@@ -3,7 +3,7 @@ import localFont from 'next/font/local';
 import Footer from '@/components/footer/Footer';
 import AnimatePresenceWrapper from '@/components/wrapper/AnimatePresenceWrapper';
 import ProviderWrapper from '@/components/wrapper/ProviderWrapper';
-import WebSocketWrapper from '@/components/wrapper/WebSocketWrapper';
+import { WebSocketProvider } from '@/components/context/WebSocketContext';
 import '@/styles/globals.css';
 import "react-vertical-timeline-component/style.min.css";
 
@@ -45,14 +45,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ProviderWrapper>
-          <WebSocketWrapper>
+          <WebSocketProvider>
             <AnimatePresenceWrapper>
               {/* Main Content */}
               <main>{children}</main>
             </AnimatePresenceWrapper>
-          </WebSocketWrapper>
-          {/* Footer */}
-          <Footer />
+            <Footer />
+          </WebSocketProvider>
         </ProviderWrapper>
       </body>
     </html>

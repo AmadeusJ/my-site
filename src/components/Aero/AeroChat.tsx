@@ -1,17 +1,21 @@
 // AeroChat.tsx
 import React, { useState } from "react";
 import { motion } from 'framer-motion';
-import { ContactChat } from "@/stores/slices/contactSlice";
-
+import { useWebSocket } from '@/components/context/WebSocketContext';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/stores/store';
+import { ContactChat, sendMessage } from '@/stores/slices/contactSlice';
 
 import styles from './AeroChat.module.scss';
 
-export default function AeroChat({ messages, onSendMessage }: { messages: ContactChat[], onSendMessage: (message: string) => void }) {
+export default function AeroChat() {
+  const websocket = useWebSocket();
+  const messages = useSelector((state: RootState) => state.contact.messages);
   const [input, setInput] = useState("");
 
   const handleSendMessage = () => {
     if (input.trim()) {
-      onSendMessage(input);
+      websocket.sendMessage(input);
       setInput("");
     }
   };

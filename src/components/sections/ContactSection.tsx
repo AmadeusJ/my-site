@@ -5,7 +5,6 @@ import AeroCard from '../Aero/AeroCard';
 import AeroChat from '../Aero/AeroChat';
 import { motion } from 'framer-motion';
 import styles from './ContactSection.module.scss';
-import { WebSocketManager } from '../../utils/websocket';
 import EmailForm from '../element/EmailForm';
 import ResumeButton from '../element/ResumeButton';
 import AboutMeButton from '../element/AboutMeButton';
@@ -13,19 +12,13 @@ import Lottie from 'lottie-react';
 import animationContact from '@/assets/animations/paper-plane.json';
 import { Tooltip } from '@nextui-org/react';
 import { useDispatch } from 'react-redux';
-import { fetchPrevChatMessagesThunk, sendMessage } from '@/stores/slices/contactSlice';
+import { fetchPrevChatMessagesThunk } from '@/stores/slices/contactSlice';
 import { getOrCreateUserId } from '@/utils/userUtils';
 import { AppDispatch } from '@/stores/store';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/stores/store';
-import { ContactChat } from '@/stores/slices/contactSlice';
 
 export default function ContactSection() {
   const contactRef = useRef<Lottie>(null);
-  // const [messages, setMessages] = useState<string[]>([]);
-  const [websocket, setWebsocket] = useState<WebSocketManager | null>(null);
   const dispatch: AppDispatch = useDispatch();
-  const messages = useSelector((state: RootState) => state.contact.messages);
 
   const [testStatus, setTestStatus] = useState<string>("Not started");
 
@@ -64,20 +57,12 @@ export default function ContactSection() {
 
   }, [dispatch]);
 
-  const sendMessage = (message: string) => {
-    if (!websocket) {
-      return;
-    }
-    websocket.sendMessage(message);
-    setMessages((prevMessages) => [...prevMessages, message]);
-  };
-
   return (
     <section className={`section ${styles.contactSection}`}>
       {/* 채팅 영역 */}
       <motion.div className={styles.contactChat}>
         <AeroCard className={styles.contactCard}>
-          <AeroChat messages={messages} onSendMessage={sendMessage} />
+          <AeroChat />
         </AeroCard>
       </motion.div>
 
