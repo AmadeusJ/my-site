@@ -26,7 +26,7 @@ export default function AeroChat() {
     if (inView && !messages.length && !hasSentInitialMessage.current) {
       // websocket.sendMessage('안녕하세요! 무엇을 도와드릴까요?');
       dispatch(sendMessage({
-        sender_id: 'system',
+        sender_id: 'jdw',
         content: '안녕하세요! 무엇을 도와드릴까요?',
       }));
       hasSentInitialMessage.current = true;
@@ -65,7 +65,7 @@ export default function AeroChat() {
         {messages.map((message, index) => (
           <motion.div
             key={index}
-            className={`${styles.message} ${index % 2 === 0 ? styles.receivedMessage : styles.sentMessage
+            className={`${styles.message} ${message.sender_id === 'jdw' ? styles.receivedMessage : styles.sentMessage
               }`}
             initial="hidden"
             animate="visible"
