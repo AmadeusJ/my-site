@@ -5,6 +5,7 @@ import { fetchPrevChatMessages } from '@/app/api/chat';
 export interface ContactChat {
   id?: number;
   sender_id: string;
+  receiver_id?: string;
   content: string;
   created_at?: string;
 }
@@ -48,6 +49,7 @@ const contactSlice = createSlice({
           (message: ContactChat) => ({
             id: message.id,
             sender_id: message.sender_id,
+            receiver_id: message.receiver_id,
             content: message.content,
             created_at: message.created_at,
           }));

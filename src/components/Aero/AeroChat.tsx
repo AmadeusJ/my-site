@@ -20,6 +20,7 @@ export default function AeroChat() {
   const { ref, inView } = useInView({ threshold: 0.8 });
 
 
+
   console.log('messages: ', messages);
 
   useEffect(() => {
@@ -42,11 +43,13 @@ export default function AeroChat() {
       // Send the message to the WebSocket server
       websocket.sendMessage({
         sender_id: userId,
+        receiver_id: 'jdw',
         content: input,
       });
       // Store the message in the Redux store
       dispatch(sendMessage({
         sender_id: userId,
+        receiver_id: 'jdw',
         content: input,
       }));
       setInput("");

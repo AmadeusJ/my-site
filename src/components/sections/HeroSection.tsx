@@ -30,7 +30,7 @@ export default function HeroSection() {
     const { userId, isNew } = getOrCreateUserId();
     dispatch(postWelcome({ user_id: userId, isNewVisitor: isNew }));
     console.log('HeroSection mounted');
-  }, []);
+  }, [dispatch]);
 
   // 부모 컨테이너 애니메이션 설정
   const containerVariants = {
