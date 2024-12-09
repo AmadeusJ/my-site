@@ -15,6 +15,7 @@ import animationCareer from '@/assets/animations/career-ladder.json';
 import animationContact from '@/assets/animations/paper-plane.json';
 import { Tooltip } from "@nextui-org/react";
 import { getUserId } from '@/utils/userUtils';
+import backgroundAnimation from '@/assets/animations/Animation_4.json';
 
 
 export default function HeroSection() {
@@ -122,7 +123,16 @@ export default function HeroSection() {
           </div>
         </div>
         <div className={styles.heroRight}>
-          <Tooltip content={"Projects"} showArrow color="primary" placement="bottom">
+          <Tooltip content={
+            <div className='px-1 py-2'>
+              <div className='text-lg font-bold'>Projects</div>
+              <div className='text-sm'>저가 진행한 다양한 프로젝트를 소개하는 공간입니다.</div>
+            </div>
+          }
+            showArrow
+            color="primary"
+            placement="bottom"
+          >
             <motion.div
               className={styles.heroIconContainer}
               variants={expandEffect}
@@ -142,7 +152,16 @@ export default function HeroSection() {
             </motion.div>
           </Tooltip>
 
-          <Tooltip content={"Skills"} showArrow color="primary" placement="bottom">
+          <Tooltip content={
+            <div className='px-1 py-2'>
+              <div className='text-lg font-bold'>Skills</div>
+              <div className='text-sm'>저의 기술 스택을 소개하는 공간입니다.</div>
+            </div>
+          }
+            showArrow
+            color="primary"
+            placement="bottom"
+          >
             <motion.div
               className={styles.heroIconContainer}
               variants={expandEffect}
@@ -162,7 +181,16 @@ export default function HeroSection() {
             </motion.div>
           </Tooltip>
 
-          <Tooltip content={"Career"} showArrow color="primary" placement="bottom">
+          <Tooltip content={
+            <div className='px-1 py-2'>
+              <div className='text-lg font-bold'>Career</div>
+              <div className='text-sm'>저의 경력을 소개하는 공간입니다.</div>
+            </div>
+          }
+            showArrow
+            color="primary"
+            placement="bottom"
+          >
             <motion.div
               className={styles.heroIconContainer}
               variants={expandEffect}
@@ -182,7 +210,16 @@ export default function HeroSection() {
             </motion.div>
           </Tooltip>
 
-          <Tooltip content={"Contact"} showArrow color="primary" placement="bottom">
+          <Tooltip content={
+            <div className='px-1 py-2'>
+              <div className='text-lg font-bold'>Contact</div>
+              <div className='text-sm'>저와 소통할 수 있는 공간입니다.</div>
+            </div>
+          }
+            showArrow
+            color="primary"
+            placement="bottom"
+          >
             <motion.div
               className={styles.heroIconContainer}
               variants={expandEffect}
@@ -203,6 +240,14 @@ export default function HeroSection() {
           </Tooltip>
         </div>
       </AeroCard>
+      <div className={styles.backgroundAnimation}>
+        <Lottie
+          animationData={backgroundAnimation}
+          loop={true}
+          autoplay={true}
+          style={{ width: '100%', height: '100%' }}
+        />
+      </div>
     </section>
   );
 }

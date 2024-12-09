@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import AeroChat from '@/components/Aero/AeroChat';
 import styles from './ChatWrapper.module.scss';
+import { fetchPrevChatMessagesThunk } from "@/stores/slices/contactSlice";
+import { getUserId } from "@/utils/userUtils";
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/stores/store';
 
 
 export default function AeroChatWrapper() {
   const [isChatOpen, setIsChatOpen] = useState(false); // 채팅창 열림 상태
   const [isCloseComplete, setIsCloseComplete] = useState(true); // 채팅창이 완전히 닫힌 후의 상태
-
+  const dispatch: AppDispatch = useDispatch();
   const handleToggleChat = () => {
     if (isChatOpen) {
       // 채팅창이 열려 있는 상태라면 닫기 시작
@@ -26,6 +30,13 @@ export default function AeroChatWrapper() {
       setIsCloseComplete(true);
     }
   };
+
+  useEffect(() => {
+    const { userId, isNew } = getUserId();
+    // 이전 채팅 메시지 가져오기
+    dispatch(fetchPrevChatMessagesThunk({ user_id: userId }));
+
+  }, [dispatch]);
 
 
   return (
