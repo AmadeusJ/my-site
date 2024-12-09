@@ -6,7 +6,7 @@ import AeroCard from '../Aero/AeroCard';
 import styles from './HeroSection.module.scss';
 import { motion } from 'framer-motion';
 import { useSelector, useDispatch } from 'react-redux';
-import { postWelcome } from '@/stores/slices/commonSlice';
+import { postWelcome, setIsNewVisitor } from '@/stores/slices/commonSlice';
 import Lottie from 'lottie-react';
 import { RootState, AppDispatch } from '@/stores/store';
 import animationProject from '@/assets/animations/launch.json';
@@ -14,7 +14,7 @@ import animationTech from '@/assets/animations/backend.json';
 import animationCareer from '@/assets/animations/career-ladder.json';
 import animationContact from '@/assets/animations/paper-plane.json';
 import { Tooltip } from "@nextui-org/react";
-import { getOrCreateUserId } from '@/utils/userUtils';
+import { getUserId } from '@/utils/userUtils';
 
 
 export default function HeroSection() {
@@ -23,11 +23,10 @@ export default function HeroSection() {
   const techRef = useRef(null);
   const careerRef = useRef(null);
   const contactRef = useRef(null);
-  const { welcome, status, error } = useSelector((state: RootState) => state.common);
-  const [welcomeSentence, setWelcomeSentence] = useState('');
 
   useEffect(() => {
-    const { userId, isNew } = getOrCreateUserId();
+    const { userId, isNew } = getUserId();
+    dispatch(setIsNewVisitor(isNew));
     dispatch(postWelcome({ user_id: userId, isNewVisitor: isNew }));
     console.log('HeroSection mounted');
   }, [dispatch]);

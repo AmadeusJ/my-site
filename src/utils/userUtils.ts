@@ -15,13 +15,15 @@ export function isWithin24Hours(createdDate: string): boolean {
 export function getOrCreateUserId(): { userId: string; isNew: boolean } {
   const userIdKey = process.env.NEXT_PUBLIC_USER_ID!;
   const createdDateKey = process.env.NEXT_PUBLIC_USER_CREATED_DATE!;
-
+  const isNewKey = process.env.NEXT_PUBLIC_USER_IS_NEW!;
   // localStorage에서 userId와 createdDate 확인
   const existingUserId = localStorage.getItem(userIdKey);
   const existingCreatedDate = localStorage.getItem(createdDateKey);
-
+  const existingIsNew = localStorage.getItem(isNewKey);
+  console.log('처음실행 확인 콘솔');
   // 24시간 이내인지 확인
   if (existingUserId && existingCreatedDate && isWithin24Hours(existingCreatedDate)) {
+    localStorage.setItem(isNewKey, 'false');
     return { userId: existingUserId, isNew: false }; // 24시간 이내라면 기존 ID 반환
   }
 
@@ -32,7 +34,18 @@ export function getOrCreateUserId(): { userId: string; isNew: boolean } {
   // localStorage에 새 userId와 생성일 저장
   localStorage.setItem(userIdKey, newUserId);
   localStorage.setItem(createdDateKey, newCreatedDate);
-
-
+  localStorage.setItem(isNewKey, 'true');
+  // 처음실행 확인 콘솔
   return { userId: newUserId, isNew: true }; // 새로 생성된 ID 반환
+}
+
+export function getUserId(): { userId: string; isNew: boolean } {
+
+  const userIdKey = process.env.NEXT_PUBLIC_USER_ID!;
+  const existingUserId = localStorage.getItem(userIdKey);
+  const existingIsNewKey = process.env.NEXT_PUBLIC_USER_IS_NEW!;
+  const existingIsNew = localStorage.getItem(existingIsNewKey);
+  // 다음 실행확인 콘솔
+  console.log('다음 실행확인 콘솔');
+  return { userId: existingUserId || '', isNew: existingIsNew === 'true' ? true : false };
 }

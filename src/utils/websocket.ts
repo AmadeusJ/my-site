@@ -1,6 +1,5 @@
 import { getOrCreateUserId } from "./userUtils";
 import { ContactChat } from "@/stores/slices/contactSlice";
-import { useDispatch, useSelector } from "react-redux";
 
 export class WebSocketManager {
   private socket: WebSocket | null = null;
@@ -12,6 +11,7 @@ export class WebSocketManager {
       console.log('WebSocket is already connected');
       return;
     }
+
 
     const { userId } = getOrCreateUserId();
 
@@ -27,6 +27,7 @@ export class WebSocketManager {
 
     this.socket.onmessage = (event) => {
       this.onMessage(event.data);
+      console.log('WebSocket message received:', event.data);
     };
 
     this.socket.onclose = () => {

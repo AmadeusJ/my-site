@@ -4,6 +4,7 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { WebSocketManager } from '@/utils/websocket'; // WebSocketManager는 커스텀 WebSocket 관리 클래스라고 가정
+import { sendMessage } from '@/stores/slices/contactSlice';
 
 // Create a context for the WebSocket
 const WebSocketContext = createContext<WebSocketManager | null>(null);
@@ -16,8 +17,10 @@ export const WebSocketProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const wsManager = new WebSocketManager((message) => {
       console.log("WebSocket Message Received:", message);
-      // 메시지를 받아서 필요에 따라 Redux store에 저장하거나 처리
-      // dispatch(storeMessage({ message }));
+      const messageData = JSON.parse(message);
+      if (messageData.sender_id === 'jdw') {
+        dispatch(sendMessage(messageData));
+      }
     });
 
     wsManager.connect();

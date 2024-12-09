@@ -13,7 +13,7 @@ import animationContact from '@/assets/animations/paper-plane.json';
 import { Tooltip } from '@nextui-org/react';
 import { useDispatch } from 'react-redux';
 import { fetchPrevChatMessagesThunk } from '@/stores/slices/contactSlice';
-import { getOrCreateUserId } from '@/utils/userUtils';
+import { getOrCreateUserId, getUserId } from '@/utils/userUtils';
 import { AppDispatch } from '@/stores/store';
 
 export default function ContactSection() {
@@ -51,7 +51,7 @@ export default function ContactSection() {
   // };
 
   useEffect(() => {
-    const { userId } = getOrCreateUserId();
+    const { userId, isNew } = getUserId();
     // 이전 채팅 메시지 가져오기
     dispatch(fetchPrevChatMessagesThunk({ user_id: userId }));
 
@@ -62,7 +62,7 @@ export default function ContactSection() {
       {/* 채팅 영역 */}
       <motion.div className={styles.contactChat}>
         <AeroCard className={styles.contactCard}>
-          <AeroChat />
+          <AeroChat lottieRef={contactRef} />
         </AeroCard>
       </motion.div>
 

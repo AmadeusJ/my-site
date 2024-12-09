@@ -7,6 +7,7 @@ interface WelcomeResponse {
 
 interface CommonState {
   welcome: WelcomeResponse;
+  isNewVisitor: boolean;
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
@@ -15,6 +16,7 @@ const initialState: CommonState = {
   welcome: {
     totalVisitors: 0,
   },
+  isNewVisitor: false,
   status: 'idle',
   error: null,
 };
@@ -27,7 +29,11 @@ export const postWelcome = createAsyncThunk('common/postWelcome', async (data: W
 const commonSlice = createSlice({
   name: 'common',
   initialState,
-  reducers: {},
+  reducers: {
+    setIsNewVisitor: (state, action) => {
+      state.isNewVisitor = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(postWelcome.pending, (state) => {
       state.status = 'loading';
@@ -42,5 +48,7 @@ const commonSlice = createSlice({
     });
   },
 });
+
+export const { setIsNewVisitor } = commonSlice.actions;
 
 export default commonSlice.reducer;
