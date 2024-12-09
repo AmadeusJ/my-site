@@ -95,7 +95,7 @@ export default function ProjectSection() {
             whileTap={{ scale: 0.9 }}
             onClick={() => router.push(`/projects`)}
           >
-            Explore More >>
+            Explore More
           </motion.div>
         </div>
       </div>

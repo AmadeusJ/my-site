@@ -16,6 +16,7 @@ import animationContact from '@/assets/animations/paper-plane.json';
 import { Tooltip } from "@nextui-org/react";
 import { getUserId } from '@/utils/userUtils';
 import backgroundAnimation from '@/assets/animations/Animation_4.json';
+import { useInView } from 'react-intersection-observer';
 
 
 export default function HeroSection() {
@@ -24,6 +25,10 @@ export default function HeroSection() {
   const techRef = useRef(null);
   const careerRef = useRef(null);
   const contactRef = useRef(null);
+
+  // 배경 애니메이션 재생 조건 설정
+  const { ref, inView } = useInView({ threshold: 0.1 });
+  const backgroundRef = useRef(null);
 
   useEffect(() => {
     const { userId, isNew } = getUserId();
@@ -75,6 +80,15 @@ export default function HeroSection() {
       },
     },
   };
+
+  // IntersectionObserver를 사용하여 backgroundAnimation 조건부 재생 설정
+  useEffect(() => {
+    if (inView) {
+      backgroundRef.current?.play();
+    } else {
+      backgroundRef.current?.stop();
+    }
+  }, [inView]);
 
   return (
     <section className={`section ${styles.heroSection}`}>
@@ -240,11 +254,12 @@ export default function HeroSection() {
           </Tooltip>
         </div>
       </AeroCard>
-      <div className={styles.backgroundAnimation}>
+      <div className={styles.backgroundAnimation} ref={ref}>
         <Lottie
+          lottieRef={backgroundRef}
           animationData={backgroundAnimation}
           loop={true}
-          autoplay={true}
+          autoplay={inView}
           style={{ width: '100%', height: '100%' }}
         />
       </div>
