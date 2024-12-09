@@ -48,9 +48,9 @@
       justify-content: flex-end;
 
       .messageBubble {
-        // background-color: #007aff;
+        background-color: #007aff;
         // background: linear-gradient(135deg, #4c68d7, #9b59b6);
-        background: linear-gradient(135deg, #c042e6, #4b52e0);
+        // background: linear-gradient(135deg, #c042e6, #4b52e0);
         // background: linear-gradient(135deg, rgba(200, 230, 255, 1), rgba(150, 200, 250, 0.9));
         // background: linear-gradient(135deg, rgba(120, 170, 240, 1), rgba(80, 140, 220, 0.9));
 
@@ -116,7 +116,11 @@
 
   .sendButton {
     padding: 10px 20px;
-    background-color: #007aff;
+    // background-color: #007aff;
+    // background: linear-gradient(135deg, rgba(200, 230, 255, 1), rgba(150, 200, 250, 0.9));
+    // background: linear-gradient(135deg, #c042e6, #4b52e0);
+    background: linear-gradient(135deg, rgba(120, 170, 240, 1), rgba(80, 140, 220, 0.9));
+
     color: white;
     border: none;
     border-radius: 20px;
