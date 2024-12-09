@@ -7,13 +7,11 @@ import React, { useRef, useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { store } from '@/stores/store';
 import { useRouter } from 'next/navigation';
-
 import AeroCard from '@/components/Aero/AeroCard';
 import BackgroundOverlay from '@/components/BackgroundOverlay';
-
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-
 import styles from './page.module.scss';
+import ChatWrapper from '@/components/wrapper/ChatWrapper';
 
 type ProjectPageProps = {
   params: { id: string }; // 동적 경로에서 `id` 값
@@ -40,6 +38,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
           </AeroCard>
         </div>
+        <ChatWrapper />
       </section>
     </Provider>
   );

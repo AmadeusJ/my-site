@@ -5,8 +5,8 @@
   z-index: 1000; // 다른 요소들보다 앞에 나오도록 설정
 
   .chatToggleButton {
-    width: 70px;
-    height: 70px;
+    width: 73px;
+    height: 73px;
     border-radius: 50%;
     background-color: #007bff;
     color: #ffffff;
@@ -16,26 +16,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('/icons/telegram2.svg');
+    background-image: url('/icons/chat-bubble.svg');
     background-size: cover;
     background-position: center;
   }
 
   .aeroChat {
     width: 370px;
-    height: 470px;
+    height: 100%;
     // background-color: #ffffff;
     background: linear-gradient(70deg,
-        rgba(255, 182, 193) 0%,
-        rgba(255, 160, 170) 25%,
-        rgba(230, 210, 255) 50%,
-        rgba(200, 220, 250) 75%,
-        rgba(240, 240, 250) 100%);
+        rgba(255, 182, 193, 0.9) 0%,
+        rgba(255, 160, 170, 0.9) 25%,
+        rgba(230, 210, 255, 0.9) 50%,
+        rgba(200, 220, 250, 0.9) 75%,
+        rgba(240, 240, 250, 0.9) 100%);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
     position: relative;
     transform-origin: bottom left; // 애니메이션의 기준점 설정 (원형 버튼 위치)
+    overflow: hidden;
+    /* 전체 화면을 넘어가지 않도록 제한 */
+
+
+    .aeroChatMessages {
+      /* chatForm을 제외한 나머지 공간을 채움 */
+      /* 세로 스크롤만 표시 */
+      overflow: hidden;
+      padding: 20px;
+      padding-bottom: 50px;
+      max-height: 450px;
+      height: 450px;
+      /* chatForm 높이를 제외한 영역 */
+    }
+
   }
 
   .closeButton {

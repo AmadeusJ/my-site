@@ -7,11 +7,10 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { Provider } from 'react-redux';
 import { store } from '@/stores/store';
-
 import AeroCard from '@/components/Aero/AeroCard';
 import BackgroundOverlay from '@/components/BackgroundOverlay';
-
 import styles from './page.module.scss';
+import ChatWrapper from '@/components/wrapper/ChatWrapper';
 
 export default function AboutPage() {
   const router = useRouter();
@@ -56,6 +55,7 @@ export default function AboutPage() {
             </div>
           </AeroCard>
         </div>
+        <ChatWrapper />
       </section>
     </>
   );

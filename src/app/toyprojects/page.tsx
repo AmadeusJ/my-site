@@ -10,6 +10,7 @@ import BackgroundOverlay from '@/components/BackgroundOverlay';
 import { AnimatePresence } from 'framer-motion';
 import { toyProjects } from '@/data/toyprojects';
 import styles from './page.module.scss';
+import ChatWrapper from '@/components/wrapper/ChatWrapper';
 
 export default function ToyProjectsPage() {
   const router = useRouter();
@@ -36,6 +37,7 @@ export default function ToyProjectsPage() {
             })
           }
         </div>
+        <ChatWrapper />
       </section>
     </Provider>
   );

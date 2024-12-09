@@ -22,33 +22,7 @@ export default function ContactSection() {
 
   const [testStatus, setTestStatus] = useState<string>("Not started");
 
-  const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-  // const runTests = async () => {
-  //   setTestStatus("Running...");
-  //   contactRef.current?.play();
-
-  //   // Simulate rendering initial messages
-  //   setMessages(["Initial message"]);
-  //   await delay(1000);
-
-  //   // Simulate sending a message
-  //   setMessages((prev) => [...prev, "Test message 1"]);
-  //   await delay(1000);
-
-  //   // Simulate clearing the input
-  //   setMessages((prev) => [...prev, "Test message 2"]);
-  //   await delay(1000);
-
-  //   setMessages((prev) => [...prev, "Test message 3"]);
-  //   await delay(1000);
-
-  //   setMessages((prev) => [...prev, "Test message 4"]);
-  //   await delay(1000);
-
-  //   setTestStatus("All tests passed!");
-  //   contactRef.current?.stop();
-  // };
+  // const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
   useEffect(() => {
     const { userId, isNew } = getUserId();
