@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { skills } from '@/data/skills'; // skills 데이터 import
-
+import styles from './TechDescription.module.scss';
 interface TechDescriptionProps {
   category: string | null; // 현재 Hover된 카테고리
 }
@@ -32,6 +32,7 @@ const TechDescription: React.FC<TechDescriptionProps> = ({ category }) => {
 
   return (
     <motion.div
+      className={styles.techDescriptionContainer}
       key={category || 'default'}
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
@@ -39,7 +40,6 @@ const TechDescription: React.FC<TechDescriptionProps> = ({ category }) => {
       transition={{ duration: 0.5, ease: 'easeInOut' }}
       style={{
         padding: '10px',
-        maxWidth: '600px',
       }}
     >
       <h3
@@ -56,7 +56,7 @@ const TechDescription: React.FC<TechDescriptionProps> = ({ category }) => {
         dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, '<br>') }}
       />
       {/* 기술 리스트 렌더링 */}
-      <div>
+      <div className={styles.techLevelList}>
         {skillDetails.map((skill) => (
           <div
             key={skill.name}

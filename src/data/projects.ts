@@ -67,6 +67,7 @@ export const projectTopics = [
       'Internationalization',
       'Interaction Flow Optimization',
       'UX Research',
+      'UI/UX Design',
     ],
     image: '/images/example.svg',
     items: [
