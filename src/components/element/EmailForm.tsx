@@ -5,8 +5,9 @@ import { getUserId } from "@/utils/userUtils";
 import { LottieRefCurrentProps } from "lottie-react";
 import { useWebSocket } from '@/components/context/WebSocketContext';
 import { ContactChat, sendMessage } from '@/stores/slices/contactSlice';
-import { RootState } from "@/stores/store";
+import { AppDispatch, RootState } from "@/stores/store";
 import { useSelector, useDispatch } from "react-redux";
+import { sendEmailThunk } from '@/stores/slices/contactSlice';
 
 interface EmailFormProps {
   lottieRef: MutableRefObject<LottieRefCurrentProps> | null;
@@ -18,7 +19,7 @@ export default function EmailForm({ lottieRef }: EmailFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const websocket = useWebSocket();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const messages = useSelector((state: RootState) => state.contact.messages) as ContactChat[];
 
 
@@ -46,11 +47,14 @@ export default function EmailForm({ lottieRef }: EmailFormProps) {
     let notificationMessage = {
       sender_id: 'jdw',
       receiver_id: userId,
-      content: `${email}\n메일주셔서 감사드립니다 :)\n빠르게 답장드리겠습니다.`,
+      content: `잠시만 기다려주세요..!`,
       is_system_message: true,
     }
 
-    websocket.sendMessage(emailMessage);
+    dispatch(sendEmailThunk({ user_id: userId, email: email, message: message }));
+
+    // TODO : 이메일 처리 API에서 응답 줄것
+    // websocket.sendMessage(notificationMessage);
     dispatch(sendMessage(notificationMessage));
 
     setEmail("");
