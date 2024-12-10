@@ -49,7 +49,7 @@ export default function AeroChat({ lottieRef }: AeroChatProps) {
         is_system_message: true,
       }
       dispatch(sendMessage(greetingMessage));
-      // websocket.sendMessage(greetingMessage);
+      websocket.sendMessage(greetingMessage);
       hasSentInitialMessage.current = true;
     }
   }, [inView, messages, dispatch]);
@@ -71,17 +71,14 @@ export default function AeroChat({ lottieRef }: AeroChatProps) {
 
     if (input.trim()) {
       // Send the message to the WebSocket server
-      websocket.sendMessage({
+      let message = {
         sender_id: userId,
         receiver_id: 'jdw',
         content: input,
-      });
+      }
+      websocket.sendMessage(message);
       // Store the message in the Redux store
-      dispatch(sendMessage({
-        sender_id: userId,
-        receiver_id: 'jdw',
-        content: input,
-      }));
+      dispatch(sendMessage(message));
       setInput("");
       scrollToBottom();
       console.log("이거 . 왜두번실행됌???")
@@ -124,9 +121,12 @@ export default function AeroChat({ lottieRef }: AeroChatProps) {
             animate="visible"
             variants={messageVariants}
           >
-            <div className={styles.messageBubble}>
-              <p>{message.content}</p>
-            </div>
+            <div
+              className={styles.messageBubble}
+              dangerouslySetInnerHTML={{
+                __html: message.content.replace(/\n/g, '<br>'), // \n을 <br> 태그로 변환
+              }}
+            ></div>
           </motion.div>
         ))}
       </div>

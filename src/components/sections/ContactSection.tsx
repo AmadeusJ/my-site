@@ -21,14 +21,21 @@ export default function ContactSection() {
   const dispatch: AppDispatch = useDispatch();
 
   const [testStatus, setTestStatus] = useState<string>("Not started");
+  // 상태 추가: AeroChat 렌더링 여부 관리
+  const [isChatReady, setIsChatReady] = useState(false);
 
   // const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
   useEffect(() => {
     const { userId, isNew } = getUserId();
-    // 이전 채팅 메시지 가져오기
-    dispatch(fetchPrevChatMessagesThunk({ user_id: userId }));
 
+    // 이전 채팅 메시지 가져오기
+    const loadMessages = async () => {
+      await dispatch(fetchPrevChatMessagesThunk({ user_id: userId }));
+      setIsChatReady(true); // dispatch 완료 후 렌더링 상태 업데이트
+    };
+
+    loadMessages();
   }, [dispatch]);
 
   return (
@@ -36,7 +43,7 @@ export default function ContactSection() {
       {/* 채팅 영역 */}
       <motion.div className={styles.contactChat}>
         <AeroCard className={styles.contactCard}>
-          <AeroChat lottieRef={contactRef} />
+          {isChatReady ? <AeroChat lottieRef={contactRef} /> : <p>Loading chat...</p>}
         </AeroCard>
       </motion.div>
 
@@ -66,7 +73,7 @@ export default function ContactSection() {
             </div>
             {/* 이메일 폼 */}
             <div className={styles.emailFormSection}>
-              <EmailForm />
+              <EmailForm lottieRef={contactRef} />
             </div>
           </div>
           <div className={styles.lottieArea}>

@@ -1,24 +1,79 @@
-import React, { useState } from "react";
+import React, { MutableRefObject, useState } from "react";
 import AeroCard from "../Aero/AeroCard";
 import styles from "./EmailForm.module.scss";
+import { getUserId } from "@/utils/userUtils";
+import { LottieRefCurrentProps } from "lottie-react";
+import { useWebSocket } from '@/components/context/WebSocketContext';
+import { ContactChat, sendMessage } from '@/stores/slices/contactSlice';
+import { RootState } from "@/stores/store";
+import { useSelector, useDispatch } from "react-redux";
 
-export default function EmailForm() {
+interface EmailFormProps {
+  lottieRef: MutableRefObject<LottieRefCurrentProps> | null;
+}
+
+export default function EmailForm({ lottieRef }: EmailFormProps) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSend = () => {
+  const websocket = useWebSocket();
+  const dispatch = useDispatch();
+  const messages = useSelector((state: RootState) => state.contact.messages) as ContactChat[];
+
+
+  const handleSendEmail = async (event: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLInputElement>) => {
+    event.preventDefault();
+
+    if (event.nativeEvent.isComposing) {
+      return; // IME 입력 중이면 메시지를 전송하지 않음
+    }
+
+    const { userId } = getUserId();
+
+
     if (!email || !message) {
       setStatus("error");
       return;
     }
 
-    setStatus("sending");
+    let emailMessage = {
+      sender_id: userId,
+      receiver_id: 'jdw',
+      content: `Email: ${email}\nMessage: ${message}`,
+    }
 
-    // Simulate email sending
-    setTimeout(() => {
-      setStatus("sent");
-    }, 1500);
+    let notificationMessage = {
+      sender_id: 'jdw',
+      receiver_id: userId,
+      content: `${email}\n메일주셔서 감사드립니다 :)\n빠르게 답장드리겠습니다.`,
+      is_system_message: true,
+    }
+
+    websocket.sendMessage(emailMessage);
+    dispatch(sendMessage(notificationMessage));
+
+    setEmail("");
+    setMessage("");
+
+    // setStatus("sending");
+    if (lottieRef?.current) {
+      const lottieInstance = lottieRef.current;
+      // Ensure the animation starts from the beginning
+      lottieInstance.goToAndStop(0, true);
+      // Play the animation
+      lottieInstance.play();
+      // Wait for the animation to complete
+      await new Promise<void>((resolve) => {
+        const onComplete = () => {
+          resolve();
+        };
+      });
+      // Stop the animation
+      lottieInstance.stop();
+      // Reset the animation state if needed
+      lottieInstance.goToAndStop(0, true);
+    }
   };
 
   return (
@@ -31,7 +86,7 @@ export default function EmailForm() {
             <input
               type="email"
               id="email"
-              placeholder="Enter your email..."
+              placeholder="이메일을 입력해주세요..."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -41,17 +96,17 @@ export default function EmailForm() {
             <label htmlFor="message">Your Message</label>
             <textarea
               id="message"
-              placeholder="Write your message..."
+              placeholder="메일 내용을 작성해주세요..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
             />
           </div>
-          <div className={styles.submitButton} onClick={handleSend}>
+          <div className={styles.submitButton} onClick={handleSendEmail}>
             {status === "sending" ? "Sending..." : "Send Message"}
           </div>
           {status === "sent" && <p className={styles.successMessage}>Message sent successfully!</p>}
-          {status === "error" && <p className={styles.errorMessage}>Please fill out all fields.</p>}
+          {status === "error" && <p className={styles.errorMessage}>이메일과 내용을 입력해주세요..!</p>}
         </div>
       </AeroCard>
     </div>
