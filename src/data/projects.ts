@@ -15,7 +15,7 @@ import Project9 from '@/assets/animations/projects/project9.json';
 export const projectTopics = [
   {
     id: 1,
-    title: 'LLM Applications',
+    title: 'Web / LLM Applications',
     description: [
       'Contextual UI',
       'Data Visualization',
@@ -61,7 +61,7 @@ export const projectTopics = [
   },
   {
     id: 3,
-    title: 'A11Y + UI/UX',
+    title: 'A11Y + UI / UX',
     description: [
       'Accessibility',
       'Internationalization',
@@ -79,11 +79,17 @@ export const projectTopics = [
   }
 ]
 
+interface ProjectTag {
+  id: number;
+  type: string;
+}
+
 export type Project = {
   id: number;
   category: number[] | undefined;
   name: string;
   purpose: string[];
+  tags: ProjectTag[] | undefined;
   customer: string[] | undefined;
   startDate: string | undefined;
   endDate: string | undefined;
