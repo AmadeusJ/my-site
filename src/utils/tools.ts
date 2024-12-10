@@ -5,7 +5,7 @@
  */
 export function parseCategory(categoryNum: number): string {
   const categoryMap: { [key: number]: string } = {
-    1: 'LLM Application',
+    1: 'Web / LLM Application',
     2: 'Platform / Service Dev',
     3: 'A11Y + UI/UX',
   };

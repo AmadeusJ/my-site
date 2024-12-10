@@ -13,6 +13,8 @@ import { projects } from '@/data/projects';
 import styles from './page.module.scss';
 import { parseCategory } from '@/utils/tools';
 import ChatWrapper from '@/components/wrapper/ChatWrapper';
+
+
 export default function ProjectsPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -40,7 +42,7 @@ export default function ProjectsPage() {
 
   const categories = [
     'All',
-    'LLM Application',
+    'Web / LLM Application',
     'Platform / Service Dev',
     'A11Y + UI/UX',
   ];
