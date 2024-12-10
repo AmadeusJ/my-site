@@ -7,6 +7,7 @@ import styles from './ProjectCard.module.scss';
 import { Project } from '@/data/projects';
 import { ToyProject } from '@/data/toyprojects';
 import Lottie from 'lottie-react';
+import { Chip } from "@nextui-org/chip";
 
 interface ProjectCardProps {
   project: Project | ToyProject;

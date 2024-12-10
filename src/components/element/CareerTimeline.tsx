@@ -11,6 +11,10 @@ const CareerTimeline = () => {
     threshold: 0.2, // 20%가 화면에 들어올 때 트리거
   });
 
+  const openWebsite = (url: string) => {
+    window.open(url, '_blank');
+  }
+
   return (
     <div ref={ref}>
       <VerticalTimeline animate={inView}>
@@ -44,9 +48,14 @@ const CareerTimeline = () => {
             <img src="/icons/bar-chart.svg" alt="MailPlug" />
           </div>}
         >
-          <h3>(주)마인즈앤컴퍼니</h3>
-          <h4>Minds & Company</h4>
-          <p>Developed scalable AI-driven frontend platforms.</p>
+          <div
+            style={{ display: "flex", flexDirection: "row", alignItems: "center", cursor: "pointer" }}
+            onClick={() => openWebsite("https://mnc.ai/")}
+          >
+            <h3>(주)마인즈앤컴퍼니</h3>
+            <h4 style={{ marginLeft: "10px" }}>Minds & Company</h4>
+          </div>
+          <p>Frontend 개발 전담 / LLM 관련 Web 개발 / 플랫폼 개발 & 운영</p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
@@ -79,9 +88,14 @@ const CareerTimeline = () => {
             <img src="/icons/rocket.svg" alt="MailPlug" />
           </div>}
         >
-          <h3>(주)메일플러그</h3>
-          <h4>MailPlug</h4>
-          <p>Built collaboration tools with React and Django.</p>
+          <div
+            style={{ display: "flex", flexDirection: "row", alignItems: "center", cursor: "pointer" }}
+            onClick={() => openWebsite("https://www.mailplug.com/")}
+          >
+            <h3>(주)메일플러그</h3>
+            <h4 style={{ marginLeft: "10px" }}>MailPlug</h4>
+          </div>
+          <p>Fullstack 개발 / 사내 메신저 서비스 개발 & 운영</p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
@@ -114,9 +128,14 @@ const CareerTimeline = () => {
             <img src="/icons/book.svg" alt="MailPlug" />
           </div>}
         >
-          <h3>숭실대학교</h3>
-          <h4>Soongsil University</h4>
-          <p>Developed scalable AI-driven frontend platforms.</p>
+          <div
+            style={{ display: "flex", flexDirection: "row", alignItems: "center", cursor: "pointer" }}
+            onClick={() => openWebsite("https://www.ssu.ac.kr/")}
+          >
+            <h3>숭실대학교</h3>
+            <h4 style={{ marginLeft: "10px" }}>Soongsil University</h4>
+          </div>
+          <p>생명정보학 전공 / 학사 & 석사 졸업</p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
@@ -149,9 +168,14 @@ const CareerTimeline = () => {
             <img src="/icons/graduation.svg" alt="MailPlug" />
           </div>}
         >
-          <h3>경북고등학교</h3>
-          <h4>Gyeongbuk High School</h4>
-          <p>Built collaboration tools with React and Django.</p>
+          <div
+            style={{ display: "flex", flexDirection: "row", alignItems: "center", cursor: "pointer" }}
+            onClick={() => openWebsite("https://kyeongbuk.dge.hs.kr/kyeongbukh/main.do")}
+          >
+            <h3>경북고등학교</h3>
+            <h4 style={{ marginLeft: "10px" }}>Kyeongbuk High School</h4>
+          </div>
+          <p>개발자를 하리라고는 상상도 못할 시절...</p>
         </VerticalTimelineElement>
       </VerticalTimeline>
     </div>
