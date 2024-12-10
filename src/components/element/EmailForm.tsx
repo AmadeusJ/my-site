@@ -107,7 +107,7 @@ export default function EmailForm({ lottieRef }: EmailFormProps) {
             />
           </div>
           <div className={styles.submitButton} onClick={handleSendEmail}>
-            {status === "sending" ? "Sending..." : "Send Message"}
+            {status === "sending" ? "Sending..." : "Send Email"}
           </div>
           {status === "sent" && <p className={styles.successMessage}>Message sent successfully!</p>}
           {status === "error" && <p className={styles.errorMessage}>이메일과 내용을 입력해주세요..!</p>}

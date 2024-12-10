@@ -59,13 +59,23 @@ export default function ContactSection() {
           <div className={styles.contactArea}>
             <div className={styles.contactButtons}>
               {/* 경력기술서 다운로드 버튼 */}
-              <Tooltip content={"Resume"} showArrow color="primary" placement="top">
+              <Tooltip content={
+                <div className='px-1 py-2'>
+                  <div className='text-lg font-bold'>Resume</div>
+                  <div className='text-sm'>저의 경력기술서를 다운로드 하실 수 있습니다.</div>
+                </div>
+              } showArrow color="primary" placement="top">
                 <motion.div>
                   <ResumeButton />
                 </motion.div>
               </Tooltip>
               {/* About Me 이동 버튼 */}
-              <Tooltip content={"About Me"} showArrow color="primary" placement="top">
+              <Tooltip content={
+                <div className='px-1 py-2'>
+                  <div className='text-lg font-bold'>About Me</div>
+                  <div className='text-sm'>저에 대해 더 알아보시겠어요?</div>
+                </div>
+              } showArrow color="primary" placement="top">
                 <motion.div>
                   <AboutMeButton />
                 </motion.div>
