@@ -2,6 +2,14 @@
   position: relative;
   z-index: 2;
 
+  .projectChip {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    /* 카드 위에 표시되도록 설정 */
+  }
+
   .projectCard {
     padding: 20px;
     cursor: pointer;

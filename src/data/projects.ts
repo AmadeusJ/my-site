@@ -124,7 +124,7 @@ export const projects: Project[] = [
     customer: ['우리은행'],
     startDate: '2023.12',
     endDate: '2024.06',
-    isDone: true,
+    isDone: false,
     description: [],
     technologies: ['Next.js', 'React'],
     roles: [

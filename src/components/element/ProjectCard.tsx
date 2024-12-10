@@ -60,6 +60,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, prefix }) => 
       onMouseEnter={() => lottieRef.current?.play()}
       onMouseLeave={() => lottieRef.current?.stop()}
     >
+      {
+        !project.isDone && (
+          <Chip className={styles.projectChip} variant='bordered' color='secondary'>In Progress</Chip>
+        )
+      }
       <AeroCard className={styles.projectCard}>
         <div className={styles.projectHeader}>
           {
