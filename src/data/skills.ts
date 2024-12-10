@@ -9,14 +9,14 @@ export const skills = [
         level: 5,
       },
       {
-        name: 'Next.js',
-        icon: '/svgs/next-js.svg',
-        level: 4,
-      },
-      {
         name: 'Vue.js',
         icon: '/svgs/vuejs.svg',
-        level: 4,
+        level: 5,
+      },
+      {
+        name: 'Next.js',
+        icon: '/svgs/next-js.svg',
+        level: 5,
       },
       {
         name: 'TypeScript',
@@ -26,13 +26,18 @@ export const skills = [
       {
         name: 'JavaScript',
         icon: '/svgs/js.svg',
-        level: 4,
+        level: 5,
       },
       {
         name: 'SASS',
         icon: '/svgs/sass.svg',
         level: 4,
       },
+      {
+        name: 'Browser',
+        icon: '/svgs/chrome.svg',
+        level: 4,
+      }
     ]
   },
   {
@@ -69,20 +74,20 @@ export const skills = [
         icon: '/svgs/mariadb.svg',
         level: 4,
       },
-      {
-        name: 'Redis',
-        icon: '/svgs/redis.svg',
-        level: 4,
-      }
+      // {
+      //   name: 'Redis',
+      //   icon: '/svgs/redis.svg',
+      //   level: 4,
+      // }
     ]
   },
   {
-    category: 'ETC',
+    category: 'Server/Infra',
     details: [
       {
         name: 'Linux',
         icon: '/svgs/linux.svg',
-        level: 4,
+        level: 5,
       },
       {
         name: 'Docker',
@@ -93,13 +98,18 @@ export const skills = [
       {
         name: 'Nginx',
         icon: '/svgs/nginx.svg',
-        level: 4,
+        level: 3,
       },
       {
         name: 'AWS',
         icon: '/svgs/aws.svg',
-        level: 4,
+        level: 3,
       },
+      {
+        name: 'Grafana',
+        icon: '/svgs/grafana.svg',
+        level: 2,
+      }
 
     ],
   },
@@ -107,13 +117,13 @@ export const skills = [
     category: 'Tools',
     details: [
       {
-        name: 'GitFlow',
-        icon: '/svgs/gitflow.svg',
-        level: 4,
-      },
-      {
         name: 'Git',
         icon: '/svgs/github.svg',
+        level: 5,
+      },
+      {
+        name: 'GitFlow',
+        icon: '/svgs/gitflow.svg',
         level: 4,
       },
       {
@@ -124,12 +134,17 @@ export const skills = [
       {
         name: 'Jira',
         icon: '/svgs/jira.svg',
-        level: 4,
+        level: 5,
       },
       {
         name: 'Figma',
         icon: '/svgs/figma.svg',
-        level: 4,
+        level: 3,
+      },
+      {
+        name: 'Notion',
+        icon: '/svgs/notion.svg',
+        level: 3,
       }
     ],
   },

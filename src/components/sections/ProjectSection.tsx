@@ -76,7 +76,7 @@ export default function ProjectSection() {
                         Array.isArray(topic.description) && topic.description.map((desc, index) => {
                           return (
                             <li key={index}>
-                              <img src="/icons/check (1).svg" alt="check" width={16} height={16} />
+                              <img src="/icons/check_2.svg" alt="check" width={18} height={18} />
                               {desc}
                             </li>
                           )
