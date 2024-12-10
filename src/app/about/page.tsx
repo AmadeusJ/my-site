@@ -25,38 +25,36 @@ export default function AboutPage() {
   return (
     <>
       <Provider store={store}>
-        <AnimatePresence>
-          <BackgroundOverlay key={'about'} color={backgroundColors[0]} />
-        </AnimatePresence>
+        <BackgroundOverlay key={'about'} color={backgroundColors[0]} />
+        <section className={styles.aboutSection}>
+          <div className={styles.aboutContents}>
+            <div className={styles.aboutProfile}>
+              <AeroCard className={styles.aboutProfileCard}>
+                <div className={styles.aboutProfileImage}></div>
+                <div className={styles.aboutProfileText}>
+                  <h1>About Me</h1>
+                </div>
+              </AeroCard>
+            </div>
+            <div className={styles.aboutMe}>
+              <AeroCard className={styles.aboutMeCard}>
+                <div className={styles.aboutMeText}>
+                  <h1>About Me</h1>
+                </div>
+              </AeroCard>
+            </div>
+          </div>
+          <div className={styles.aboutFEContents}>
+            <AeroCard className={styles.aboutFECard}>
+              <div className={styles.aboutFEText}>
+                <h1>About FE1</h1>
+              </div>
+            </AeroCard>
+          </div>
+          <ChatWrapper />
+        </section>
       </Provider>
 
-      <section className={styles.aboutSection}>
-        <div className={styles.aboutContents}>
-          <div className={styles.aboutProfile}>
-            <AeroCard className={styles.aboutProfileCard}>
-              <div className={styles.aboutProfileImage}></div>
-              <div className={styles.aboutProfileText}>
-                <h1>About Me</h1>
-              </div>
-            </AeroCard>
-          </div>
-          <div className={styles.aboutMe}>
-            <AeroCard className={styles.aboutMeCard}>
-              <div className={styles.aboutMeText}>
-                <h1>About Me</h1>
-              </div>
-            </AeroCard>
-          </div>
-        </div>
-        <div className={styles.aboutFEContents}>
-          <AeroCard className={styles.aboutFECard}>
-            <div className={styles.aboutFEText}>
-              <h1>About FE1</h1>
-            </div>
-          </AeroCard>
-        </div>
-        <ChatWrapper />
-      </section>
     </>
   );
 }

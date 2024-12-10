@@ -1,0 +1,14 @@
+.toyProjectDetailSection {
+  height: 100vh;
+  background: transparent;
+  padding: 50px;
+
+  .toyProjectDetailContents {
+    flex: 1;
+
+    .toyProjectDetailCard {
+      height: 100%;
+      max-height: 100%;
+    }
+  }
+}

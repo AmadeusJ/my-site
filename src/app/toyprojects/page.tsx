@@ -20,9 +20,7 @@ export default function ToyProjectsPage() {
 
   return (
     <Provider store={store}>
-      <AnimatePresence>
-        <BackgroundOverlay color={backgroundColors[0]} />
-      </AnimatePresence>
+      <BackgroundOverlay color={backgroundColors[0]} />
 
       <section className={styles.toyProjectsSection}>
         <div className={styles.projectList}>

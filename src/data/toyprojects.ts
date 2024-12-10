@@ -7,6 +7,7 @@ export type ToyProject = {
   name: string;
   category: number[] | undefined;
   purpose: string[];
+  tags: { id: number, type: string, color: string }[] | undefined;
   description: string[];
   technologies: string[];
   startDate: string;
@@ -26,6 +27,14 @@ export const toyProjects: ToyProject[] = [
     name: 'My Portfolio',
     category: [1, 2],
     purpose: ['포트폴리오 사이트 개발'],
+    tags: [
+      { id: 1, type: 'Next.js', color: 'warning' },
+      { id: 2, type: 'React', color: 'warning' },
+      { id: 3, type: 'TypeScript', color: 'warning' },
+      { id: 4, type: 'Python', color: 'warning' },
+      { id: 5, type: 'Docker', color: 'warning' },
+      { id: 6, type: 'UI/UX', color: 'warning' },
+    ],
     description: [],
     technologies: ['Next.js', 'React', 'TypeScript'],
     startDate: '2024.12',

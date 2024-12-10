@@ -82,6 +82,7 @@ export const projectTopics = [
 interface ProjectTag {
   id: number;
   type: string;
+  color: string;
 }
 
 export type Project = {
@@ -109,9 +110,17 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
-    category: [1, 2],
+    category: [1, 2, 3],
     name: 'GenOS',
     purpose: ['LLM 앱 커스터마이징 플랫폼 개발'],
+    tags: [
+      { id: 1, type: 'LLM', color: 'primary' },
+      { id: 2, type: 'LLMOps', color: 'primary' },
+      { id: 3, type: 'React', color: 'primary' },
+      { id: 4, type: 'Next.js', color: 'primary' },
+      { id: 6, type: 'Chat', color: 'primary' },
+      { id: 7, type: 'i18n', color: 'primary' },
+    ],
     customer: ['우리은행'],
     startDate: '2023.12',
     endDate: '2024.06',
@@ -134,9 +143,16 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    category: [1],
+    category: [1, 3],
     name: '우리은행 고객상담 AI Banker',
     purpose: ['예·적금 상담 및 상품 추천 서비스 제공'],
+    tags: [
+      { id: 1, type: 'LLM', color: 'primary' },
+      { id: 6, type: 'Chat', color: 'primary' },
+      { id: 7, type: 'Webview', color: 'primary' },
+      { id: 8, type: 'Mobile', color: 'primary' },
+      { id: 9, type: 'WON뱅킹', color: 'primary' },
+    ],
     customer: ['우리은행'],
     startDate: '2023.12',
     endDate: '2024.06',
@@ -160,6 +176,13 @@ export const projects: Project[] = [
     category: [1],
     name: 'AI Search (Deep Surfing)',
     purpose: ['의미 기반 자연어 검색 솔루션 개발'],
+    tags: [
+      { id: 1, type: 'LLM', color: 'primary' },
+      { id: 6, type: 'Chat', color: 'primary' },
+      { id: 10, type: 'Vue', color: 'primary' },
+      { id: 11, type: 'Python', color: 'primary' },
+      { id: 12, type: 'AI Search', color: 'primary' },
+    ],
     customer: undefined,
     startDate: '2023.06',
     endDate: '2023.12',
@@ -183,6 +206,13 @@ export const projects: Project[] = [
     category: [1],
     name: 'LLMOps',
     purpose: ['기업 내 LLM 운영 환경 구축'],
+    tags: [
+      { id: 1, type: 'LLM', color: 'primary' },
+      { id: 13, type: 'LLMOps', color: 'primary' },
+      { id: 14, type: 'Python', color: 'primary' },
+      { id: 15, type: 'React', color: 'primary' },
+      { id: 16, type: 'On-Premise', color: 'primary' },
+    ],
     customer: undefined,
     startDate: '2023.06',
     endDate: '2023.10',
@@ -206,6 +236,14 @@ export const projects: Project[] = [
     category: [1],
     name: 'SQL Assistant',
     purpose: ['LLM 기반 SQL 쿼리 작성 지원 도구 개발'],
+    tags: [
+      { id: 1, type: 'LLM', color: 'primary' },
+      { id: 17, type: 'SQL', color: 'primary' },
+      { id: 18, type: 'Vue', color: 'primary' },
+      { id: 19, type: 'Python', color: 'primary' },
+      { id: 20, type: 'On-Premise', color: 'primary' },
+      { id: 21, type: 'Assistant', color: 'primary' },
+    ],
     customer: ['BC 카드'],
     startDate: '2023.09',
     endDate: '2023.10',
@@ -228,9 +266,17 @@ export const projects: Project[] = [
   },
   {
     id: 5,
-    category: [2],
+    category: [2, 3],
     name: 'AI 경진대회 플랫폼',
     purpose: ['인공지능 경진대회 플랫폼 개발'],
+    tags: [
+      { id: 21, type: 'Platform', color: 'primary' },
+      { id: 22, type: 'UI/UX', color: 'primary' },
+      { id: 23, type: 'Vue', color: 'primary' },
+      { id: 24, type: 'AWS', color: 'primary' },
+      { id: 25, type: 'Python', color: 'primary' },
+      { id: 26, type: 'Docker', color: 'primary' },
+    ],
     customer: ['AI Connect'],
     startDate: '2021.05',
     endDate: '2023.05',
@@ -256,9 +302,16 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    category: [2],
+    category: [2, 3],
     name: 'MLOps',
     purpose: ['DevOps 기반 AI 모델 개발 환경 제공'],
+    tags: [
+      { id: 23, type: 'Vue', color: 'primary' },
+      { id: 25, type: 'Python', color: 'primary' },
+      { id: 26, type: 'Docker', color: 'primary' },
+      { id: 27, type: 'Monitoring', color: 'primary' },
+      { id: 28, type: 'Machine Learning', color: 'primary' },
+    ],
     customer: ['롯데손해보험', "Payletter"],
     startDate: '2021.03',
     endDate: '2021.12',
@@ -285,6 +338,13 @@ export const projects: Project[] = [
     category: [2],
     name: 'Image Data Annotation Tool',
     purpose: ['이미지 데이터 라벨링 도구 개발'],
+    tags: [
+      { id: 33, type: 'React', color: 'primary' },
+      { id: 31, type: 'Python', color: 'primary' },
+      { id: 34, type: 'Django', color: 'primary' },
+      { id: 29, type: 'CVAT', color: 'primary' },
+      { id: 32, type: 'Docker', color: 'primary' },
+    ],
     customer: ['민팃'],
     startDate: '2023.08',
     endDate: '2024.02',
@@ -305,9 +365,18 @@ export const projects: Project[] = [
   },
   {
     id: 8,
-    category: [2],
+    category: [2, 3],
     name: '사내 메신저: Puddlr',
     purpose: ['사내 메신저 서비스 개발'],
+    tags: [
+      { id: 35, type: 'Vue', color: 'primary' },
+      { id: 36, type: 'Python', color: 'primary' },
+      { id: 37, type: 'Django', color: 'primary' },
+      { id: 37, type: 'Redis', color: 'primary' },
+      { id: 37, type: 'RabbitMQ', color: 'primary' },
+      { id: 37, type: 'WebSocket', color: 'primary' },
+
+    ],
     customer: ['민팃'],
     startDate: '2019.04',
     endDate: '2021.03',

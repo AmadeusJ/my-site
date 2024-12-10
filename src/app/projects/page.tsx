@@ -56,9 +56,7 @@ export default function ProjectsPage() {
 
   return (
     <Provider store={store}>
-      <AnimatePresence>
-        <BackgroundOverlay key={'projects'} color={backgroundColors[0]} />
-      </AnimatePresence>
+      <BackgroundOverlay key={'projects'} color={backgroundColors[0]} />
 
       <section className={styles.projectsSection}>
         <div className={styles.projectCategory}>

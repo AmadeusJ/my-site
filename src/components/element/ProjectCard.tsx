@@ -82,6 +82,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, prefix }) => 
         </div>
         <div className={styles.projectBody}>
           <h1>{project.name}</h1>
+          <div className={styles.projectPurpose}>
+            {project.purpose.map((purpose, index) => (
+              <div key={index}>{purpose}</div>
+            ))}
+          </div>
+          {
+            project.tags && (
+              <div className={styles.projectTags}>
+                {project.tags.map((tag, index) => (
+                  <Chip key={`${tag.id}-${index}`} variant='flat' color={tag.color}>{tag.type}</Chip>
+                ))}
+              </div>
+            )
+          }
         </div>
       </AeroCard>
     </motion.div>

@@ -13,26 +13,26 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import styles from './page.module.scss';
 import ChatWrapper from '@/components/wrapper/ChatWrapper';
 
-type ProjectPageProps = {
+type ToyProjectPageProps = {
   params: { id: string }; // 동적 경로에서 `id` 값
 };
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default function ToyProjectPage({ params }: ToyProjectPageProps) {
   const { id } = React.use(params);
   const router = useRouter();
-  const backgroundColors = ['var(--project-detail-bg-color)'];
+  const backgroundColors = ['var(--toyprojects-bg-color)'];
 
   useEffect(() => {
   }, [router]);
 
   return (
     <Provider store={store}>
-      <BackgroundOverlay key={`project-${id}`} color={backgroundColors[0]} />
-      <section className={styles.projectDetailSection}>
-        <div className={styles.projectDetailContents}>
-          <AeroCard className={styles.projectDetailCard}>
-            <div className={styles.projectDetailText}>
-              <h1>Project Detail</h1>
+      <BackgroundOverlay key={`toyproject-${id}`} color={backgroundColors[0]} />
+      <section className={styles.toyProjectDetailSection}>
+        <div className={styles.toyProjectDetailContents}>
+          <AeroCard className={styles.toyProjectDetailCard}>
+            <div className={styles.toyProjectDetailText}>
+              <h1>Toy Project Detail</h1>
             </div>
           </AeroCard>
         </div>
