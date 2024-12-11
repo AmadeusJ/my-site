@@ -164,7 +164,7 @@ export const projects: Project[] = [
     isDone: true,
     description: [
       "프로젝트 시작전 PoC 단계에서 Vuejs 통해서 프로토타입 개발했습니다.",
-      "<strong>웹뷰 기반의 대화형 UI</strong>를 모달 레이어 형식으로 기존의 원뱅킹 챗봇에 추가하여 구현했습니다.",
+      "<strong>Webview 기반의 모바일 앱</strong>에서 대화형 UI를 모달 레이어 형식으로 기존의 원뱅킹 챗봇에 추가하여 구현했습니다.",
       "Javascript / Jquery를 이용해 ChatGPT 효과를 내는 대화형 인터페이스를 구축했습니다.",
       "서버에러가 있는 경우, 사용자가 <strong>쾨적한 UX</strong>를 경험할 수 있도록, 안내메세지, <strong>Retry 로직</strong>등을 이용해 예외처리를 구현했습니다."
     ],
@@ -175,11 +175,11 @@ export const projects: Project[] = [
     ],
     results: ["예·적금 상담 및 상품 추천 서비스 제공"],
     challenges: [
-      "원뱅킹 앱이 모바일 환경에서 웹뷰 기반의 앱이다 보니, 로컬 PC에서 개발 후, 모바일 환경에서 테스트 하는 것이 어려웠습니다..",
-      "마인즈앤컴퍼니에서의 처음이자 마지막 SI(?) 프로젝트였는데, 기존에 원뱅킹에서 개발이 필요한 부분의 가이드가 없어서 직접 소스를 파악하며 개발했던 아픈 기억이 있습니다..",
+      "원뱅킹 앱이 모바일 환경에서 Webview 기반의 앱이다 보니, 로컬 PC에서 개발 후, 모바일 환경에서 테스트 하는 것이 어려웠습니다..",
+      "기존에 원뱅킹에서 개발이 필요한 부분의 가이드가 없어서 직접 소스를 파악하며 개발했던 아픈 기억이 있습니다..",
     ],
     learningPoints: [
-      "Webview 기반의 모바일 앱 개발시 UI에서 신경써줘야 할 Native Interface",
+      "Webview 기반의 모바일 앱 개발시 UI에서 신경써줘야 할 <strong>Native Interface</strong>.",
       "원뱅킹 앱의 챗봇 기능을 사용자가 얼마나 사용하는지를 떠나서, 제1금융권 은행의 앱의 기능을 개발해본 값진 경험",
     ],
     image: '/images/example.svg',

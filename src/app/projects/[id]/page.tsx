@@ -138,7 +138,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <div className={`${styles.projectDetailMoreInfoItem} ${styles.projectDetailMoreInfoWhatHow}`}>
               <h2>What & How</h2>
               {project.description.map((description, index) => (
-                <p key={`project-description-${index}`} dangerouslySetInnerHTML={{ __html: description }} />
+                <div className={styles.projectDetailMoreInfoDetailItems} key={`project-description-${index}`}>
+                  <img src={`/icons/correct.svg`} alt='description' width={20} height={20} />
+                  <p dangerouslySetInnerHTML={{ __html: description }} />
+                </div>
               ))}
             </div>
 
@@ -146,7 +149,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <div className={`${styles.projectDetailMoreInfoItem} ${styles.projectDetailMoreInfoWhatHow}`}>
               <h2>Challenges</h2>
               {project.challenges.map((challenge, index) => (
-                <p key={`project-challenge-${index}`} dangerouslySetInnerHTML={{ __html: challenge }} />
+                <div className={styles.projectDetailMoreInfoDetailItems} key={`project-challenge-${index}`}>
+                  <img src={`/icons/question-mark.svg`} alt='challenge' width={20} height={20} />
+                  <p dangerouslySetInnerHTML={{ __html: challenge }} />
+                </div>
               ))}
             </div>
 
@@ -154,7 +160,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <div className={`${styles.projectDetailMoreInfoItem} ${styles.projectDetailMoreInfoWhatHow}`}>
               <h2>Learning Points</h2>
               {project.learningPoints.map((learningPoint, index) => (
-                <p key={`project-learningPoint-${index}`} dangerouslySetInnerHTML={{ __html: learningPoint }} />
+                <div className={styles.projectDetailMoreInfoDetailItems} key={`project-learningPoint-${index}`}>
+                  <img src={`/icons/like.svg`} alt='learningPoint' width={20} height={20} />
+                  <p dangerouslySetInnerHTML={{ __html: learningPoint }} />
+                </div>
               ))}
             </div>
           </AeroCard>
