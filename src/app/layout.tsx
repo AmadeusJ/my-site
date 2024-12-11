@@ -4,6 +4,7 @@ import Footer from '@/components/footer/Footer';
 import AnimatePresenceWrapper from '@/components/wrapper/AnimatePresenceWrapper';
 import ProviderWrapper from '@/components/wrapper/ProviderWrapper';
 import { WebSocketProvider } from '@/components/context/WebSocketContext';
+import Header from '@/components/header/Header';
 import '@/styles/globals.css';
 import "react-vertical-timeline-component/style.min.css";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
           <WebSocketProvider>
             <AnimatePresenceWrapper>
               {/* Main Content */}
+              <Header />
               <main>{children}</main>
             </AnimatePresenceWrapper>
             <Footer />

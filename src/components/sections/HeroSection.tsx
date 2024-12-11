@@ -137,7 +137,9 @@ export default function HeroSection() {
             >
               이 포트폴리오에서는 제가 경험한 프로젝트와 사용 기술, 경력 이야기를 만나보실 수 있습니다.
             </motion.p>
-            <motion.p>
+            <motion.p
+              className={styles.heroText}
+            >
               아래에 Projects, Tech, Career, 그리고 Contact 섹션이 준비되어있습니다! 천천히 둘러봐주세요! 감사합니다!
             </motion.p>
           </div>
