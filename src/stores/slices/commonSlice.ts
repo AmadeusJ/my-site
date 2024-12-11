@@ -10,6 +10,7 @@ interface CommonState {
   isNewVisitor: boolean;
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
+  currentProjectCategory: number;
 }
 
 const initialState: CommonState = {
@@ -19,6 +20,7 @@ const initialState: CommonState = {
   isNewVisitor: false,
   status: 'idle',
   error: null,
+  currentProjectCategory: 0,
 };
 
 export const postWelcome = createAsyncThunk('common/postWelcome', async (data: WelcomeRequest) => {
@@ -32,6 +34,9 @@ const commonSlice = createSlice({
   reducers: {
     setIsNewVisitor: (state, action) => {
       state.isNewVisitor = action.payload;
+    },
+    setCurrentProjectCategory: (state, action) => {
+      state.currentProjectCategory = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -49,6 +54,6 @@ const commonSlice = createSlice({
   },
 });
 
-export const { setIsNewVisitor } = commonSlice.actions;
+export const { setIsNewVisitor, setCurrentProjectCategory } = commonSlice.actions;
 
 export default commonSlice.reducer;

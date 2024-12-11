@@ -3,8 +3,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Provider } from 'react-redux';
-import { store } from '@/stores/store';
+import { Provider, useSelector } from 'react-redux';
+import { RootState, store } from '@/stores/store';
 import ProjectCard from '@/components/element/ProjectCard';
 import BackgroundOverlay from '@/components/BackgroundOverlay';
 import CategoryButton from '@/components/button/CategoryButton';
@@ -13,10 +13,15 @@ import { projects } from '@/data/projects';
 import styles from './page.module.scss';
 import { parseCategory } from '@/utils/tools';
 import ChatWrapper from '@/components/wrapper/ChatWrapper';
+import { setCurrentProjectCategory } from '@/stores/slices/commonSlice';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/stores/store';
 
 
 export default function ProjectsPage() {
   const router = useRouter();
+  const dispatch: AppDispatch = useDispatch();
+  const currentProjectCategory = useSelector((state: RootState) => state.common.currentProjectCategory);
   const searchParams = useSearchParams();
   const categoryQuery = parseCategory(Number(searchParams.get('category')));
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -28,7 +33,11 @@ export default function ProjectsPage() {
 
   useEffect(() => {
     setFilteredProjects([]);  // 초기화
-    setActiveCategory(categoryQuery)
+    if (currentProjectCategory === 0) {
+      setActiveCategory('All');
+    } else {
+      setActiveCategory(categories[currentProjectCategory]);
+    }
     if (categoryQuery === 'All') {
       setFilteredProjects(projects);
     } else {
@@ -51,8 +60,10 @@ export default function ProjectsPage() {
     setActiveCategory(category);
     if (category === 'All') {
       router.push('/projects');
+      dispatch(setCurrentProjectCategory(0));
     } else {
       router.push(`/projects?category=${categories.indexOf(category)}`);
+      dispatch(setCurrentProjectCategory(categories.indexOf(category)));
     }
   };
 
