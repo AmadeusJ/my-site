@@ -127,12 +127,18 @@ export default function HeroSection() {
                 </motion.span>
               ))}
             </motion.h1>
+            <motion.h1>
+              {'좋은 하루되세요!'}
+            </motion.h1>
           </div>
           <div className={styles.heroContent}>
             <motion.p
               className={styles.heroText}
             >
-              이곳은 저의 Portfolio 사이트로, 제가 진행한 다양한 프로젝트를 소개하는 공간입니다. 앞으로도 새로운 프로젝트들이 지속적으로 추가될 예정이니 많은 관심 부탁드립니다. 방문해 주셔서 감사합니다!
+              이 포트폴리오에서는 제가 경험한 프로젝트와 사용 기술, 경력 이야기를 만나보실 수 있습니다.
+            </motion.p>
+            <motion.p>
+              아래에 Projects, Tech, Career, 그리고 Contact 섹션이 준비되어있습니다! 천천히 둘러봐주세요! 감사합니다!
             </motion.p>
           </div>
         </div>
