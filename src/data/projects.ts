@@ -98,6 +98,9 @@ export type Project = {
   isDone: boolean;
   description: string[];
   technologies: string[];
+  challenges: string[] | undefined;
+  learningPoints: string[] | undefined;
+  screenshots: string[] | undefined;
   roles: string[];
   results: string[] | undefined;
   image: string | undefined;
@@ -122,12 +125,12 @@ export const projects: Project[] = [
       { id: 6, type: 'Chat', color: 'primary' },
       { id: 7, type: 'i18n', color: 'primary' },
     ],
-    customer: ['우리은행'],
+    customer: ['내부프로젝트', '미래에셋증권', '삼성화재', '삼성디스플레이'],
     startDate: '2023.12',
     endDate: '2024.06',
     isDone: false,
     description: [],
-    technologies: ['Next.js', 'React'],
+    technologies: ['next-js', 'React'],
     roles: [
       "프론트엔드 개발",
       "MSA 기반 플랫폼 구조 설계 및 구현",
@@ -153,18 +156,32 @@ export const projects: Project[] = [
       { id: 7, type: 'Webview', color: 'primary' },
       { id: 8, type: 'Mobile', color: 'primary' },
       { id: 9, type: 'WON뱅킹', color: 'primary' },
+      { id: 10, type: 'B2C', color: 'primary' },
     ],
-    customer: ['우리은행'],
+    customer: ['우리금융그룹'],
     startDate: '2023.12',
     endDate: '2024.06',
     isDone: true,
-    description: [],
-    technologies: ['javascript', 'react'],
+    description: [
+      "프로젝트 시작전 PoC 단계에서 Vuejs 통해서 프로토타입 개발했습니다.",
+      "<strong>웹뷰 기반의 대화형 UI</strong>를 모달 레이어 형식으로 기존의 원뱅킹 챗봇에 추가하여 구현했습니다.",
+      "Javascript / Jquery를 이용해 ChatGPT 효과를 내는 대화형 인터페이스를 구축했습니다.",
+      "서버에러가 있는 경우, 사용자가 <strong>쾨적한 UX</strong>를 경험할 수 있도록, 안내메세지, <strong>Retry 로직</strong>등을 이용해 예외처리를 구현했습니다."
+    ],
+    technologies: ['vuejs', 'javascript', 'jsp', 'react'],
     roles: [
       "대화형 UI 설계 및 웹뷰 기반 프론트엔드 개발",
       "자연어 처리 결과를 활용한 추천 인터페이스 구축"
     ],
     results: ["예·적금 상담 및 상품 추천 서비스 제공"],
+    challenges: [
+      "원뱅킹 앱이 모바일 환경에서 웹뷰 기반의 앱이다 보니, 로컬 PC에서 개발 후, 모바일 환경에서 테스트 하는 것이 어려웠습니다..",
+      "마인즈앤컴퍼니에서의 처음이자 마지막 SI(?) 프로젝트였는데, 기존에 원뱅킹에서 개발이 필요한 부분의 가이드가 없어서 직접 소스를 파악하며 개발했던 아픈 기억이 있습니다..",
+    ],
+    learningPoints: [
+      "Webview 기반의 모바일 앱 개발시 UI에서 신경써줘야 할 Native Interface",
+      "원뱅킹 앱의 챗봇 기능을 사용자가 얼마나 사용하는지를 떠나서, 제1금융권 은행의 앱의 기능을 개발해본 값진 경험",
+    ],
     image: '/images/example.svg',
     animationData: Project2,
     svg: {

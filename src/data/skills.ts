@@ -25,7 +25,7 @@ export const skills = [
       },
       {
         name: 'JavaScript',
-        icon: '/svgs/js.svg',
+        icon: '/svgs/javascript.svg',
         level: 5,
       },
       {
