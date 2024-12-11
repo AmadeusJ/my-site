@@ -52,7 +52,10 @@ export default function ContactSection() {
 
         {/* 컨텐츠 영역 소개 */}
         <p>
-          If you have any questions or would like to discuss a project, please feel free to contact me using the form below.
+          Chat을 통해 실시간으로 저와 소통해 보세요! 편하게 궁금한 점을 물어보실 수 있습니다.
+        </p>
+        <p>
+          Email도 준비되어 있으니, 더 긴 내용을 전하고 싶으실 때 활용해 주세요.
         </p>
 
         <div className={styles.contactFormWrapper}>

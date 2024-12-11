@@ -116,7 +116,7 @@ export default function HeroSection() {
             <motion.h1
               className={styles.heroSubtitle}
             >
-              {'방문자님 반갑습니다! 찾아주셔서 감사합니다 : )'.split('').map((char, index) => (
+              {'방문자님 반갑습니다! 찾아주셔서 감사합니다. 좋은 하루되세요! : )'.split('').map((char, index) => (
                 <motion.span
                   key={index}
                   variants={bounceUp}
@@ -126,9 +126,6 @@ export default function HeroSection() {
                   {char}
                 </motion.span>
               ))}
-            </motion.h1>
-            <motion.h1>
-              {'좋은 하루되세요!'}
             </motion.h1>
           </div>
           <div className={styles.heroContent}>

@@ -33,11 +33,11 @@ export const skills = [
         icon: '/svgs/sass.svg',
         level: 4,
       },
-      {
-        name: 'Browser',
-        icon: '/svgs/chrome.svg',
-        level: 4,
-      }
+      // {
+      //   name: 'Browser',
+      //   icon: '/svgs/chrome.svg',
+      //   level: 4,
+      // }
     ]
   },
   {
