@@ -101,7 +101,7 @@ export type Project = {
   technologies: string[];
   challenges: string[] | undefined;
   learningPoints: string[] | undefined;
-  screenshots: string[] | undefined;
+  screenshots: { path: string, width: number, height: number }[] | undefined;
   roles: string[];
   results: string[] | undefined;
   image: string | undefined;
@@ -148,6 +148,15 @@ export const projects: Project[] = [
       "In Progress...",
     ],
     screenshots: [
+      { path: "/screenshots/genos/1.png", width: 680, height: 630 },
+      { path: "/screenshots/genos/2.png", width: 680, height: 630 },
+      { path: "/screenshots/genos/3.png", width: 680, height: 630 },
+      { path: "/screenshots/genos/4.png", width: 680, height: 630 },
+      { path: "/screenshots/genos/5.png", width: 680, height: 630 },
+      { path: "/screenshots/genos/6.png", width: 680, height: 630 },
+      { path: "/screenshots/genos/7.png", width: 680, height: 630 },
+      { path: "/screenshots/genos/8.png", width: 680, height: 630 },
+      { path: "/screenshots/genos/9.png", width: 680, height: 630 },
     ],
     results: ["미래에셋금융을 시작으로 여러 대기업에 판매 계약 진행 중"],
     image: '/images/example.svg',
@@ -200,8 +209,11 @@ export const projects: Project[] = [
       "요즘 하나 둘씩 나오고 있는 LLM 기반의 서비스가 결국에는 UI/UX에서 사업성과 경쟁력을 결정하는 것이 아닐까라는 인사이트"
     ],
     screenshots: [
-    ],
-    screenshots: [
+      { path: "/screenshots/aibanker/1.png", width: 300, height: 640 },
+      { path: "/screenshots/aibanker/2.png", width: 300, height: 640 },
+      { path: "/screenshots/aibanker/3.png", width: 300, height: 640 },
+      { path: "/screenshots/aibanker/4.png", width: 300, height: 640 },
+      { path: "/screenshots/aibanker/5.png", width: 300, height: 640 },
     ],
     image: '/images/example.svg',
     animationData: Project2,
@@ -259,6 +271,11 @@ export const projects: Project[] = [
       "플랫폼 사용자들의 피드백을 반영하여 서비스 개선 경험 -> 어떤 부분을 개선해야 할지 판단하는 노하우",
     ],
     screenshots: [
+      { path: "/screenshots/aiconnect/1.png", width: 600, height: 590 },
+      { path: "/screenshots/aiconnect/2.png", width: 600, height: 590 },
+      { path: "/screenshots/aiconnect/3.png", width: 600, height: 590 },
+      { path: "/screenshots/aiconnect/4.png", width: 600, height: 590 },
+      { path: "/screenshots/aiconnect/5.png", width: 600, height: 590 },
     ],
     image: '/images/example.svg',
     animationData: Project6,
@@ -279,7 +296,7 @@ export const projects: Project[] = [
       { id: 12, type: 'Pdf', color: 'primary' },
       { id: 13, type: 'Docker', color: 'primary' },
     ],
-    customer: undefined,
+    customer: ["None"],
     startDate: '2023.06',
     endDate: '2023.12',
     isDone: true,
@@ -304,6 +321,12 @@ export const projects: Project[] = [
       "UI에서 Streaming 형태의 응답을 처리하는 방법 & 노하우",
       "오픈소스 코드를 수정하는 것이 어려웠습니다(서버작업). -> Docker Image로 빌드하며 버전관리로 해결",
     ],
+    screenshots: [
+      { path: "/screenshots/deepsurf/1.png", width: 600, height: 590 },
+      { path: "/screenshots/deepsurf/2.png", width: 600, height: 590 },
+      { path: "/screenshots/deepsurf/3.png", width: 600, height: 590 },
+      { path: "/screenshots/deepsurf/4.png", width: 600, height: 590 },
+    ],
     image: '/images/example.svg',
     animationData: Project3,
     svg: {
@@ -327,7 +350,7 @@ export const projects: Project[] = [
     startDate: '2023.06',
     endDate: '2023.10',
     isDone: true,
-    technologies: ['vuejs', 'vite', 'python', 'docker'],
+    technologies: ['react', 'vite', 'python', 'docker'],
     roles: [
       "데이터 대시보드와 관리 도구 설계",
       "관리자 정책 관리 기능 구현"
@@ -347,6 +370,12 @@ export const projects: Project[] = [
       "기업 고객을 타겟팅한 사용자 및 리소스 관리 기능 기획 / 개발 경험...",
     ],
     screenshots: [
+      { path: "/screenshots/llmops/1.png", width: 600, height: 590 },
+      { path: "/screenshots/llmops/2.png", width: 600, height: 590 },
+      { path: "/screenshots/llmops/3.png", width: 600, height: 590 },
+      { path: "/screenshots/llmops/4.png", width: 600, height: 590 },
+      { path: "/screenshots/llmops/5.png", width: 600, height: 590 },
+
     ],
     image: '/images/example.svg',
     animationData: Project4,
@@ -395,9 +424,9 @@ export const projects: Project[] = [
       "별도 USB에 담아 전달하는 경우, 되도록 SSD 외장하드를 사용하는 것이 좋다는 것.."
     ],
     screenshots: [
-      "/screenshots/sql-assistant/1.png",
-      "/screenshots/sql-assistant/2.png",
-      "/screenshots/sql-assistant/3.png",
+      { path: "/screenshots/sql-assistant/1.png", width: 600, height: 590 },
+      { path: "/screenshots/sql-assistant/2.png", width: 600, height: 590 },
+      { path: "/screenshots/sql-assistant/3.png", width: 600, height: 590 },
     ],
     image: '/images/example.svg',
     animationData: Project5,
@@ -422,7 +451,7 @@ export const projects: Project[] = [
     startDate: '2021.03',
     endDate: '2021.12',
     isDone: true,
-    technologies: ['vuejs', 'python', 'docker'],
+    technologies: ['vuejs', 'python', 'docker', 'grafana'],
     roles: [
       "프론트엔드 개발",
       "데이터 모니터링 대시보드 설계 및 구현",
@@ -449,6 +478,11 @@ export const projects: Project[] = [
       "실시간으로 데이터를 주고 받는 방법이 여러가지가 있다는 것을 아는 것을 넘어 실제 업무에 적용해 보게 된 경험",
     ],
     screenshots: [
+      { path: "/screenshots/mlops/1.png", width: 600, height: 590 },
+      { path: "/screenshots/mlops/2.png", width: 600, height: 590 },
+      { path: "/screenshots/mlops/3.png", width: 600, height: 590 },
+      { path: "/screenshots/mlops/4.png", width: 600, height: 590 },
+      { path: "/screenshots/mlops/5.png", width: 600, height: 590 },
     ],
     image: '/images/example.svg',
     animationData: Project7,
@@ -490,7 +524,12 @@ export const projects: Project[] = [
       "Docker Compose를 이용해 여러 컨테이너를 모듈 형식으로 관리 / 개발하는 방법을 실제 업무에 적용",
       "Build가 오래 걸리는 Webpack의 빌드 성능 개선 방안에 대한 인사이트 -> 설정 / 캐싱 / 플러그인 / 병렬빌드"
     ],
-    screenshots: [],
+    screenshots: [
+      { path: "/screenshots/cvat/1.png", width: 600, height: 590 },
+      { path: "/screenshots/cvat/2.png", width: 600, height: 590 },
+      { path: "/screenshots/cvat/3.png", width: 600, height: 590 },
+      { path: "/screenshots/cvat/4.png", width: 600, height: 590 },
+    ],
     image: '/images/example.svg',
     animationData: Project8,
     svg: {
@@ -532,7 +571,10 @@ export const projects: Project[] = [
       "Django의 ORM을 이용해 데이터베이스 조회 / 관리",
       "Electron을 이용해 Window, Mac 환경에서 이용가능한 크로스 플랫폼 데스크탑 애플리케이션 개발",
     ],
-    results: ["사내 메신저 서비스 운영"],
+    results: [
+      "사내 메신저 서비스 운영",
+      "현재는 서비스 종료 -> 그룹웨어 서비스로 전환"
+    ],
     challenges: [
       "서버가 Python 기반이라서 한번씩 처리 속도 / 부하 문제가 있었습니다. -> RabbitMQ와 연결된 메세지 처리 부분을 Go 언어로 개발(처리 속도 개선)",
       "나중에서야 알았지만, Fan-out Exchange 방식으로 Queue를 처리하며며 웹소켓으로 메세지를 주고 받는 것을 확인 -> 다른 방에서 어떤 메세지들이 오가는지 확인 할 수 있는 이슈",
@@ -544,7 +586,9 @@ export const projects: Project[] = [
       "WebSocket 기반 아키텍처 설계 경험",
       "Message Queue 이용 경험",
     ],
-    screenshots: [],
+    screenshots: [
+      { path: "/screenshots/puddlr/1.png", width: 600, height: 590 },
+    ],
     image: '/images/example.svg',
     animationData: Project9,
     svg: {
@@ -586,7 +630,9 @@ export const projects: Project[] = [
       "웹 개발의 이해",
       "분산 처리 Sungrid Engine 이용 경험",
     ],
-    screenshots: [],
+    screenshots: [
+      { path: "/screenshots/c3db/1.png", width: 600, height: 590 },
+    ],
     image: '/images/example.svg',
     animationData: Project9,
     svg: {

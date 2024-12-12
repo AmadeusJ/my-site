@@ -140,21 +140,19 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </div>
           {/* 프로젝트 상세 페이지 - 프로젝트 스크린샷*/}
           <div className={styles.projectDetailScreenshots}>
-            <div className={styles.projectDetailScreenshot}>
-              <AeroCard className={styles.projectDetailScreenshotCard}>
-                {/* 프로젝트 상세 페이지 - 프로젝트 스크린샷 - 이미지가 있을 경우 */}
-                {project.screenshots && project.screenshots.length > 0 && (
-                  <ProjectScreenshotSlider images={project.screenshots || []} />
-                )}
-                {/* 프로젝트 상세 페이지 - 프로젝트 스크린샷 - 이미지가 없을 경우 */}
-                {!project.screenshots || project.screenshots.length === 0 && (
-                  <div className={styles.projectDetailScreenshotNoImage}>
-                    <img src={`/icons/no-image.svg`} alt='no-image' width={20} height={20} />
-                    <p>No screenshots available</p>
-                  </div>
-                )}
-              </AeroCard>
-            </div>
+            <AeroCard className={styles.projectDetailScreenshotCard}>
+              {/* 프로젝트 상세 페이지 - 프로젝트 스크린샷 - 이미지가 있을 경우 */}
+              {project.screenshots && project.screenshots.length > 0 && (
+                <ProjectScreenshotSlider images={project.screenshots || []} />
+              )}
+              {/* 프로젝트 상세 페이지 - 프로젝트 스크린샷 - 이미지가 없을 경우 */}
+              {!project.screenshots || project.screenshots.length === 0 && (
+                <div className={styles.projectDetailScreenshotNoImage}>
+                  <img src={`/icons/no-image.svg`} alt='no-image' width={20} height={20} />
+                  <p>No screenshots available</p>
+                </div>
+              )}
+            </AeroCard>
           </div>
         </div>
 
