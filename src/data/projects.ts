@@ -116,7 +116,7 @@ export const projects: Project[] = [
   {
     id: 1,
     category: [1, 2, 3],
-    name: 'GenOS',
+    name: 'GenOS (LLMOps)',
     purpose: ['LLM 앱 커스터마이징 플랫폼 개발'],
     tags: [
       { id: 4, type: 'Next.js', color: 'primary' },
@@ -208,6 +208,63 @@ export const projects: Project[] = [
     svg: {
       width: 215,
       height: 215,
+    }
+  },
+  {
+    id: 6,
+    category: [2, 3],
+    name: 'AI 경진대회 플랫폼',
+    url: "https://aiconnect.kr",
+    purpose: ['인공지능 경진대회 플랫폼 개발'],
+    tags: [
+      { id: 21, type: 'Platform', color: 'primary' },
+      { id: 22, type: 'UI/UX', color: 'primary' },
+      { id: 23, type: 'Vue', color: 'primary' },
+      { id: 24, type: 'AWS', color: 'primary' },
+      { id: 25, type: 'Python', color: 'primary' },
+      { id: 26, type: 'Docker', color: 'primary' },
+    ],
+    customer: ['과학기술정보통신부', '정보통신산업진흥원', '국방부', 'SKT', '각종 교육기관'],
+    startDate: '2021.05',
+    endDate: '2023.05',
+    isDone: true,
+    technologies: ['vuejs', 'aws', 'python', 'celery', 'docker'],
+    roles: [
+      "프론트엔드 개발 /협업 리드",
+      "프로젝트 관리 및 일정 조율",
+      "리더보드 및 평가 인터페이스 개발"
+    ],
+    description: [
+      "Vue.js를 이용해 zero base에서 부터 Component 기반 프론트엔드 개발을 진행했습니다.",
+      "AWS 기반의 클라우드 인프라를 구축하여 안정적인 서비스 운영을 보장했습니다. (Router5, RDS, EC2, S3, Lambda, CloudFront 이용)",
+      "서버운영 : GPU서버에 Docker Container를 4개식 띄워 GPU 스레드를 나누어 참가자들에 할당",
+      "채점서버 : 채점 서버에서 채점 결과를 받아와서 채점 결과를 화면에 표시 (Python 이용)",
+      "참가자들의 대회 참여 현황을 실시간으로 확인할 수 있도록 리더보드 및 평가 인터페이스를 개발했습니다.",
+      "사업부 마케팅, 기획자, 디자이너, 백엔드 개발자, 데이터사이언티스트와 협업하여 대회 운영 및 플랫폼 개발을 진행했습니다.",
+    ],
+    results: [
+      "회원수 7000여명의 플랫폼으로 성장",
+      "1000명 이상의 사용자 대상 안정적인 서비스 운영",
+      "각종 국가기관(과기부) / 사기업 등에서 대회운영 사업 수주하여 진행"
+    ],
+    challenges: [
+      "플랫폼 특성상 버그나 오류시 치명적인 대회운영 차질 발생할 우려 및 대회 참가자들의 불만 발생 가능성이 많은 특성이 주는 책임감",
+      "FE 개발자 1명(본인), BE 개발자 1인으로 프로젝트 관리 및 일정 조율 및 개발 진행 어려움 -> 상대적으로 개발이 빠른 Vue.js 프레임워크를 이용",
+      "운영인력 부족으로 문의사항 처리에 에러 -> Slack 채널 연동으로 응대 효율성 향상",
+    ],
+    learningPoints: [
+      "AWS 클라우드 인프라를 구축하여 서비스를 운영하는 방법",
+      "참가자들의 대회 참여 현황을 실시간으로 확인할 수 있도록 리더보드 및 평가 인터페이스를 개발하는 경험",
+      "여러 직군과의 협업 경험 -> 프로젝트 일정 관리 / 디자이너와의 협업 노하우",
+      "플랫폼 사용자들의 피드백을 반영하여 서비스 개선 경험 -> 어떤 부분을 개선해야 할지 판단하는 노하우",
+    ],
+    screenshots: [
+    ],
+    image: '/images/example.svg',
+    animationData: Project6,
+    svg: {
+      width: 275,
+      height: 275,
     }
   },
   {
@@ -341,63 +398,6 @@ export const projects: Project[] = [
     ],
     image: '/images/example.svg',
     animationData: Project5,
-    svg: {
-      width: 275,
-      height: 275,
-    }
-  },
-  {
-    id: 6,
-    category: [2, 3],
-    name: 'AI 경진대회 플랫폼',
-    url: "https://aiconnect.kr",
-    purpose: ['인공지능 경진대회 플랫폼 개발'],
-    tags: [
-      { id: 21, type: 'Platform', color: 'primary' },
-      { id: 22, type: 'UI/UX', color: 'primary' },
-      { id: 23, type: 'Vue', color: 'primary' },
-      { id: 24, type: 'AWS', color: 'primary' },
-      { id: 25, type: 'Python', color: 'primary' },
-      { id: 26, type: 'Docker', color: 'primary' },
-    ],
-    customer: ['AI Connect'],
-    startDate: '2021.05',
-    endDate: '2023.05',
-    isDone: true,
-    technologies: ['vuejs', 'aws', 'python', 'celery', 'docker'],
-    roles: [
-      "프론트엔드 개발 /협업 리드",
-      "프로젝트 관리 및 일정 조율",
-      "리더보드 및 평가 인터페이스 개발"
-    ],
-    description: [
-      "Vue.js를 이용해 zero base에서 부터 Component 기반 프론트엔드 개발을 진행했습니다.",
-      "AWS 기반의 클라우드 인프라를 구축하여 안정적인 서비스 운영을 보장했습니다. (Router5, RDS, EC2, S3, Lambda, CloudFront 이용)",
-      "서버운영 : GPU서버에 Docker Container를 4개식 띄워 GPU 스레드를 나누어 참가자들에 할당",
-      "채점서버 : 채점 서버에서 채점 결과를 받아와서 채점 결과를 화면에 표시 (Python 이용)",
-      "참가자들의 대회 참여 현황을 실시간으로 확인할 수 있도록 리더보드 및 평가 인터페이스를 개발했습니다.",
-      "사업부 마케팅, 기획자, 디자이너, 백엔드 개발자, 데이터사이언티스트와 협업하여 대회 운영 및 플랫폼 개발을 진행했습니다.",
-    ],
-    results: [
-      "긍정 피드백 60% 달성",
-      "대규모 사용자 대상 안정적인 서비스 운영",
-      "각종 국가기관(과기부) / 사기업 등에서 대회운영 사업 수주하여 진행"
-    ],
-    challenges: [
-      "플랫폼 특성상 버그나 오류시 치명적인 대회운영 차질 발생할 우려 및 대회 참가자들의 불만 발생 가능성이 많은 특성이 주는 책임감",
-      "FE 개발자 1명(본인), BE 개발자 1인으로 프로젝트 관리 및 일정 조율 및 개발 진행 어려움 -> 상대적으로 개발이 빠른 Vue.js 프레임워크를 이용",
-      "운영인력 부족으로 문의사항 처리에 에러 -> Slack 채널 연동으로 응대 효율성 향상",
-    ],
-    learningPoints: [
-      "AWS 클라우드 인프라를 구축하여 서비스를 운영하는 방법",
-      "참가자들의 대회 참여 현황을 실시간으로 확인할 수 있도록 리더보드 및 평가 인터페이스를 개발하는 경험",
-      "여러 직군과의 협업 경험 -> 프로젝트 일정 관리 / 디자이너와의 협업 노하우",
-      "플랫폼 사용자들의 피드백을 반영하여 서비스 개선 경험 -> 어떤 부분을 개선해야 할지 판단하는 노하우",
-    ],
-    screenshots: [
-    ],
-    image: '/images/example.svg',
-    animationData: Project6,
     svg: {
       width: 275,
       height: 275,
