@@ -67,15 +67,15 @@ export default function AboutPage() {
               <div className={styles.aboutFEText}>
                 <div>
                   <h1>Introduction</h1>
-                  <p>{me.introduction}</p>
+                  <p dangerouslySetInnerHTML={{ __html: me.introduction }} />
                 </div>
                 <div>
                   <h1>Philosophy</h1>
-                  <p>{me.philosophy}</p>
+                  <p dangerouslySetInnerHTML={{ __html: me.philosophy }} />
                 </div>
                 <div>
                   <h1>Goals</h1>
-                  <p>{me.goals}</p>
+                  <p dangerouslySetInnerHTML={{ __html: me.goals }} />
                 </div>
               </div>
             </AeroCard>

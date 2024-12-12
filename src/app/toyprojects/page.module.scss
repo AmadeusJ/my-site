@@ -9,7 +9,15 @@
   padding: 20px;
   padding-bottom: 50px;
 
+  .projectCategory {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
   .projectList {
+    padding-top: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 74px;

@@ -36,6 +36,9 @@ export default function ToyProjectPage({ params }: ToyProjectPageProps) {
     <Provider store={store}>
       <BackgroundOverlay key={`project-${id}`} color={backgroundColors[0]} />
       <section className={styles.projectDetailSection}>
+        <div className={styles.toyProjectCategory}>
+          {/* 토이프로젝트 카테고리 */}
+        </div>
         <div className={styles.projectDetailContainer}>
           {/* 프로젝트 상세 페이지 - 프로젝트 개요*/}
           <div className={styles.projectDetailContents}>
