@@ -46,6 +46,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               {/* 프로젝트 상세 페이지 타이틀 */}
               <div className={styles.projectDetailTitle}>
                 <h1>{project.name}</h1>
+                {project.url && (
+                  <a href={project.url} target='_blank' rel='noopener noreferrer'>
+                    {`(${project.url})`}
+                  </a>
+                )}
                 {!project.isDone && (
                   <div className={styles.projectIsDone}>
                     <Chip color="primary" variant="solid" size="sm">
@@ -78,7 +83,16 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 <div className={styles.projectDetailStackList}>
                   {project.technologies?.map((technology) => (
                     <div className={styles.projectDetailStackItem} key={technology}>
-                      <Tooltip content={technology} showArrow placement='top' color='primary'>
+                      <Tooltip
+                        content={
+                          <div className='px-1 py-2'>
+                            <div className='text-lg font-bold'>{technology}</div>
+                          </div>
+                        }
+                        showArrow
+                        placement='top'
+                        color='primary'
+                      >
                         <img src={`/svgs/${technology}.svg`} alt={technology} width={40} height={40} />
                       </Tooltip>
                     </div>
