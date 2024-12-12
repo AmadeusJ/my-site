@@ -17,19 +17,21 @@ type ImageSliderProps = {
 export default function ProjectScreenshotSlider({ images }: ImageSliderProps) {
   return (
     <Swiper
+      className='swiper'
       modules={[Autoplay, Navigation, Pagination]}
       spaceBetween={10}
       slidesPerView={1}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      autoplay={{ delay: 4000, disableOnInteraction: false, }}
+      loop={true}
       pagination={{ clickable: true }}
-      navigation
+      speed={1000}
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
           <img
             src={image}
             alt={`Slide ${index + 1}`}
-            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+            style={{ width: '100%', height: '100%', borderRadius: '8px' }}
           />
         </SwiperSlide>
       ))}
