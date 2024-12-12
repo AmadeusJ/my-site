@@ -33,7 +33,7 @@ export default function AboutPage() {
             <div className={styles.aboutProfile}>
               <AeroCard className={styles.aboutProfileCard}>
                 <div className={styles.aboutProfileImage}>
-                  Profile Image
+                  <img src={me.image} alt='profile' />
                 </div>
                 <div className={styles.aboutProfileText}>
                   <div className={styles.aboutProfileName}>

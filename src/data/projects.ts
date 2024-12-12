@@ -395,6 +395,9 @@ export const projects: Project[] = [
       "별도 USB에 담아 전달하는 경우, 되도록 SSD 외장하드를 사용하는 것이 좋다는 것.."
     ],
     screenshots: [
+      "/screenshots/sql-assistant/1.png",
+      "/screenshots/sql-assistant/2.png",
+      "/screenshots/sql-assistant/3.png",
     ],
     image: '/images/example.svg',
     animationData: Project5,

@@ -1,14 +1,241 @@
-.toyProjectDetailSection {
+// TODO: 프로젝트 상세 페이지 스타일링
+.projectDetailSection {
   height: 100vh;
   background: transparent;
   padding: 50px;
+  padding-bottom: calc(100vh + 620px); // Footer 높이를 동적으로 계산
 
-  .toyProjectDetailContents {
-    flex: 1;
 
-    .toyProjectDetailCard {
-      height: 100%;
-      max-height: 100%;
+  .projectDetailContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+
+    .projectDetailContents {
+      flex: 5;
+
+      .projectDetailCard {
+        height: 100%;
+        max-height: 100%;
+        padding: 30px;
+
+        .projectDetailItem {
+          margin-top: 20px;
+        }
+
+        h1 {
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: var(--project-detail-title-color);
+        }
+
+        h2 {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--project-detail-title-color);
+        }
+
+        p {
+          padding-left: 20px;
+          font-size: 1rem;
+          color: var(--project-detail-purpose-color);
+        }
+
+        .projectDetailTitle {
+          display: flex;
+          flex-direction: row;
+
+          a {
+            padding-left: 10px;
+            color: var(--project-detail-purpose-color);
+          }
+
+
+          .projectIsDone {
+            padding-left: 10px;
+          }
+        }
+
+        .projectDetailPurpose {
+          padding-top: 10px;
+
+          div {
+            font-size: 1.05rem;
+            color: var(--project-detail-purpose-color);
+          }
+        }
+
+        .projectDetailStack {
+          padding-top: 10px;
+
+          div {
+            font-size: 1.05rem;
+            color: var(--project-detail-purpose-color);
+          }
+
+          .projectDetailStackList {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-left: 20px;
+
+            img {
+              cursor: pointer;
+            }
+          }
+        }
+
+        .projectDetailRole {
+          padding-top: 10px;
+
+          ul {
+            padding-left: 20px;
+
+            li {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 5px;
+            }
+          }
+        }
+
+        .projectDetailResult {
+          padding-top: 10px;
+
+          ul {
+            padding-left: 20px;
+
+            li {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 5px;
+            }
+          }
+        }
+
+        .projectDetailTag {
+          padding-top: 10px;
+
+          .projectDetailTagList {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+
+    .projectDetailScreenshots {
+      flex: 5;
     }
   }
+
+  .projectDetailMoreInfos {
+    display: flex;
+    width: 100%;
+
+    .projectDetailMoreInfoCard {
+      width: 100%;
+
+      .projectDetailMoreInfoItem {
+        padding: 30px;
+
+        h2 {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--project-detail-title-color);
+        }
+      }
+
+      .projectDetailMoreInfoWhatHow {
+        padding-left: 20px;
+
+        strong {
+          font-weight: 700;
+          color: var(--project-detail-title-color);
+        }
+
+        p {
+          padding-left: 20px;
+          font-size: 1rem;
+          color: var(--project-detail-purpose-color);
+          padding-top: 6px;
+          line-height: 1.5;
+        }
+
+        .projectDetailMoreInfoDetailItems {
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          padding-left: 20px;
+
+          p {
+            padding-left: 5px;
+            padding-top: 0px;
+          }
+        }
+
+        .projectDetailMoreInfoLearningPoint {
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          padding-left: 20px;
+
+          p {
+            padding-left: 5px;
+            padding-top: 0px;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  .moreInfoArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+
+    .moreInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: right;
+      justify-content: right;
+
+      p {
+        font-size: 1.2rem;
+        color: rgba(0, 0, 0, 0.7);
+        margin-bottom: 10px;
+      }
+
+      .moreButton {
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: white;
+        background: linear-gradient(90deg, #007aff, #007aff);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: linear-gradient(90deg, #005bb5, #003f80);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+
+
 }
