@@ -52,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, prefix }) => 
       ref={ref}
       key={`${project.id}-${index}`}
       initial={{ opacity: 0, y: 100 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: 0.2 * index }}
       whileHover="hover"
       variants={expandEffect}
