@@ -14,6 +14,7 @@ import styles from './page.module.scss';
 import ChatWrapper from '@/components/wrapper/ChatWrapper';
 import { projects } from '@/data/projects';
 import { Chip, Tooltip } from '@nextui-org/react';
+import ProjectScreenshotSlider from '@/components/element/ProjectScreenshotSlider';
 
 type ProjectPageProps = {
   params: { id: string }; // 동적 경로에서 `id` 값
@@ -127,6 +128,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <div className={styles.projectDetailScreenshots}>
             <h2>Screenshots</h2>
             <div className={styles.projectDetailScreenshot}>
+              <ProjectScreenshotSlider images={project.screenshots || []} />
             </div>
           </div>
         </div>

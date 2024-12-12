@@ -191,6 +191,9 @@ export const projects: Project[] = [
     learningPoints: [
       "Webview 기반의 모바일 앱 개발시 UI에서 신경써줘야 할 <strong>Native Interface</strong>.",
       "원뱅킹 앱의 챗봇 기능을 사용자가 얼마나 사용하는지를 떠나서, 제1금융권 은행의 앱의 기능을 개발해본 값진 경험",
+      "요즘 하나 둘씩 나오고 있는 LLM 기반의 서비스가 결국에는 UI/UX에서 사업성과 경쟁력을 결정하는 것이 아닐까라는 인사이트"
+    ],
+    screenshots: [
     ],
     screenshots: [
     ],
