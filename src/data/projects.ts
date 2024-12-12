@@ -90,6 +90,7 @@ export type Project = {
   id: number;
   category: number[] | undefined;
   name: string;
+  url: string | undefined;
   purpose: string[];
   tags: ProjectTag[] | undefined;
   customer: string[] | undefined;
@@ -118,16 +119,16 @@ export const projects: Project[] = [
     name: 'GenOS',
     purpose: ['LLM 앱 커스터마이징 플랫폼 개발'],
     tags: [
+      { id: 4, type: 'Next.js', color: 'primary' },
+      { id: 3, type: 'React', color: 'primary' },
+      { id: 7, type: 'i18n', color: 'primary' },
       { id: 1, type: 'LLM', color: 'primary' },
       { id: 2, type: 'LLMOps', color: 'primary' },
-      { id: 3, type: 'React', color: 'primary' },
-      { id: 4, type: 'Next.js', color: 'primary' },
       { id: 6, type: 'Chat', color: 'primary' },
-      { id: 7, type: 'i18n', color: 'primary' },
     ],
     customer: ['내부프로젝트', '미래에셋증권', '삼성화재', '삼성디스플레이'],
-    startDate: '2023.12',
-    endDate: '2024.06',
+    startDate: '2024.06',
+    endDate: 'In Progress...',
     isDone: false,
     technologies: ['next-js', 'React'],
     roles: [
@@ -136,18 +137,19 @@ export const projects: Project[] = [
       "다국어 적용 (국문/영문)"
     ],
     description: [
-      "그동한 MNC 내부 LLM 관련 프로젝트들을 모듈화 하여 하나로 모아서 플랫폼화 진행",
-      "영어를 추가한 다국어 적용(i18n) 경험",
+      "그동안의 MNC 내부 LLM 관련 프로젝트들을 모듈화 하여 하나로 모아서 플랫폼화 진행",
+      "영어를 추가한 다국어 적용(i18n)",
     ],
     challenges: [
       "In Progress...",
     ],
     learningPoints: [
+      "다국어 적용을 위한 프로젝트 설계",
       "In Progress...",
     ],
     screenshots: [
     ],
-    results: ["미래에셋금융에 서비스 판매"],
+    results: ["미래에셋금융을 시작으로 여러 대기업에 판매 계약 진행 중"],
     image: '/images/example.svg',
     animationData: Project1,
     svg: {
@@ -161,12 +163,12 @@ export const projects: Project[] = [
     name: '우리은행 고객상담 AI Banker',
     purpose: ['예·적금 상담 및 상품 추천 서비스 제공'],
     tags: [
+      { id: 7, type: 'Webview', color: 'primary' },
+      { id: 9, type: 'WON뱅킹', color: 'primary' },
+      { id: 8, type: 'Mobile', color: 'primary' },
+      { id: 10, type: 'B2C', color: 'primary' },
       { id: 1, type: 'LLM', color: 'primary' },
       { id: 6, type: 'Chat', color: 'primary' },
-      { id: 7, type: 'Webview', color: 'primary' },
-      { id: 8, type: 'Mobile', color: 'primary' },
-      { id: 9, type: 'WON뱅킹', color: 'primary' },
-      { id: 10, type: 'B2C', color: 'primary' },
     ],
     customer: ['우리금융그룹'],
     startDate: '2023.12',
@@ -183,12 +185,16 @@ export const projects: Project[] = [
       "Javascript / Jquery를 이용해 ChatGPT 효과를 내는 대화형 인터페이스를 구축했습니다.",
       "서버에러가 있는 경우, 사용자가 <strong>쾨적한 UX</strong>를 경험할 수 있도록, 안내메세지, <strong>Retry 로직</strong>등을 이용해 예외처리를 구현했습니다."
     ],
-    results: ["예·적금 상담 및 상품 추천 서비스 제공"],
+    results: [
+      "예·적금 상담 및 상품 추천 서비스 제공",
+      "서비스 오픈 2개월 동안 총 3000여건의 피드백중 90% 이상의 UX 만족도 피드백"
+    ],
     challenges: [
       "원뱅킹 앱이 모바일 환경에서 Webview 기반의 앱이다 보니, 로컬 PC에서 개발 후, 모바일 환경에서 테스트 하는 것이 어려웠습니다..",
       "기존에 원뱅킹에서 개발이 필요한 부분의 가이드가 없어서 직접 소스를 파악하며 개발했던 아픈 기억이 있습니다..",
     ],
     learningPoints: [
+      "<strong><a href='https://lawsofux.com/' target='_blank' rel='noopener noreferrer'>Laws of UX</a></strong>를 더 깊이있게 스터디하게 된 계기",
       "Webview 기반의 모바일 앱 개발시 UI에서 신경써줘야 할 <strong>Native Interface</strong>.",
       "원뱅킹 앱의 챗봇 기능을 사용자가 얼마나 사용하는지를 떠나서, 제1금융권 은행의 앱의 기능을 개발해본 값진 경험",
       "요즘 하나 둘씩 나오고 있는 LLM 기반의 서비스가 결국에는 UI/UX에서 사업성과 경쟁력을 결정하는 것이 아닐까라는 인사이트"
@@ -210,8 +216,8 @@ export const projects: Project[] = [
     name: 'AI Search (Deep Surfing)',
     purpose: ['의미 기반 자연어 검색 솔루션 개발'],
     tags: [
+      { id: 10, type: 'React', color: 'primary' },
       { id: 1, type: 'LLM', color: 'primary' },
-      { id: 10, type: 'Vue', color: 'primary' },
       { id: 11, type: 'Python', color: 'primary' },
       { id: 12, type: 'Pdf', color: 'primary' },
       { id: 13, type: 'Docker', color: 'primary' },
@@ -220,7 +226,7 @@ export const projects: Project[] = [
     startDate: '2023.06',
     endDate: '2023.12',
     isDone: true,
-    technologies: ['vuejs', 'python', 'docker'],
+    technologies: ['react', 'python', 'docker'],
     roles: [
       "다이나믹 폼 및 실시간 시각화 UI 설계",
       "개발 팀 리드 / 솔루션 구조 설계 및 협업 주도"
@@ -254,11 +260,11 @@ export const projects: Project[] = [
     name: 'LLMOps',
     purpose: ['기업 내 LLM 운영 환경 구축'],
     tags: [
+      { id: 15, type: 'React', color: 'primary' },
+      { id: 14, type: 'Python', color: 'primary' },
+      { id: 16, type: 'On-Premise', color: 'primary' },
       { id: 1, type: 'LLM', color: 'primary' },
       { id: 13, type: 'LLMOps', color: 'primary' },
-      { id: 14, type: 'Python', color: 'primary' },
-      { id: 15, type: 'React', color: 'primary' },
-      { id: 16, type: 'On-Premise', color: 'primary' },
     ],
     customer: undefined,
     startDate: '2023.06',
@@ -298,12 +304,12 @@ export const projects: Project[] = [
     name: 'SQL Assistant',
     purpose: ['LLM 기반 SQL 쿼리 작성 지원 도구 개발'],
     tags: [
-      { id: 1, type: 'LLM', color: 'primary' },
-      { id: 17, type: 'SQL', color: 'primary' },
       { id: 18, type: 'Vue', color: 'primary' },
       { id: 19, type: 'Python', color: 'primary' },
+      { id: 17, type: 'SQL', color: 'primary' },
+      { id: 1, type: 'LLM', color: 'primary' },
       { id: 20, type: 'On-Premise', color: 'primary' },
-      { id: 21, type: 'Assistant', color: 'primary' },
+      { id: 21, type: 'Docker', color: 'primary' },
     ],
     customer: ['BC 카드'],
     startDate: '2023.09',
@@ -344,6 +350,7 @@ export const projects: Project[] = [
     id: 6,
     category: [2, 3],
     name: 'AI 경진대회 플랫폼',
+    url: "https://aiconnect.kr",
     purpose: ['인공지능 경진대회 플랫폼 개발'],
     tags: [
       { id: 21, type: 'Platform', color: 'primary' },
@@ -382,7 +389,7 @@ export const projects: Project[] = [
       "운영인력 부족으로 문의사항 처리에 에러 -> Slack 채널 연동으로 응대 효율성 향상",
     ],
     learningPoints: [
-      "AWS 클라우드 인프라를 구축하여 서비스를 운영하는 경험",
+      "AWS 클라우드 인프라를 구축하여 서비스를 운영하는 방법",
       "참가자들의 대회 참여 현황을 실시간으로 확인할 수 있도록 리더보드 및 평가 인터페이스를 개발하는 경험",
       "여러 직군과의 협업 경험 -> 프로젝트 일정 관리 / 디자이너와의 협업 노하우",
       "플랫폼 사용자들의 피드백을 반영하여 서비스 개선 경험 -> 어떤 부분을 개선해야 할지 판단하는 노하우",

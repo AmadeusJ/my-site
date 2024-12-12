@@ -47,6 +47,11 @@
           display: flex;
           flex-direction: row;
 
+          a {
+            padding-left: 10px;
+            color: var(--project-detail-purpose-color);
+          }
+
 
           .projectIsDone {
             padding-left: 10px;
