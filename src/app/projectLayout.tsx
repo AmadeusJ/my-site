@@ -11,7 +11,7 @@ export default function ProjectsLayout({
   return (
     <>
       {/* <Header /> */}
-      <main>{children}</main>
+      {children}
     </>
   );
 }

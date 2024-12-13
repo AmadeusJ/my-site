@@ -36,20 +36,20 @@ export default function AboutPage() {
                   <img src={me.image} alt='profile' />
                 </div>
                 <div className={styles.aboutProfileText}>
-                  <div className={styles.aboutProfileName}>
+                  <div className={styles.aboutProfileItem}>
                     <div className={styles.aboutProfileLabel}>Name: </div> <div className={styles.aboutProfileNameValue}>{me.name}</div>
                   </div>
-                  <div className={styles.aboutProfileTitle}>
+                  <div className={styles.aboutProfileItem}>
                     <div className={styles.aboutProfileLabel}>Title: </div> <div className={styles.aboutProfileValue}>{me.title}</div>
                   </div>
-                  <div className={styles.aboutProfileExperience}>
+                  <div className={styles.aboutProfileItem}>
                     <div className={styles.aboutProfileLabel}>Experience: </div> <div className={styles.aboutProfileValue}>{calculateExperience(me.careerStartDate)}</div>
                   </div>
-                  <div className={styles.aboutProfileCurrentCompany}>
-                    <div className={styles.aboutProfileLabel}>Current Company: </div> <div className={styles.aboutProfileValue}>{me.currentCompany}</div>
+                  <div className={styles.aboutProfileItem}>
+                    <div className={styles.aboutProfileLabel}>Company: </div> <div className={styles.aboutProfileValue}>{me.currentCompany}</div>
                   </div>
-                  <div className={styles.aboutProfileCurrentPosition}>
-                    <div className={styles.aboutProfileLabel}>Current Position: </div> <div className={styles.aboutProfileValue}>{me.currentPosition}</div>
+                  <div className={styles.aboutProfileItem}>
+                    <div className={styles.aboutProfileLabel}>Position: </div> <div className={styles.aboutProfileValue}>{me.currentPosition}</div>
                   </div>
                 </div>
               </AeroCard>
@@ -65,15 +65,15 @@ export default function AboutPage() {
           <div className={styles.aboutFEContents}>
             <AeroCard className={styles.aboutFECard}>
               <div className={styles.aboutFEText}>
-                <div>
+                <div className={styles.aboutFEItem}>
                   <h1>Introduction</h1>
                   <p dangerouslySetInnerHTML={{ __html: me.introduction }} />
                 </div>
-                <div>
+                <div className={styles.aboutFEItem}>
                   <h1>Philosophy</h1>
                   <p dangerouslySetInnerHTML={{ __html: me.philosophy }} />
                 </div>
-                <div>
+                <div className={styles.aboutFEItem}>
                   <h1>Goals</h1>
                   <p dangerouslySetInnerHTML={{ __html: me.goals }} />
                 </div>

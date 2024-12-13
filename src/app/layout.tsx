@@ -50,7 +50,7 @@ export default function RootLayout({
             <AnimatePresenceWrapper>
               {/* Main Content */}
               <Header />
-              <main>{children}</main>
+              <main className="main-content">{children}</main>
             </AnimatePresenceWrapper>
             <Footer />
           </WebSocketProvider>

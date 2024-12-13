@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import Modal from 'react-modal';
-
 import styles from './ProjectScreenshotSlider.module.scss';
 
 import 'swiper/css';
@@ -29,8 +28,14 @@ const customStyles = {
     padding: 0,
     border: 'none',
     background: 'transparent',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    maxWidth: '90%', // 화면 너비 기준 최대 크기
+    maxHeight: '90%', // 화면 높이 기준 최대 크기
   },
   overlay: {
+    zIndex: 8888,
     backgroundColor: 'rgba(0, 0, 0, 0.75)',
   },
 };
@@ -84,7 +89,12 @@ export default function ProjectScreenshotSlider({ images }: ImageSliderProps) {
           <img
             src={selectedImage}
             alt="Zoomed"
-            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+            style={{
+              maxWidth: '90vw', // 화면 너비의 90%를 넘지 않도록
+              maxHeight: '90vh', // 화면 높이의 90%를 넘지 않도록
+              borderRadius: '8px',
+              objectFit: 'contain', // 비율 유지하며 컨테이너 안에 맞춤
+            }}
           />
         )}
       </Modal>
