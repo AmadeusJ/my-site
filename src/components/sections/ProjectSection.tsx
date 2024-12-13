@@ -37,6 +37,9 @@ export default function ProjectSection() {
 
   return (
     <section className={`section ${styles.projectSection}`}>
+      <div className={styles.projectSectionTitle}>
+        <h1>다양한 프로젝트를 수행하며 쌓아온 경험과 핵심 역량들을 세 가지 주요 카테고리로 정리했습니다. </h1>
+      </div>
       <div className={styles.projectWrapper}>
         {
           projectTopics.map((topic, index) => {

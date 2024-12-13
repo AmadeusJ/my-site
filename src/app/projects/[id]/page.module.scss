@@ -1,9 +1,8 @@
 // TODO: 프로젝트 상세 페이지 스타일링
 .projectDetailSection {
-  height: 100vh;
+  height: 100%;
   background: transparent;
   padding: 50px;
-  padding-bottom: calc(100vh + 620px); // Footer 높이를 동적으로 계산
 
 
   .projectDetailContainer {

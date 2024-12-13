@@ -3,14 +3,18 @@ import animationPlatform from '@/assets/animations/category2.json';
 import animationA11y from '@/assets/animations/category3.json';
 import { AnimationItem } from 'lottie-web';
 import Project1 from '@/assets/animations/projects/project1.json';
-import Project2 from '@/assets/animations/projects/project2.json';
+// import Project2 from '@/assets/animations/projects/project2.json';
+import Project2_1 from '@/assets/animations/projects/project2-1.json';
 import Project3 from '@/assets/animations/projects/project3.json';
 import Project4 from '@/assets/animations/projects/project4.json';
 import Project5 from '@/assets/animations/projects/project5.json';
 import Project6 from '@/assets/animations/projects/project6.json';
-import Project7 from '@/assets/animations/projects/project7.json';
+import Project6_1 from '@/assets/animations/projects/project6-1.json';
+// import Project7 from '@/assets/animations/projects/project7.json';
+
 import Project8 from '@/assets/animations/projects/project8.json';
 import Project9 from '@/assets/animations/projects/project9.json';
+import Project10 from '@/assets/animations/projects/project10.json';
 
 export const projectTopics = [
   {
@@ -141,10 +145,12 @@ export const projects: Project[] = [
       "영어를 추가한 다국어 적용(i18n)",
     ],
     challenges: [
+      "플랫폼화 과정에서 프로젝트 간 일관된 인터페이스 설계를 맞추는 데 어려움.",
+      "LLM 관련 API의 성능 최적화와 <strong>다국어 텍스트 처리</strong> 간의 균형점 찾기.",
       "In Progress...",
     ],
     learningPoints: [
-      "다국어 적용을 위한 프로젝트 설계",
+      "<strong>다국어 지원(i18n)</strong> 적용 시 필수적으로 고려해야 할 로컬라이제이션 전략 학습.",
       "In Progress...",
     ],
     screenshots: [
@@ -189,10 +195,10 @@ export const projects: Project[] = [
       "자연어 처리 결과를 활용한 추천 인터페이스 구축"
     ],
     description: [
-      "프로젝트 시작전 PoC 단계에서 Vuejs 통해서 프로토타입 개발했습니다.",
-      "<strong>Webview 기반의 모바일 앱</strong>에서 대화형 UI를 모달 레이어 형식으로 기존의 원뱅킹 챗봇에 추가하여 구현했습니다.",
-      "Javascript / Jquery를 이용해 ChatGPT 효과를 내는 대화형 인터페이스를 구축했습니다.",
-      "서버에러가 있는 경우, 사용자가 <strong>쾨적한 UX</strong>를 경험할 수 있도록, 안내메세지, <strong>Retry 로직</strong>등을 이용해 예외처리를 구현했습니다."
+      "프로젝트 시작전 PoC 단계에서 Vuejs 통해서 프로토타입 개발 .",
+      "<strong>Webview 기반의 모바일 앱</strong>에서 대화형 UI를 모달 레이어 형식으로 기존의 원뱅킹 챗봇에 추가하여 구현';.",
+      "Javascript / Jquery를 이용해 ChatGPT 효과를 내는 대화형 인터페이스를 구축.",
+      "서버에러가 있는 경우, 사용자가 <strong>쾨적한 UX</strong>를 경험할 수 있도록, 안내메세지, <strong>Retry 로직</strong>등을 이용해 예외처리를 구현."
     ],
     results: [
       "예·적금 상담 및 상품 추천 서비스 제공",
@@ -216,10 +222,10 @@ export const projects: Project[] = [
       { path: "/screenshots/aibanker/5.png", width: 300, height: 640 },
     ],
     image: '/images/example.svg',
-    animationData: Project2,
+    animationData: Project2_1,
     svg: {
-      width: 215,
-      height: 215,
+      width: 255,
+      height: 255,
     }
   },
   {
@@ -247,12 +253,12 @@ export const projects: Project[] = [
       "리더보드 및 평가 인터페이스 개발"
     ],
     description: [
-      "Vue.js를 이용해 zero base에서 부터 Component 기반 프론트엔드 개발을 진행했습니다.",
-      "AWS 기반의 클라우드 인프라를 구축하여 안정적인 서비스 운영을 보장했습니다. (Router5, RDS, EC2, S3, Lambda, CloudFront 이용)",
+      "Vue.js를 이용해 zero base에서 부터 Component 기반 프론트엔드 개발을 진행.",
+      "AWS 기반의 클라우드 인프라를 구축하여 안정적인 서비스 운영을 보장. (Router5, RDS, EC2, S3, Lambda, CloudFront 이용)",
       "서버운영 : GPU서버에 Docker Container를 4개식 띄워 GPU 스레드를 나누어 참가자들에 할당",
       "채점서버 : 채점 서버에서 채점 결과를 받아와서 채점 결과를 화면에 표시 (Python 이용)",
-      "참가자들의 대회 참여 현황을 실시간으로 확인할 수 있도록 리더보드 및 평가 인터페이스를 개발했습니다.",
-      "사업부 마케팅, 기획자, 디자이너, 백엔드 개발자, 데이터사이언티스트와 협업하여 대회 운영 및 플랫폼 개발을 진행했습니다.",
+      "참가자들의 대회 참여 현황을 실시간으로 확인할 수 있도록 리더보드 및 평가 인터페이스를 개발.",
+      "사업부 마케팅, 기획자, 디자이너, 백엔드 개발자, 데이터사이언티스트와 협업하여 대회 운영 및 플랫폼 개발을 진행.",
     ],
     results: [
       "회원수 7000여명의 플랫폼으로 성장",
@@ -306,14 +312,14 @@ export const projects: Project[] = [
       "개발 팀 리드 / 솔루션 구조 설계 및 협업 주도"
     ],
     description: [
-      "사용자가 입력한 질의를 LLM에 필요한 Parameter들과 결합하여 Prompt를 생성하여 Model API를 호출합니다.",
-      "Model API의 응답은 Streaming 형태로 받아와서 실시간으로 응답 텍스트를 화면에 표시합니다.",
+      "사용자가 입력한 질의를 LLM에 필요한 Parameter들과 결합하여 Prompt를 생성하여 Model API를 호출.",
+      "Model API의 응답은 Streaming 형태로 받아와서 실시간으로 응답 텍스트를 화면에 표시.",
       "API 작업 : 서버로직에 Reward Model을 거치도록 설계하여 사용자가 원하는 응답을 낼 수 있도록 최적화 작업",
       "PDF Viewer와 LLM을 연동하여 사용자가 입력한 질의를 통해 PDF 파일을 검색할 수 있도록 구축",
     ],
     results: ["ChatGPT를 On-Premise 환경에서 사용할 수 있도록 구축", "대형 카드사 / 보험사 등에서 데모시연"],
     challenges: [
-      "LLM에 대응하는 UI/UX 설계 및 개발은 처음으로 시도했기에 여러 오픈소스들을 참고하여 개발했습니다.",
+      "LLM에 대응하는 UI/UX 설계 및 개발은 처음으로 시도했기에 여러 오픈소스들을 참고하여 개발.",
       "오픈소스 Class를 커스터마이징 해야하는 부분이 있었는데, 출시 초기 버전이라 오픈소스 코드를 수정하는 것이 어려웠습니다(서버작업). -> Docker Image로 빌드하며 버전관리로 해결",
       "서버에서 Streaming 형태의 응답을 bianry encoding 형태를 UI에서 decoding 할때, 알 수 없는 문자들이 나오는 이슈 -> 정규표현 식 및 서버 디버깅으로 해결",
     ],
@@ -409,7 +415,7 @@ export const projects: Project[] = [
       "생산성을 높이는 인터페이스 설계로 개발자 효율성 증대"
     ],
     description: [
-      "CodeMirror 라는 Text Editor Library를 이용해 SQL 쿼리 작성 인터페이스를 구축했습니다.",
+      "CodeMirror 라는 Text Editor Library를 이용해 SQL 쿼리 작성 인터페이스를 구축.",
       "잘의 작성 -> LLM 응답 확인 -> SQL 수정/완성 Flow에 대한 UI / UX 설계 및 구현",
       "Figma를 통한 기획자 / 디자이너와 협업",
     ],
@@ -458,7 +464,7 @@ export const projects: Project[] = [
       "관리 도구 개발로 데이터 흐름 시각화"
     ],
     description: [
-      "Zero Base에서 부터 프론트엔드 개발을 진행했습니다.",
+      "Zero Base에서 부터 프론트엔드 개발을 진행.",
       "MLOps 환경에서 Model이 학습 중에 발생하는 데이터 모니터링 대시보드 설계 및 구현 -> Chart.js / ApexChart 이용",
       "Vuexy 템플릿을 이용하여 MLOps 전체 UI / UX / 대시보드 설계 및 구현",
       "Grafana를 이용하여 모델 학습 중에 발생하는 리소스 사용 현황 모니터링 대시보드 설계 및 구현",
@@ -485,7 +491,7 @@ export const projects: Project[] = [
       { path: "/screenshots/mlops/5.png", width: 600, height: 590 },
     ],
     image: '/images/example.svg',
-    animationData: Project7,
+    animationData: Project6_1,
     svg: {
       width: 275,
       height: 275,
@@ -513,7 +519,7 @@ export const projects: Project[] = [
       "급하게 투입되어 협업 프로젝트 잔금을 받아낸 중요한 역할 수행!"
     ],
     description: [
-      "CVAT 이라는 오픈소스를 이용해 휴대폰 파손 이미지를 라벨링하는 도구를 개발했습니다.",
+      "CVAT 이라는 오픈소스를 이용해 휴대폰 파손 이미지를 라벨링하는 도구를 개발.",
     ],
     results: ["고객에 전달 완료 및 사용 메뉴얼 전달"],
     challenges: [
@@ -634,10 +640,10 @@ export const projects: Project[] = [
       { path: "/screenshots/c3db/1.png", width: 600, height: 590 },
     ],
     image: '/images/example.svg',
-    animationData: Project9,
+    animationData: Project10,
     svg: {
-      width: 275,
-      height: 275,
+      width: 235,
+      height: 235,
     }
   }
 
