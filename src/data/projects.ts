@@ -107,6 +107,7 @@ export type Project = {
   learningPoints: string[] | undefined;
   screenshots: { path: string, width: number, height: number }[] | undefined;
   roles: string[];
+  contribution: number | undefined;
   results: string[] | undefined;
   image: string | undefined;
   animationData: AnimationItem | undefined;
@@ -246,7 +247,7 @@ export const projects: Project[] = [
     startDate: '2021.05',
     endDate: '2023.05',
     isDone: true,
-    technologies: ['vuejs', 'aws', 'python', 'docker'],
+    technologies: ['vuejs', 'sass', 'aws', 'python', 'docker',],
     roles: [
       "프론트엔드 개발 /협업 리드",
       "프로젝트 관리 및 일정 조율",
