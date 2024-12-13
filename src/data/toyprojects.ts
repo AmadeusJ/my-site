@@ -17,7 +17,7 @@ export type ToyProject = {
   description: string[];
   challenges: string[] | undefined;
   learningPoints: string[] | undefined;
-  screenshots: string[] | undefined;
+  screenshots: { path: string, width: number, height: number }[] | undefined;
   results: string[] | undefined;
   animationData: AnimationItem | undefined;
   githubUrl: string[] | undefined;
@@ -70,7 +70,11 @@ export const toyProjects: ToyProject[] = [
     results: [
       "UI/UX 장인이 언젠간 되고 싶다는 마음을 남김..",
     ],
-    screenshots: [],
+    screenshots: [
+      { path: '/screenshots/my-site/1.png', width: 600, height: 500 },
+      { path: '/screenshots/my-site/2.png', width: 600, height: 500 },
+      { path: '/screenshots/my-site/3.png', width: 600, height: 500 },
+    ],
     githubUrl: [
       "https://github.com/AmadeusJ/my-site",
       "https://github.com/AmadeusJ/my-site-server"

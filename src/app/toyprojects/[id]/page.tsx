@@ -65,11 +65,6 @@ export default function ToyProjectPage({ params }: ToyProjectPageProps) {
                 <p>{project.purpose.join(', ')}</p>
               </div>
 
-              {/* 프로젝트 상세 페이지 고객사 */}
-              <div className={`${styles.projectDetailItem} ${styles.projectDetailCustomer}`}>
-                <h2>Customer</h2>
-                <p>{project.customer?.join(' / ')}</p>
-              </div>
 
               {/* 프로젝트 상세 페이지 기간 */}
               <div className={`${styles.projectDetailItem} ${styles.projectDetailPeriod}`}>
@@ -110,6 +105,31 @@ export default function ToyProjectPage({ params }: ToyProjectPageProps) {
                 </ul>
               </div>
 
+              {/* Github URL */}
+              <div className={`${styles.projectDetailItem} ${styles.projectDetailGithub}`}>
+                <h2>Github</h2>
+                <div className={styles.projectDetailGithubList}>
+                  {project.githubUrl?.map((githubUrl, index) => (
+                    <div className={styles.projectDetailGithubItem} key={githubUrl}
+                      onClick={() => window.open(githubUrl, '_blank')}
+                    >
+                      <Tooltip
+                        content={
+                          <div className='px-1 py-2'>
+                            <div className='text-lg font-bold'>{githubUrl}</div>
+                          </div>
+                        }
+                        showArrow
+                        placement='top-start'
+                        color='primary'
+                      >
+                        <img src={`/svgs/github${index + 1}.svg`} alt='github' width={35} height={35} />
+                      </Tooltip>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* 프로젝트 상세 페이지 성과 */}
               <div className={`${styles.projectDetailItem} ${styles.projectDetailResult}`}>
                 <h2>Result</h2>
@@ -140,10 +160,19 @@ export default function ToyProjectPage({ params }: ToyProjectPageProps) {
           </div>
           {/* 프로젝트 상세 페이지 - 프로젝트 스크린샷*/}
           <div className={styles.projectDetailScreenshots}>
-            <h2>Screenshots</h2>
-            <div className={styles.projectDetailScreenshot}>
-              <ProjectScreenshotSlider images={project.screenshots || []} />
-            </div>
+            <AeroCard className={styles.projectDetailScreenshotCard}>
+              {/* 프로젝트 상세 페이지 - 프로젝트 스크린샷 - 이미지가 있을 경우 */}
+              {project.screenshots && project.screenshots.length > 0 && (
+                <ProjectScreenshotSlider images={project.screenshots || []} />
+              )}
+              {/* 프로젝트 상세 페이지 - 프로젝트 스크린샷 - 이미지가 없을 경우 */}
+              {!project.screenshots || project.screenshots.length === 0 && (
+                <div className={styles.projectDetailScreenshotNoImage}>
+                  <img src={`/icons/no-image.svg`} alt='no-image' width={20} height={20} />
+                  <p>No screenshots available</p>
+                </div>
+              )}
+            </AeroCard>
           </div>
         </div>
 

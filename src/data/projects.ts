@@ -246,7 +246,7 @@ export const projects: Project[] = [
     startDate: '2021.05',
     endDate: '2023.05',
     isDone: true,
-    technologies: ['vuejs', 'aws', 'python', 'celery', 'docker'],
+    technologies: ['vuejs', 'aws', 'python', 'docker'],
     roles: [
       "프론트엔드 개발 /협업 리드",
       "프로젝트 관리 및 일정 조율",
@@ -561,7 +561,7 @@ export const projects: Project[] = [
     startDate: '2019.04',
     endDate: '2021.03',
     isDone: true,
-    technologies: ['vuejs', 'python', 'django', 'electron', 'redis', 'rabbitmq', 'gunicorn'],
+    technologies: ['vuejs', 'python', 'django', 'electron', 'redis', 'rabbitmq'],
     roles: [
       "Full-Stack 개발",
       "채팅 인터페이스 설계 및 구현",
@@ -618,7 +618,7 @@ export const projects: Project[] = [
     startDate: '2019.04',
     endDate: '2021.03',
     isDone: true,
-    technologies: ['python', 'django', 'postgresql', 'jquery', 'javascript', 'bootstrap', 'celery'],
+    technologies: ['python', 'django', 'postgresql', 'javascript',],
     roles: [
       "Full-Stack 개발",
     ],

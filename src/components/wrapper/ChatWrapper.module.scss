@@ -8,7 +8,11 @@
     width: 73px;
     height: 73px;
     border-radius: 50%;
-    background-color: #007bff;
+    // background-color: #81D4FA;
+    // background: linear-gradient(135deg, #9b59b6, #4c68d7);
+    background: linear-gradient(135deg, #CCFFCC, #F0F4C3);
+
+
     color: #ffffff;
     border: none;
     cursor: pointer;
@@ -16,9 +20,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('/icons/chat-bubble.svg');
-    background-size: cover;
-    background-position: center;
+    // background-image: url('/icons/send.svg');
+    // background-size: 40px;
+    // background-position: center;
+    // background-repeat: no-repeat;
+
   }
 
   .aeroChat {

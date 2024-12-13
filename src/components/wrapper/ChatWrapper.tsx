@@ -50,6 +50,7 @@ export default function AeroChatWrapper() {
           animate={{ opacity: 1 }}
           whileHover={{ scale: 1.1 }}
         >
+          <img src="/icons/send.svg" width={43} height={43} alt="send" />
         </motion.button>
       )}
 
