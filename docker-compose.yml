@@ -1,10 +1,10 @@
 services:
   frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: node:22-alpine
     container_name: frontend
     ports:
       - 3000:3000
     env_file:
       - .env
+    volumes:
+      - /home/ubuntu/my-site-frontend/dist:/app
