@@ -1,18 +1,32 @@
-# 베이스 이미지 선택
-FROM node:22-alpine
-
-# 작업 디렉토리 설정
+# 빌드 단계
+FROM node:22-alpine AS builder
 WORKDIR /app
 
-# 패키지 설치
+# 의존성 설치
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
-# 애플리케이션 소스 복사
+# 애플리케이션 빌드
 COPY . .
+RUN yarn build
 
-# 빌드
-RUN npm run build
+# 실행 단계
+FROM node:22-alpine AS runner
+WORKDIR /app
 
-# Next.js 애플리케이션 실행
-CMD ["npm", "start"]
+# production 모드 설정
+ENV NODE_ENV=production
+
+# 의존성 복사 (필요한 파일만 복사)
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile --production
+
+# 빌드 결과물 복사
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/next.config.js ./
+
+# Next.js 실행
+CMD ["yarn", "start"]
+
+EXPOSE 3000

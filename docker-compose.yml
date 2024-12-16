@@ -5,17 +5,14 @@ services:
     volumes:
       - /var/www/html/ssl:/etc/letsencrypt
       - /var/www/html:/var/www/certbot
-    command: certonly --webroot --webroot-path=/var/www/certbot --email dawoonjung1026@gmail.com --agree-tos --no-eff-email -d dawoonjung.com -d www.dawoonjung.com
+    command: certonly --webroot --webroot-path=/var/www/certbot --email dawoonjung1026@gmail.com --agree-tos --no-eff-email -d ${MY_DOMAIN} -d www.${MY_DOMAIN}
 
   frontend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: frontend
     ports:
       - 3000:3000
-    volumes:
-      - .:/app
-    command: yarn dev
-    environment:
-      - WATCHPACK_POLLING=true
     env_file:
       - .env
