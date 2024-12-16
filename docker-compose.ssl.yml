@@ -1,0 +1,8 @@
+services:
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - /var/www/html/ssl:/etc/letsencrypt
+      - /var/www/html:/var/www/certbot
+    command: certonly --webroot --webroot-path=/var/www/certbot --email dawoonjung1026@gmail.com --agree-tos --no-eff-email -d ${MY_DOMAIN} -d www.${MY_DOMAIN}
