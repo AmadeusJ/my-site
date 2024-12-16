@@ -45,7 +45,7 @@ export default function AeroChat({ lottieRef }: AeroChatProps) {
       const greetingMessage = {
         sender_id: 'jdw',
         receiver_id: userId,
-        content: '안녕하세요! 궁금한 점이 있으시다면 말씀해주세요 :)',
+        content: '안녕하세요! \n궁금한 점이 있으시다면 말씀해주세요 :)',
         is_system_message: true,
       }
       dispatch(sendMessage(greetingMessage));
