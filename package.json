@@ -32,7 +32,7 @@
     "react-redux": "^9.1.2",
     "react-vertical-timeline-component": "^3.6.0",
     "redux": "^5.0.1",
-    "sass": "^1.80.6",
+    "sass": "^1.83.0",
     "swiper": "^11.1.15",
     "tailwindcss": "^3.4.16"
   },

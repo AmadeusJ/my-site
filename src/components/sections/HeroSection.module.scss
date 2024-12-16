@@ -1,5 +1,5 @@
 /* HeroSection.module.css */
-@import '@/styles/_variables.scss';
+@use '@/styles/_variables.scss' as *;
 
 .heroSection {
   height: 100vh;

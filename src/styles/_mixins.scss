@@ -1,4 +1,7 @@
 // _mixins.scss
+
+@use '@/styles/_variables.scss' as *;
+
 @mixin respond-to($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     @media (max-width: map-get($breakpoints, $breakpoint)) {

@@ -1,5 +1,5 @@
-@import '@/styles/_variables.scss';
-@import '@/styles/_mixins.scss';
+@use '@/styles/_variables.scss' as *;
+@use '@/styles/_mixins.scss' as mixins;
 
 .projectSection {
   height: '100vh';
@@ -134,7 +134,7 @@
 
 
   // 미디어 쿼리
-  @include respond-to("xxlarge") {
+  @include mixins.respond-to("xxlarge") {
     width: calc(100% - 420px);
     /* 좌우 패딩을 고려한 유동적인 너비 */
     max-width: 3840px;
@@ -142,32 +142,32 @@
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
 
-  @include respond-to("xlarge") {
+  @include mixins.respond-to("xlarge") {
     width: calc(100% - 100px);
     gap: 75px;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     max-width: 1600px;
   }
 
-  @include respond-to("large") {
+  @include mixins.respond-to("large") {
     width: calc(100% - 100px);
     gap: 75px;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
 
 
-  @include respond-to("desktop") {
+  @include mixins.respond-to("desktop") {
     gap: 50px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 
-  @include respond-to("tablet") {
+  @include mixins.respond-to("tablet") {
     padding: 30px;
     gap: 30px;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
-  @include respond-to("mobile") {
+  @include mixins.respond-to("mobile") {
     padding: 20px;
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
