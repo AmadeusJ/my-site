@@ -1,5 +1,7 @@
 // app/about/page.module.scss
 
+@use '@/styles/_variables.scss' as *;
+
 .aboutSection {
   background: transparent;
   padding: 20px;
@@ -96,7 +98,7 @@
           h1 {
             font-size: 1.3rem;
             font-weight: 700;
-            color: $project-detail-title-color;
+            color: var(--project-detail-title-color);
           }
 
           p {
