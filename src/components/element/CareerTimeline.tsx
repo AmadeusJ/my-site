@@ -55,7 +55,7 @@ const CareerTimeline = () => {
             <h3>(주)마인즈앤컴퍼니</h3>
             <h4 style={{ marginLeft: "10px" }}>Minds & Company</h4>
           </div>
-          <p>Frontend 개발 전담 / LLM 관련 Web 개발 / 플랫폼 개발 & 운영</p>
+          <p>Frontend 개발 전담 / Web Application 개발 / 플랫폼 개발 & 운영</p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement

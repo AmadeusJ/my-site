@@ -13,6 +13,8 @@ import styles from './page.module.scss';
 import ChatWrapper from '@/components/wrapper/ChatWrapper';
 import { me } from '@/data/me';
 import { calculateExperience } from '@/utils/tools';
+import Lottie from 'lottie-react';
+
 
 export default function AboutPage() {
   const router = useRouter();
@@ -55,11 +57,12 @@ export default function AboutPage() {
               </AeroCard>
             </div>
             <div className={styles.aboutMe}>
-              <AeroCard className={styles.aboutMeCard}>
-                <div className={styles.aboutMeText}>
-                  <h1>About Me</h1>
-                </div>
-              </AeroCard>
+              <Lottie
+                animationData={me.animationData}
+                style={{ width: '65%', height: '65%' }}
+                autoplay={true}
+                loop={true}
+              />
             </div>
           </div>
           <div className={styles.aboutFEContents}>

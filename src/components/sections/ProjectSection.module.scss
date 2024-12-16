@@ -8,6 +8,11 @@
   margin: 0 auto;
   position: relative;
 
+  .projectSectionTitle {
+    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
   .projectWrapper {
     display: flex;
     flex-direction: row;
@@ -19,7 +24,7 @@
     max-height: calc(100% - 90px);
     align-items: center;
     justify-content: center;
-    padding-top: 115px;
+    padding-top: 85px;
 
     .projectCardWrapper {
       position: relative;

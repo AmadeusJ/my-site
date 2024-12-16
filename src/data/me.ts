@@ -1,3 +1,5 @@
+import { AnimationItem } from 'lottie-web';
+import Me1 from '@/assets/animations/about/3.json';
 export interface Me {
   name: string; // 이름
   title: string; // 직업/포지션
@@ -9,6 +11,7 @@ export interface Me {
   goals: string; // 목표 및 비전
   image?: string; // 프로필 이미지 경로 (옵션)
   careerStartDate: string; // 경력 시작일
+  animationData?: AnimationItem; // 애니메이션 데이터
 }
 
 export const me: Me = {
@@ -42,4 +45,5 @@ export const me: Me = {
     <strong>사용자 중심의 서비스를 설계</strong>할 수 있는 <strong>기술 전문가</strong>로 발전하는 것이 목표입니다.
   `,
   image: "/photo/me2.png",
+  animationData: Me1,
 };

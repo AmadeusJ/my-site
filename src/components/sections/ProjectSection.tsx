@@ -37,9 +37,9 @@ export default function ProjectSection() {
 
   return (
     <section className={`section ${styles.projectSection}`}>
-      {/* <div className={styles.projectSectionTitle}>
-        <h1>다양한 프로젝트를 수행하며 쌓아온 경험과 핵심 역량들을 세 가지 주요 카테고리로 정리했습니다. </h1>
-      </div> */}
+      <div className={styles.projectSectionTitle}>
+        <p>프로젝트를 통해 쌓아온 경험과 기술을 세 가지 카테고리로 정리했습니다. 궁금한 프로젝트가 있다면 클릭해보세요!</p>
+      </div>
       <div className={styles.projectWrapper}>
         {
           projectTopics.map((topic, index) => {
