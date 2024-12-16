@@ -141,6 +141,7 @@ export const projects: Project[] = [
       "재사용 가능한 컴포넌트 개발",
       "다국어 적용 (국문/영문)"
     ],
+    contribution: 50,
     description: [
       "그동안의 MNC 내부 LLM 관련 프로젝트들을 모듈화 하여 하나로 모아서 플랫폼화 진행",
       "영어를 추가한 다국어 적용(i18n)",
@@ -195,6 +196,7 @@ export const projects: Project[] = [
       "대화형 UI 설계 및 웹뷰 기반 프론트엔드 개발",
       "자연어 처리 결과를 활용한 추천 인터페이스 구축"
     ],
+    contribution: 100,
     description: [
       "프로젝트 시작전 PoC 단계에서 Vuejs 통해서 프로토타입 개발 .",
       "<strong>Webview 기반의 모바일 앱</strong>에서 대화형 UI를 모달 레이어 형식으로 기존의 원뱅킹 챗봇에 추가하여 구현';.",
@@ -253,6 +255,7 @@ export const projects: Project[] = [
       "프로젝트 관리 및 일정 조율",
       "리더보드 및 평가 인터페이스 개발"
     ],
+    contribution: 100,
     description: [
       "Vue.js를 이용해 zero base에서 부터 Component 기반 프론트엔드 개발을 진행.",
       "AWS 기반의 클라우드 인프라를 구축하여 안정적인 서비스 운영을 보장. (Router5, RDS, EC2, S3, Lambda, CloudFront 이용)",
@@ -312,6 +315,7 @@ export const projects: Project[] = [
       "다이나믹 폼 및 실시간 시각화 UI 설계",
       "개발 팀 리드 / 솔루션 구조 설계 및 협업 주도"
     ],
+    contribution: 100,
     description: [
       "사용자가 입력한 질의를 LLM에 필요한 Parameter들과 결합하여 Prompt를 생성하여 Model API를 호출.",
       "Model API의 응답은 Streaming 형태로 받아와서 실시간으로 응답 텍스트를 화면에 표시.",
@@ -362,6 +366,7 @@ export const projects: Project[] = [
       "데이터 대시보드와 관리 도구 설계",
       "관리자 정책 관리 기능 구현"
     ],
+    contribution: 80,
     description: [
       "MLOps 플랫폼 개발 경험을 바탕으로, 단순 AI Model이 아닌 LLM Model을 학습하는 Ops 플랫폼 개발",
       "기업 고객을 타겟팅한 사용자 관리 기능 기획 / 개발",
@@ -415,6 +420,7 @@ export const projects: Project[] = [
       "LLM 기반 SQL 쿼리 작성 지원 기능 구현",
       "생산성을 높이는 인터페이스 설계로 개발자 효율성 증대"
     ],
+    contribution: 100,
     description: [
       "CodeMirror 라는 Text Editor Library를 이용해 SQL 쿼리 작성 인터페이스를 구축.",
       "잘의 작성 -> LLM 응답 확인 -> SQL 수정/완성 Flow에 대한 UI / UX 설계 및 구현",
@@ -464,6 +470,7 @@ export const projects: Project[] = [
       "데이터 모니터링 대시보드 설계 및 구현",
       "관리 도구 개발로 데이터 흐름 시각화"
     ],
+    contribution: 100,
     description: [
       "Zero Base에서 부터 프론트엔드 개발을 진행.",
       "MLOps 환경에서 Model이 학습 중에 발생하는 데이터 모니터링 대시보드 설계 및 구현 -> Chart.js / ApexChart 이용",
@@ -519,6 +526,7 @@ export const projects: Project[] = [
       "React와 Django 기반의 Full-Stack 개발",
       "급하게 투입되어 협업 프로젝트 잔금을 받아낸 중요한 역할 수행!"
     ],
+    contribution: 100,
     description: [
       "CVAT 이라는 오픈소스를 이용해 휴대폰 파손 이미지를 라벨링하는 도구를 개발.",
     ],
@@ -569,6 +577,7 @@ export const projects: Project[] = [
       "실시간 채팅 및 협업 도구 개발",
       "WebSocket 기반 아키텍처 설계"
     ],
+    contribution: 80,
     description: [
       "첫 커리어 시작시 처음 맡은 서비스",
       "Django의 template engine과 Vue.js 프레임워크 Build를 SSR 방식으로 개발",
@@ -623,6 +632,7 @@ export const projects: Project[] = [
     roles: [
       "Full-Stack 개발",
     ],
+    contribution: 100,
     description: [
       "대학원 논문 주제로 진행한 3차원 화합물 데이터베이스 개발",
     ],

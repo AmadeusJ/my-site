@@ -84,7 +84,7 @@ export default function EmailForm({ lottieRef }: EmailFormProps) {
     <div className={styles.emailForm}>
       <AeroCard>
         <div className={styles.form}>
-          <h2>Contact Me</h2>
+          <h2>Email</h2>
           <div className={styles.inputGroup}>
             <label htmlFor="email">Your Email</label>
             <input

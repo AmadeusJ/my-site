@@ -24,6 +24,12 @@
   .contactContents {
     flex: 6;
 
+    p {
+      font-size: 1.3rem;
+      line-height: 1.5;
+      padding-bottom: 10px;
+    }
+
     .contactFormWrapper {
       display: flex;
       flex-direction: row;

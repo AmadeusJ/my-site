@@ -102,7 +102,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
               {/* 프로젝트 상세 페이지 역할 */}
               <div className={`${styles.projectDetailItem} ${styles.projectDetailRole}`}>
-                <h2>Role</h2>
+                <div className={styles.projectDetailRoleTitle}>
+                  <h2>Role</h2>
+                  <p>{`(Contribution: ${project.contribution}%)`}</p>
+                </div>
                 <ul>
                   {project.roles?.map((role) => (
                     <li><img src={`/icons/check_1.svg`} alt='role' width={20} height={20} />{role}</li>

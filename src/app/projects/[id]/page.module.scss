@@ -25,6 +25,18 @@
           margin-top: 20px;
         }
 
+        .projectDetailRoleTitle {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          p {
+            padding-left: 10px;
+            font-size: 0.9rem;
+            color: var(--project-detail-purpose-color);
+          }
+        }
+
         h1 {
           font-size: 1.3rem;
           font-weight: 700;
