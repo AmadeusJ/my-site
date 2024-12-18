@@ -24,7 +24,7 @@ RUN yarn install --frozen-lockfile --production
 # 빌드 결과물 복사
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/next.config.ts ./
 
 # Next.js 실행
 CMD ["yarn", "start"]
