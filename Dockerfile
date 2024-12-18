@@ -2,6 +2,8 @@
 FROM node:22-alpine AS builder
 WORKDIR /app
 
+ENV NODE_ENV=production
+
 # 의존성 설치
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
