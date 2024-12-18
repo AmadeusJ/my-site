@@ -135,7 +135,7 @@ export const projects: Project[] = [
     startDate: '2024.06',
     endDate: 'In Progress...',
     isDone: false,
-    technologies: ['next-js', 'React'],
+    technologies: ['next-js', 'react'],
     roles: [
       "프론트엔드 개발",
       "재사용 가능한 컴포넌트 개발",

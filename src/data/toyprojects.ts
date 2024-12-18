@@ -42,7 +42,7 @@ export const toyProjects: ToyProject[] = [
       { id: 5, type: 'Docker', color: 'warning' },
       { id: 6, type: 'UI/UX', color: 'warning' },
     ],
-    technologies: ['next-js', 'React', 'TypeScript', 'sass', 'Docker', 'Python', 'FastAPI', 'Telegram',],
+    technologies: ['next-js', 'react', 'typescript', 'sass', 'docker', 'python', 'fastapi', 'telegram',],
     startDate: '2024.11',
     endDate: '2024.12',
     isDone: true,
