@@ -1,12 +1,10 @@
 services:
   frontend:
-    image: node:22-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: frontend
     ports:
       - 3000:3000
     env_file:
       - .env
-    volumes:
-      - /home/ubuntu/my-site-frontend/dist:/app
-    working_dir: /app
-    command: [ "yarn", "start" ]
