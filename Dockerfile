@@ -7,7 +7,7 @@ COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 # 애플리케이션 빌드 및 TypeScript 파일 변환
-COPY . .  # 프로젝트 소스 복사
+COPY . . 
 RUN yarn build
 RUN yarn tsc next.config.ts --skipLibCheck --esModuleInterop --resolveJsonModule
 
@@ -25,7 +25,7 @@ RUN yarn install --frozen-lockfile --production
 # 빌드 결과물 복사
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.js ./  # 변환된 파일 복사
+COPY --from=builder /app/next.config.js ./ 
 
 # Next.js 실행
 EXPOSE 3000
