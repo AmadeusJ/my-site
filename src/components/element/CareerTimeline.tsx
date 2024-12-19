@@ -59,7 +59,7 @@ const CareerTimeline = () => {
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
-          date="2019 - 2021"
+          date="2019.04 - 2021.02"
           iconStyle={{
             background: "rgba(255, 255, 255, 0.2)",
             backdropFilter: "blur(10px)",
@@ -99,7 +99,7 @@ const CareerTimeline = () => {
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
-          date="2021 - Present"
+          date="2009.03 - 2018.02"
           iconStyle={{
             background: "rgba(255, 255, 255, 0.2)", // 반투명한 흰색 배경
             backdropFilter: "blur(10px)", // 블러 효과
@@ -139,7 +139,7 @@ const CareerTimeline = () => {
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
-          date="2019 - 2021"
+          date="2006.03 - 2009.02"
           iconStyle={{
             background: "rgba(255, 255, 255, 0.2)",
             backdropFilter: "blur(10px)",
