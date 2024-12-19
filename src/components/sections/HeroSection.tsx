@@ -34,7 +34,6 @@ export default function HeroSection() {
     const { userId, isNew } = getUserId();
     dispatch(setIsNewVisitor(isNew));
     dispatch(postWelcome({ user_id: userId, isNewVisitor: isNew }));
-    console.log('HeroSection mounted');
   }, [dispatch]);
 
   // 부모 컨테이너 애니메이션 설정

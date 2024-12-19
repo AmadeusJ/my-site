@@ -35,8 +35,6 @@ export default function AeroChat({ lottieRef }: AeroChatProps) {
     }
   };
 
-  console.log('messages: ', messages);
-
   useEffect(() => {
     if (inView && !messages.length && !hasSentInitialMessage.current) {
       const { userId, isNew } = getUserId();
@@ -81,7 +79,6 @@ export default function AeroChat({ lottieRef }: AeroChatProps) {
       dispatch(sendMessage(message));
       setInput("");
       scrollToBottom();
-      console.log("이거 . 왜두번실행됌???")
       // Play the Lottie animation
       if (lottieRef?.current) {
         const lottieInstance = lottieRef.current;

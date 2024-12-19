@@ -16,7 +16,6 @@ export const WebSocketProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const wsManager = new WebSocketManager((message) => {
-      console.log("WebSocket Message Received:", message);
       const messageData = JSON.parse(message);
       if (messageData.sender_id === 'jdw') {
         dispatch(sendMessage(messageData));
@@ -46,7 +45,6 @@ export const WebSocketProvider = ({ children }: { children: ReactNode }) => {
 // Custom Hook to use WebSocket Context
 export const useWebSocket = () => {
   const context = useContext(WebSocketContext);
-  console.log('context: ', context);
   if (!context) {
     throw new Error('useWebSocket must be used within a WebSocketProvider');
   }

@@ -25,7 +25,6 @@ export default function AeroChatWrapper() {
   };
 
   const handleCloseAnimationComplete = (definition: any) => {
-    console.log('handleCloseAnimationComplete', definition);
     if (!definition.opacity) {
       setIsCloseComplete(true);
     }

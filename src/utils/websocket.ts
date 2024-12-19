@@ -8,7 +8,6 @@ export class WebSocketManager {
 
   connect(): void {
     if (this.socket) {
-      console.log('WebSocket is already connected');
       return;
     }
 
@@ -22,16 +21,14 @@ export class WebSocketManager {
     this.socket = new WebSocket(`${websocketUrl}?user_id=${userId}`);
 
     this.socket.onopen = () => {
-      console.log('WebSocket connected');
+      // WebSocket 연결 확인
     };
 
     this.socket.onmessage = (event) => {
       this.onMessage(event.data);
-      console.log('WebSocket message received:', event.data);
     };
 
     this.socket.onclose = () => {
-      console.log('WebSocket closed');
       this.socket = null;
     };
 

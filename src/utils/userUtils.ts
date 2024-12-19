@@ -20,7 +20,6 @@ export function getOrCreateUserId(): { userId: string; isNew: boolean } {
   const existingUserId = localStorage.getItem(userIdKey);
   const existingCreatedDate = localStorage.getItem(createdDateKey);
   const existingIsNew = localStorage.getItem(isNewKey);
-  console.log('처음실행 확인 콘솔');
   // 24시간 이내인지 확인
   if (existingUserId && existingCreatedDate && isWithin24Hours(existingCreatedDate)) {
     localStorage.setItem(isNewKey, 'false');
@@ -45,7 +44,6 @@ export function getUserId(): { userId: string; isNew: boolean } {
   const existingUserId = localStorage.getItem(userIdKey);
   const existingIsNewKey = process.env.NEXT_PUBLIC_USER_IS_NEW!;
   const existingIsNew = localStorage.getItem(existingIsNewKey);
-  // 다음 실행확인 콘솔
-  console.log('다음 실행확인 콘솔');
+
   return { userId: existingUserId || '', isNew: existingIsNew === 'true' ? true : false };
 }
